@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@9.15.9",
   "resolutions": {},
   "scripts": {
     "docs:dev": "pnpm vitepress dev docs",
