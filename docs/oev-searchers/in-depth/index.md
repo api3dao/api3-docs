@@ -46,7 +46,7 @@ extraction.
 | [Hana Finance](https://www.hana.finance/)                                                            | Taiko    |
 | [INIT Capital](https://app.init.capital/?chain=81457)                                                | Blast    |
 | [Orbit Protocol](https://orbitlending.io/)                                                           | Blast    |
-| [Silo Finance RDNT market](https://app.silo.finance/silo/0x19d3F8D09773065867e9fD11716229e73481c55A) | Ethereum |
+| [Silo Finance RDNT market](https://v1.silo.finance/silo/0x19d3F8D09773065867e9fD11716229e73481c55A)  | Ethereum |
 
 ## From MEV searching
 
