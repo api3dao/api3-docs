@@ -165,8 +165,6 @@ async function testLink(url, filePath, ignoreTimeout) {
 }
 
 async function run(task) {
-  let passed = 0;
-  let failed = 0;
   console.log('Checking (' + task + ')', Object.keys(linksObj).length),
     'links.';
   for (var key in linksObj) {
@@ -178,6 +176,8 @@ async function run(task) {
         totalPassedCnt++;
       }
     }
+
+    await new Promise((r) => setTimeout(r, 1000));
   }
   console.log('\n');
 }
@@ -185,7 +185,7 @@ async function run(task) {
 /**
  * LOAD LINKS
  */
-async function loadLinks() {
+function loadLinks() {
   const paths = walkSync(distDir);
   const root = distDir.split('./docs/.vitepress/dist')[1];
   for (let i = 0; i < paths.length; i++) {
@@ -242,7 +242,7 @@ async function printFailures() {
 
 async function start() {
   linksObj = {};
-  await loadLinks();
+  loadLinks();
   await run('links');
   await printFailures();
 }
