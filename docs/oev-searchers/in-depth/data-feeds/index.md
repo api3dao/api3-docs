@@ -247,6 +247,12 @@ To know which encoding to use, you can check the length of the
 both `address` and `bytes32` are encoded using 32 bytes. For a beacon set, the
 length depends on the number of beacons encoded.
 
+::: warning ⚠️ Airnode Mnemonic Rotation
+
+Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Please refer to the [Api3 Market](https://market.api3.org) or directly on-chain data for the latest Airnode addresses.
+
+:::
+
 ::: info ℹ️ Example
 
 Say there is a dApp proxy that uses the `ETH/USD` dAPI. We can compute the
