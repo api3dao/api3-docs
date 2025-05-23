@@ -35,10 +35,6 @@ It consists of:
 - Template ID = A template represents an endpoint of the data provider API, e.g.
   ETH/USD.
 
-::: warning ⚠️ Airnode Mnemonic Rotation
-Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Current Airnode addresses can be found on the [API3 Market](https://market.api3.org) and in the `@api3/api-integrations` package.
-:::
-
 Together they represent a data point from a specific data provider. Beacons are
 identified by beacon ID, which is the hash of their Airnode address and template ID. They can be
 aggregated into "beacon sets" which are identified by the IDs of the constituent
@@ -250,6 +246,12 @@ To know which encoding to use, you can check the length of the
 `dataFeedDetails`. For a single beacon, the length is always `64` bytes, because
 both `address` and `bytes32` are encoded using 32 bytes. For a beacon set, the
 length depends on the number of beacons encoded.
+
+::: warning ⚠️ Airnode Mnemonic Rotation
+
+Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Please refer to the [Api3 Market](market.api3.org) or directly on-chain data for the latest Airnode addresses.
+
+:::
 
 ::: info ℹ️ Example
 
