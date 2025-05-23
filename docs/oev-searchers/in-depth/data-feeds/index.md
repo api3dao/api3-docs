@@ -36,7 +36,7 @@ It consists of:
   ETH/USD.
 
 ::: warning ⚠️ Airnode Mnemonic Rotation
-Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Current Airnode addresses can be found on the [API3 Market](https://market.api3.org) and in the `@api3/api-integrations` repository.
+Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Current Airnode addresses can be found on the [API3 Market](https://market.api3.org) and in the `@api3/api-integrations` package.
 :::
 
 Together they represent a data point from a specific data provider. Beacons are
