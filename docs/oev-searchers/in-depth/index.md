@@ -28,6 +28,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 | [INIT Capital](https://app.init.capital/?chain=5000) | Mantle         | `init`         |
 | [Lendle](https://lendle.xyz/)                        | Mantle         | `lendle`       |
 | [MachFi](https://www.machfi.xyz/)                    | Sonic          | `mach-finance` |
+| [Malda](https://malda.xyz/)                          | Linea          | `malda`        |
 | [Moonwell](https://moonwell.fi/)                     | Moonbeam       | `moonwell`     |
 | [Stout](https://stout.fi/)                           | Sonic          | `stout`        |
 | [Stability](https://stability.market/)               | Sonic          | `stability`    |
