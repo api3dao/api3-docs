@@ -33,6 +33,7 @@ When we refer to a 1% deviation threshold, we mean that at the time of a deviati
 Api3 Market offers the following deviation threshold options:
 
 - 5%
+- 2.5%
 - 1%
 - 0.5%
 - 0.25%
