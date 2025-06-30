@@ -30,8 +30,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
+        specifier: ^3.6.1
+        version: 3.6.2
       vitepress:
         specifier: 1.6.3
         version: 1.6.3(@algolia/client-search@5.20.4)(@types/node@22.7.5)(axios@1.10.0)(postcss@8.4.49)(search-insights@2.16.2)
@@ -794,8 +794,8 @@ packages:
   preact@10.23.1:
     resolution: {integrity: sha512-O5UdRsNh4vdZaTieWe3XOgSpdMAmkIYBCT3VhQDlKrzyCm8lUYsk0fmVEvoQQifoOjFRTaHZO69ylrzTW2BH+A==}
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1729,7 +1729,7 @@ snapshots:
 
   preact@10.23.1: {}
 
-  prettier@3.5.3: {}
+  prettier@3.6.2: {}
 
   property-information@7.0.0: {}
 
