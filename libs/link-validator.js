@@ -165,8 +165,8 @@ async function testLink(url, filePath, ignoreTimeout) {
 }
 
 async function run(task) {
-  console.log('Checking (' + task + ')', Object.keys(linksObj).length),
-    'links.';
+  (console.log('Checking (' + task + ')', Object.keys(linksObj).length),
+    'links.');
   for (var key in linksObj) {
     if (linksObj.hasOwnProperty(key)) {
       let fail = await testLink(key, linksObj[key], false);
