@@ -107,7 +107,7 @@ We maintain a history of data feed update gas costs and update counts required t
 
 ::: info 💰 Financial
 
-The prices you see on Api3 Market are the exact operational costs that we estimate (or $0.1/day, whichever is higher).
+The prices you see on Api3 Market are the exact operational costs that we estimate (or $0.05/day, whichever is higher).
 This means that it is unlikely that you will find a better bargain.
 
 We do not plan to monetize data feed plans at any point.
