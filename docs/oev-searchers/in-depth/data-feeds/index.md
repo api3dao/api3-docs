@@ -189,7 +189,11 @@ hardcoded in the OEV proxies of the dApp.
 The ID has no meaning other than to group proxies of the same dApp together.
 
 Searchers can derive the dApp ID from the information provided in the
-[OEV dApps catalog](/oev-searchers/in-depth/#oev-dapps). Searchers can use [`unsafeComputeDappId`](https://github.com/api3dao/contracts/blob/52109d0d285d3ac485a2f0ed68bd7799e75a9722/src/proxy.ts#L57) from the `@api3/contracts` package.
+[OEV dApps catalog](/oev-searchers/in-depth/#oev-dapps) in two ways.
+
+#### Programmatically
+
+Searchers can use [unsafeComputeDappId](https://github.com/api3dao/contracts/blob/52109d0d285d3ac485a2f0ed68bd7799e75a9722/src/proxy.ts#L57) from the `@api3/contracts` package available as an NPM package.
 
 ::: info ℹ️ Example
 
@@ -198,6 +202,31 @@ Say we want to determine dApp ID for [dTRINITY](https://dtrinity.org/). From the
 ```js
 const dTrinityDappId = unsafeComputeDappId('dtrinity', 252);
 // 16210721173577624589952893185091679941657223823840386808143855919126917477566
+```
+
+:::
+
+#### Using the CLI
+
+Alternatively, searchers can use the `compute-dapp-id` command from the `@api3/contracts` package.
+
+::: info ℹ️ Example
+
+For the same example as above, run the following command:
+
+```sh
+npx @api3/contracts@latest compute-dapp-id \
+  --dapp-alias dtrinity \
+  --chain-id 252
+```
+
+The command will output:
+
+```
+dApp alias: dtrinity
+chain: Fraxtal
+
+• dApp ID: 16210721173577624589952893185091679941657223823840386808143855919126917477566
 ```
 
 :::
