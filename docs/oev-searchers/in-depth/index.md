@@ -34,6 +34,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 | [Morpho wstETH/USDC market](https://app.morpho.org/ethereum/market/0x6d2fba32b8649d92432d036c16aa80779034b7469b63abc259b17678857f31c2/wsteth-usdc) | Ethereum       | `morpho-wsteth-usdc-860-lltv` |
 | [Stout](https://stout.fi/)                                                                                                                         | Sonic          | `stout`                       |
 | [Stability](https://stability.market/)                                                                                                             | Sonic          | `stability`                   |
+| [Takara](https://app.takaralend.com/)                                                                                                              | Sei            | `takara`                      |
 | [Yei Finance](https://www.yei.finance/)                                                                                                            | Sei            | `yei`                         |
 
 ### Legacy integrations
