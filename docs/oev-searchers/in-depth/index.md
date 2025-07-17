@@ -32,6 +32,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 | [Moonwell](https://moonwell.fi/)                                                                                                                   | Moonbeam       | `moonwell`                    |
 | [Morpho MVL/USDC market](https://app.morpho.org/ethereum/market/0x972b343b611a3cf2559a04bf2c0b8e45d1c69a1c1d94dc852ca6e16a924b006b/mvl-usdc)       | Ethereum       | `morpho-mvl-usdc-770-lltv`    |
 | [Morpho wstETH/USDC market](https://app.morpho.org/ethereum/market/0x6d2fba32b8649d92432d036c16aa80779034b7469b63abc259b17678857f31c2/wsteth-usdc) | Ethereum       | `morpho-wsteth-usdc-860-lltv` |
+| [Nerite](https://www.nerite.org/)                                                                                                                  | Arbitrum       | `nerite`                      |
 | [Stout](https://stout.fi/)                                                                                                                         | Sonic          | `stout`                       |
 | [Stability](https://stability.market/)                                                                                                             | Sonic          | `stability`                   |
 | [Takara](https://app.takaralend.com/)                                                                                                              | Sei            | `takara`                      |
