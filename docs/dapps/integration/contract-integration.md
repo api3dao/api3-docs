@@ -140,6 +140,10 @@ We recommend directing them to this page.
 
 :::
 
+## Combining Data Feeds
+
+The `data-feed-proxy-combinators` repository offers modular smart contracts for creating customized data feeds. These can be formed by transforming and combining existing feeds, which is useful when a specific data feed is not available on the Api3 Market. This allows dApps to integrate highly specific or composite data requirements directly into their smart contracts. See [here.](/dapps/integration/data-feed-proxy-combinators.md) for more details.
+
 ## Mixed oracle design
 
 Some dApps choose to mix oracle solutions, either by refusing service if they are not in consensus, or by using one primarily and deferring to another in case of inconsistency.
