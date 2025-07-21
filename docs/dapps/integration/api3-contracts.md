@@ -23,3 +23,7 @@ Additionally, `@api3/contracts` provides a CLI command for printing OEV Rewards-
 [AggregatorV2V3Interface](/dapps/integration/aggregatorv2v3interface.md) is not exported from this package, since contracts using this interface must have already imported it from elsewhere.
 
 :::
+
+## Advanced Usage: Combining Data Feeds
+
+The `data-feed-proxy-combinators` repository offers modular smart contracts for creating customized data feeds. These can be formed by transforming and combining existing feeds, which is useful when a specific data feed is not available on the Api3 Market. See [here.](/dapps/integration/data-feed-proxy-combinators.md) for more details.

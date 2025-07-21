@@ -25,10 +25,6 @@ module.exports = [
         link: '/dapps/integration/api3-contracts',
       },
       {
-        text: 'data-feed-proxy-combinators',
-        link: '/dapps/integration/data-feed-proxy-combinators',
-      },
-      {
         text: 'Security considerations',
         link: '/dapps/integration/security-considerations',
       },
