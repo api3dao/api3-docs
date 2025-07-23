@@ -140,6 +140,11 @@ We recommend directing them to this page.
 
 :::
 
+## Api3ReaderProxyV1 combinations
+
+See the [`data-feed-proxy-combinators`](https://github.com/api3dao/data-feed-proxy-combinators) repository for various modular contracts that you can use to create combinations out of Api3ReaderProxyV1 contracts.
+For example, you can combine an `ETH/USD` Api3ReaderProxyV1 contract and a `wstETH/ETH Exchange Rate` Api3ReaderProxyV1 contract to read a `wstETH/USD` value.
+
 ## Mixed oracle design
 
 Some dApps choose to mix oracle solutions, either by refusing service if they are not in consensus, or by using one primarily and deferring to another in case of inconsistency.
