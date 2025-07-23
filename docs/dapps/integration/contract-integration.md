@@ -140,10 +140,10 @@ We recommend directing them to this page.
 
 :::
 
-## Combining data feeds
+## Api3ReaderProxyV1 combinations
 
-The `data-feed-proxy-combinators` repository offers modular smart contracts for creating customized data feeds. These can be formed by transforming and combining existing feeds. This allows dApps to integrate highly specific or composite data requirements directly into their smart contracts. See [here](https://github.com/api3dao/data-feed-proxy-combinators/blob/0beed2baa94a48b50841f4a5ae6aeaccfe4e6b8a/README.md) for more details.
-
+See the [`data-feed-proxy-combinators`](https://github.com/api3dao/data-feed-proxy-combinators) repository for various modular contracts that you can use to create combinations out of Api3ReaderProxyV1 contracts.
+For example, you can combine an `ETH/USD` Api3ReaderProxyV1 contract and a `wstETH/ETH Exchange Rate` Api3ReaderProxyV1 contract to read a `wstETH/USD` value.
 ## Mixed oracle design
 
 Some dApps choose to mix oracle solutions, either by refusing service if they are not in consensus, or by using one primarily and deferring to another in case of inconsistency.
