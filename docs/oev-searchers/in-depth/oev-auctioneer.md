@@ -42,13 +42,35 @@ understand and comply with in order to successfully participate in auctions.
 
 | Name                                  | Value | Description                                                                                        |
 | ------------------------------------- | ----- | -------------------------------------------------------------------------------------------------- |
-| AUCTION_LENGTH_SECONDS                | 30    | How long an auction lasts.                                                                         |
 | OEV_AUCTIONS_MAJOR_VERSION            | 1     | Increased when we release any breaking change relevant to OEV auctions.                            |
 | COLLATERAL_REQUIREMENT_BUFFER_PERCENT | 5     | The additional percentage of the bidder's collateral to mitigate against price changes.            |
-| BID_PHASE_LENGTH_SECONDS              | 25    | The length of the bid phase during which searchers can place their bids.                           |
+| AWARD_PHASE_LENGTH_SECONDS            | 5     | The length of the award phase during which Auctioneer attempts to resolve the auction.             |
 | REPORT_FULFILLMENT_PERIOD_SECONDS     | 86400 | The fulfillment period, during which the auction winner is able to report payment for the OEV bid. |
 | MINIMUM_BID_EXPIRING_SECONDS          | 15    | The minimum expiring time for a bid to be considered eligible for award.                           |
 | PLACED_BIDS_BLOCK_RANGE               | 300   | The number of blocks queried for placed bids during award phase.                                   |
+
+### Auction length
+
+The auction length depends on the chain.
+
+| Chain   | Length (seconds) |
+| ------- | ---------------- |
+| Fraxtal | 15               |
+| Mantle  | 15               |
+| Sei     | 15               |
+| Sonic   | 15               |
+
+**Default auction length: `30`**
+
+If the chain you are working with is not in the above list, then it uses the default auction length of `30` seconds.
+
+### Bid phase length
+
+The length of the bid phase during which searchers can place their bids. The length depends on the auction length.
+
+```js
+const bidPhaseLength = auctionLength - AWARD_PHASE_LENGTH_SECONDS;
+```
 
 ### Auction offset
 
@@ -57,12 +79,12 @@ starts at the UNIX timestamp 0 (midnight UTC on 1st of January 1970) plus an
 offset based on the dApp ID.
 
 ```solidity
-uint256(keccak256(abi.encodePacked(uint256(dAppId)))) % AUCTION_LENGTH_SECONDS;
+uint256(keccak256(abi.encodePacked(uint256(dappId)))) % auctionLength;
 ```
 
 ::: info ℹ️ Example
 
-Say there is a dApp with ID `13` and `AUCTION_LENGTH_SECONDS=30`
+Say there is a dApp with ID `13` and `auctionLength=30`
 
 - When we encode and hash the dApp ID, we get
   `0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1eb5`.
@@ -97,9 +119,7 @@ Let's break down the components of the bid topic:
    protocol specs, is denoted by this major version being incremented. Refer to
    the current value of `OEV_AUCTIONS_MAJOR_VERSION` constant.
 2. `dappId` - The dApp ID for which the auction is being held.
-3. `auctionLength` - The length of the auction. This parameter must be set to
-   `AUCTION_LENGTH_SECONDS`. It is one of the most important parameters, so
-   we're explicitly including it in the bid topic to highlight its importance.
+3. `auctionLength` - The length of the auction in seconds. It is one of the most important parameters, so we're explicitly including it in the bid topic to highlight its importance.
 4. `signedDataTimestampCutoff` - The cutoff timestamp of the signed data. The auction winner is permitted to only use signed data with timestamps smaller than or equal to this. It is equal to the end of the bid phase of the
    auction.
 
@@ -108,10 +128,10 @@ Let's break down the components of the bid topic:
 Auctions repeat continuously and indefinitely. To calculate the
 `signedDataTimestampCutoff` that is to be specified in the bid topic, one needs
 to calculate the `startTimestamp` of the next auction. This depends on the auction
-offset, `BID_PHASE_LENGTH_SECONDS` and the current time.
+offset, `bidPhaseLength` and the current time.
 
 For example, dApp with ID `13` has an auction offset of `17`. With
-`AUCTION_LENGTH_SECONDS=30` and `BID_PHASE_LENGTH_SECONDS=25` this gives the
+`auctionLength=30` and `bidPhaseLength=25` this gives the
 following sequence of auctions:
 
 | `startTimestamp` | `signedDataTimestampCutoff` | End of award phase |
@@ -205,7 +225,7 @@ transaction.
 Each auction is split into two phases:
 
 1. Bid phase - During this phase, searchers are free to submit their bids.
-   This phase takes `BID_PHASE_LENGTH_SECONDS`.
+   This phase takes `bidPhaseLength`.
 2. Award phase - During this phase, Auctioneer determines and awards the winner.
    Bids placed during this period are ignored.
 
@@ -221,6 +241,7 @@ as soon as possible. The following happens under the hood:
    selected
 6. Prepare and submit the award for the auction winner on the OEV Network
 
+Auctioneer may take longer than the allotted `AWARD_PHASE_LENGTH_SECONDS` to award the winner.
 Under rare circumstances, when Auctioneer is unable to fetch the block or the
 logs from the OEV Network, the auction will be aborted and no winner is chosen.
 Similarly, if the auction award transaction fails, there will be no retry,
