@@ -39,16 +39,28 @@ function generateLlmsTxt() {
         const filePath = path.join(docsDir, `${file}.md`);
         if (fs.existsSync(filePath)) {
           const fileContent = fs.readFileSync(filePath, 'utf-8');
-          const match = fileContent.match(/---\s*title:\s*(.*?)\s*---/);
-          const title = match ? match[1] : path.basename(file, '.md');
+          const lines = fileContent.split('\n');
+          let title = path.basename(file, '.md');
+          for (const line of lines) {
+            if (line.startsWith('title: ')) {
+              title = line.substring('title: '.length);
+              break;
+            }
+          }
           const url = `https://docs.api3.org${file}`;
           content += `- [${title}](${url.replace(/\/$/, '/index')}.md)\n`;
         } else {
           const indexPath = path.join(docsDir, file, 'index.md');
           if (fs.existsSync(indexPath)) {
             const fileContent = fs.readFileSync(indexPath, 'utf-8');
-            const match = fileContent.match(/---\s*title:\s*(.*?)\s*---/);
-            const title = match ? match[1] : path.basename(file);
+            const lines = fileContent.split('\n');
+            let title = path.basename(file);
+            for (const line of lines) {
+              if (line.startsWith('title: ')) {
+                title = line.substring('title: '.length);
+                break;
+              }
+            }
             const url = `https://docs.api3.org${file}`;
             content += `- [${title}](${url.replace(/\/$/, '/index.md')})\n`;
           }
