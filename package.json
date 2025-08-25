@@ -6,11 +6,12 @@
   "packageManager": "pnpm@9.15.9",
   "resolutions": {},
   "scripts": {
-    "docs:dev": "pnpm vitepress dev docs",
-    "docs:build": "pnpm vitepress build docs;",
+    "docs:dev": "pnpm generate-llms-files && pnpm vitepress dev docs",
+    "docs:build": "pnpm generate-llms-files && pnpm vitepress build docs;",
     "docs:serve": "vitepress serve docs --port 8082",
     "format": "prettier --write --cache \"./**/*.{js,vue,md,json,yaml}\" --log-level silent",
     "format:check": "prettier --check --cache \"./**/*.{js,vue,md,json,yaml}\"",
+    "generate-llms-files": "node scripts/generate-llms-files.js",
     "prepare": "husky",
     "firebase:emulator": "pnpm docs:build; firebase emulators:start"
   },
