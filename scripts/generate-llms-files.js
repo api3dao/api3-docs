@@ -48,7 +48,7 @@ function generateLlmsTxt() {
             }
           }
           const url = `https://docs.api3.org${file}`;
-          content += `- [${title}](${url.replace(/\/$/, '/index')}.md)\n`;
+          content += `- [${title}](${url.replace(/\/$/, '/index')}.html)\n`;
         } else {
           const indexPath = path.join(docsDir, file, 'index.md');
           if (fs.existsSync(indexPath)) {
@@ -62,7 +62,7 @@ function generateLlmsTxt() {
               }
             }
             const url = `https://docs.api3.org${file}`;
-            content += `- [${title}](${url.replace(/\/$/, '/index.md')})\n`;
+            content += `- [${title}](${url.replace(/\/$/, '/index.html')})\n`;
           }
         }
       }
@@ -83,7 +83,9 @@ function generateLlmsFullTxt() {
     for (const link of links) {
       const match = link.match(/- \[(.*?)\]\((.*?)\)/);
       if (match) {
-        const url = match[2].replace('https://docs.api3.org', '');
+        const url = match[2]
+          .replace('https://docs.api3.org', '')
+          .replace('.html', '.md');
         const filePath = path.join(docsDir, url);
         if (fs.existsSync(filePath)) {
           let fileContent = fs.readFileSync(filePath, 'utf-8');
