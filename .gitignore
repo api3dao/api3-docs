@@ -9,6 +9,9 @@ docs/.vitepress/dist/
 docs/.vitepress/.temp
 .firebase/
 
+docs/public/llms.txt
+docs/public/llms-full.txt
+
 /indexes/content-files/
 
 yarn-error.log

@@ -14,6 +14,9 @@ pnpm-lock.yaml
 /docs/public/img
 /docs/public/api3-whitepaper-v1.0.3.pdf
 
+docs/public/llms.txt
+docs/public/llms-full.txt
+
 # assets
 /docs/reference/ois/latest/assets
 /docs/reference/airnode/latest/assets

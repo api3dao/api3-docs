@@ -13,6 +13,12 @@ Api3 provides data feeds and pays dApps for using them.
 
 2. Api3 enables the Oracle Extractable Value (OEV) resulting from the usage of these data feeds to be captured, and pays it to the respective dApps in the form of [OEV Rewards.](#oev-rewards)
 
+::: info 💡 Tip
+
+For quick reference, you can copy-paste [`llms-full.txt`](https://docs.api3.org/llms-full.txt) to your choice of AI assistant.
+
+:::
+
 ## Api3 Market
 
 Liquidity is increasingly shifting to newly launched L2 networks, and dApps that are able to branch out to these more quickly are at a significant competitive advantage.
