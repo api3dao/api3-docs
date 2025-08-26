@@ -78,6 +78,7 @@ function generateLlmsFullTxt() {
   const llmsTxtContent = fs.readFileSync(llmsTxtPath, 'utf-8');
   const links = llmsTxtContent.match(/- \[(.*?)\]\((.*?)\)/g);
   let fullContent = '';
+  const pageHeader = '<PageHeader/>\n\n';
 
   if (links) {
     for (const link of links) {
@@ -89,12 +90,12 @@ function generateLlmsFullTxt() {
         const filePath = path.join(docsDir, url);
         if (fs.existsSync(filePath)) {
           let fileContent = fs.readFileSync(filePath, 'utf-8');
-          const pageHeaderIndex = fileContent.indexOf('<PageHeader/>\n\n');
+          const pageHeaderIndex = fileContent.indexOf(pageHeader);
           if (pageHeaderIndex === -1) {
             throw new Error(`Could not find PageHeader in ${filePath}`);
           }
           fileContent = fileContent.substring(
-            pageHeaderIndex + '<PageHeader/>\n\n'.length
+            pageHeaderIndex + pageHeader.length
           );
           fullContent += fileContent + '\n\n';
         }
