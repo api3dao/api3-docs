@@ -81,3 +81,7 @@ required to understand the mental model behind OEV and our
 [data feeds](/oev-searchers/in-depth/data-feeds/). Because of this, we recommend starting
 with an in-between solution we call
 [MEV with Signed APIs](/oev-searchers/in-depth/mev-with-signed-apis).
+
+## OEV Dashboard
+
+To see OEV in more detail, head out to the [OEV Dashboard](https://oev-dashboard.api3.org/) where you can see how much is leaked and recaptured across different dApps.

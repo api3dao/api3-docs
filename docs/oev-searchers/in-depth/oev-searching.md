@@ -354,8 +354,9 @@ To open a dispute, head to the
 [OEV Discord channel](https://discord.com/channels/758003776174030948/1062909222347603989)
 and create a post with the description of the dispute.
 
-## Reference implementation
+## Additional resources
 
 - [Example OEV Compound bot](https://github.com/api3dao/oev-v1-compound-bot) - You can also inspect the
   [changes](https://github.com/api3dao/oev-v1-compound-bot/compare/mev-with-signed-apis...oev)
   needed to add the OEV functionality to an existing bot supporting [MEV with Signed APIs](/oev-searchers/in-depth/mev-with-signed-apis).
+- [Auctions overview on the OEV Network](https://oev-dashboard.api3.org/#oev-network) is a great tool to inspect the auctions.
