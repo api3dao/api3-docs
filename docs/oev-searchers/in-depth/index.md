@@ -22,22 +22,22 @@ Api3 feeds are used across many dApps, but not all are suitable for OEV searchin
 
 The following table includes dApps which integrated OEV proxies and are good candidates for OEV searching. The chain and dApp alias define are unique for every market and are required when implementing searcher bots.
 
-| dApp                                                                                                                                             | Chain          | dApp alias                   |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | ---------------------------- |
-| [dTRINITY](https://dtrinity.org/)                                                                                                                | Fraxtal, Sonic | `dtrinity`                   |
-| [INIT Capital](https://app.init.capital/?chain=5000)                                                                                             | Mantle         | `init`                       |
-| [Lendle](https://lendle.xyz/)                                                                                                                    | Mantle         | `lendle`                     |
-| [MachFi](https://www.machfi.xyz/)                                                                                                                | Sonic          | `mach-finance`               |
-| [Malda](https://malda.xyz/)                                                                                                                      | Linea          | `malda`                      |
-| [Moonwell](https://moonwell.fi/)                                                                                                                 | Moonbeam       | `moonwell`                   |
-| [Morpho cbBTC/USDC market](https://app.morpho.org/ethereum/market/0xba3ba077d9c838696b76e29a394ae9f0d1517a372e30fd9a0fc19c516fb4c5a7/cbbtc-usdc) | Ethereum       | `morpho-cbbtc-usdc-860-lltv` |
-| [Morpho MVL/USDC market](https://app.morpho.org/ethereum/market/0x972b343b611a3cf2559a04bf2c0b8e45d1c69a1c1d94dc852ca6e16a924b006b/mvl-usdc)     | Ethereum       | `morpho-mvl-usdc-770-lltv`   |
-| [Morpho wbtc/USDC market](https://app.morpho.org/ethereum/market/0x704e020b95cbf452e7a30545d5f72a241c4238eebf9d1c67657fdd4a488581e0/wbtc-usdc)   | Ethereum       | `morpho-wbtc-usdc-860-lltv`  |
-| [Nerite](https://www.nerite.org/)                                                                                                                | Arbitrum       | `nerite`                     |
-| [Stout](https://stout.fi/)                                                                                                                       | Sonic          | `stout`                      |
-| [Stability](https://stability.market/)                                                                                                           | Sonic          | `stability`                  |
-| [Takara](https://app.takaralend.com/)                                                                                                            | Sei            | `takara`                     |
-| [Yei Finance](https://www.yei.finance/)                                                                                                          | Sei            | `yei`                        |
+| dApp                                                                                                                                               | Chain          | dApp alias                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------- |
+| [dTRINITY](https://dtrinity.org/)                                                                                                                  | Fraxtal, Sonic | `dtrinity`                    |
+| [INIT Capital](https://app.init.capital/?chain=5000)                                                                                               | Mantle         | `init`                        |
+| [Lendle](https://lendle.xyz/)                                                                                                                      | Mantle         | `lendle`                      |
+| [MachFi](https://www.machfi.xyz/)                                                                                                                  | Sonic          | `mach-finance`                |
+| [Moonwell](https://moonwell.fi/)                                                                                                                   | Moonbeam       | `moonwell`                    |
+| [Morpho cbBTC/USDC market](https://app.morpho.org/ethereum/market/0xba3ba077d9c838696b76e29a394ae9f0d1517a372e30fd9a0fc19c516fb4c5a7/cbbtc-usdc)   | Ethereum       | `morpho-cbbtc-usdc-860-lltv`  |
+| [Morpho MVL/USDC market](https://app.morpho.org/ethereum/market/0x972b343b611a3cf2559a04bf2c0b8e45d1c69a1c1d94dc852ca6e16a924b006b/mvl-usdc)       | Ethereum       | `morpho-mvl-usdc-770-lltv`    |
+| [Morpho wbtc/USDC market](https://app.morpho.org/ethereum/market/0x704e020b95cbf452e7a30545d5f72a241c4238eebf9d1c67657fdd4a488581e0/wbtc-usdc)     | Ethereum       | `morpho-wbtc-usdc-860-lltv`   |
+| [Morpho wstETH/USDC market](https://app.morpho.org/ethereum/market/0x6d2fba32b8649d92432d036c16aa80779034b7469b63abc259b17678857f31c2/wsteth-usdc) | Ethereum       | `morpho-wsteth-usdc-860-lltv` |
+| [Nerite](https://www.nerite.org/)                                                                                                                  | Arbitrum       | `nerite`                      |
+| [Stout](https://stout.fi/)                                                                                                                         | Sonic          | `stout`                       |
+| [Stability](https://stability.market/)                                                                                                             | Sonic          | `stability`                   |
+| [Takara](https://app.takaralend.com/)                                                                                                              | Sei            | `takara`                      |
+| [Yei Finance](https://www.yei.finance/)                                                                                                            | Sei            | `yei`                         |
 
 ### Legacy integrations
 
