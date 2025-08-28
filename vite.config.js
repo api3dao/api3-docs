@@ -1,8 +1,9 @@
+import { defineConfig } from 'vite';
+
 /*
 https://stackoverflow.com/questions/69260715/skipping-larger-chunks-while-running-npm-run-build
 https://rollupjs.org/guide/en/#outputmanualchunks
 */
-
 export default defineConfig({
   build: {
     rollupOptions: {

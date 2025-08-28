@@ -51,22 +51,58 @@ understand and comply with in order to successfully participate in auctions.
 
 ### Auction length
 
-The auction length depends on the chain.
+The auction length is chain dependent.
 
-| Chain   | Length (seconds) |
-| ------- | ---------------- |
-| Fraxtal | 15               |
-| Mantle  | 15               |
-| Sei     | 15               |
-| Sonic   | 15               |
+<!-- BEGIN:chain-auction-length-table -->
 
-**Default auction length: `30`**
+| Chain           | Length (seconds) |
+| --------------- | ---------------- |
+| ApeChain        | 30               |
+| Arbitrum One    | 30               |
+| Avalanche       | 30               |
+| Base            | 15               |
+| Berachain       | 30               |
+| Bitlayer        | 30               |
+| Blast           | 30               |
+| BNB Smart Chain | 30               |
+| BOB             | 30               |
+| Core            | 30               |
+| Ethereum        | 30               |
+| Fraxtal         | 30               |
+| Gnosis Chain    | 30               |
+| Ink             | 30               |
+| Katana          | 30               |
+| Kava            | 30               |
+| Linea           | 30               |
+| Lumia           | 30               |
+| Manta           | 30               |
+| Mantle          | 30               |
+| Merlin          | 30               |
+| Metal L2        | 30               |
+| Metis           | 30               |
+| Mode            | 30               |
+| Moonbeam        | 30               |
+| Moonriver       | 30               |
+| opBNB           | 30               |
+| Optimism        | 30               |
+| Polygon         | 30               |
+| Polygon zkEVM   | 30               |
+| Ronin           | 30               |
+| Scroll          | 30               |
+| Sei             | 30               |
+| Soneium         | 30               |
+| Sonic           | 30               |
+| Taiko           | 30               |
+| Unichain        | 30               |
+| World Chain     | 30               |
+| X Layer         | 30               |
+| Zircuit         | 30               |
 
-If the chain you are working with is not in the above list, then it uses the default auction length of `30` seconds.
+<!-- END:chain-auction-length-table -->
 
 ### Bid phase length
 
-The length of the bid phase during which searchers can place their bids. The length depends on the auction length.
+The length of the bid phase during which searchers can place their bids. The bid phase length is auction length dependent.
 
 ```js
 const bidPhaseLength = auctionLength - AWARD_PHASE_LENGTH_SECONDS;
