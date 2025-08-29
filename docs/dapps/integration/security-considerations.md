@@ -95,7 +95,7 @@ Similarly, our OEV implementation uses this mechanism, ensuring OEV updates cont
 OEV updates provide identical guarantees to regular updates—they are on-chain aggregations of API provider-signed data—so they introduce no additional [data correctness](#data-correctness) risk.
 The OEV auction mechanism allows winners to frontrun updates of an artificially delayed base feed, a tradeoff designed to benefit the dApp.
 
-Here's how the process works.
+Here's how the process works for auctions with a length of 30 seconds.
 The lifecycle of a data point consists of three phases:
 
 1. From 0-30 seconds: OEV searchers examine the data point and place bids on potential OEV opportunities.
