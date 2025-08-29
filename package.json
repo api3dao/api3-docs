@@ -11,14 +11,17 @@
     "docs:serve": "vitepress serve docs --port 8082",
     "format": "prettier --write --cache \"./**/*.{js,vue,md,json,yaml}\" --log-level silent",
     "format:check": "prettier --check --cache \"./**/*.{js,vue,md,json,yaml}\"",
+    "lint": "pnpm format:check && pnpm lint:tsc",
+    "lint:tsc": "pnpm tsc",
+    "test": "vitest run",
     "generate-llms-files": "node scripts/generate-llms-files.js",
     "prepare": "husky",
-    "test": "vitest run",
     "firebase:emulator": "pnpm docs:build; firebase emulators:start"
   },
   "devDependencies": {
     "@api3/contracts": "^27.0.0",
     "@api3/dapi-management": "^3.48.0",
+    "@types/node": "^22.18.0",
     "axios": "^1.11.0",
     "colors": "^1.4.0",
     "file": "^0.2.2",
@@ -27,6 +30,7 @@
     "medium-zoom": "^1.1.0",
     "oust": "^2.0.4",
     "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
     "vitepress": "1.6.4",
     "vitest": "^3.2.4",
     "walk-sync": "^3.0.0"

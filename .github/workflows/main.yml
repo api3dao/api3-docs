@@ -27,15 +27,13 @@ jobs:
       - run: pnpm install
 
       - name: Lint
-        run: |
-          pnpm format:check
+        run: pnpm lint
 
       - name: Test
         run: pnpm test
 
       - name: Build documentation
-        run: |
-          pnpm docs:build
+        run: pnpm docs:build
 
       - name: Serve docs and check links
         run: |

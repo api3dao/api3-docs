@@ -1,5 +1,5 @@
-import * as path from 'node:path';
-import * as fs from 'node:fs';
+import path from 'node:path';
+import fs from 'node:fs';
 import { test, expect } from 'vitest';
 import { CHAINS } from '@api3/contracts';
 import { getChains } from '@api3/dapi-management';
