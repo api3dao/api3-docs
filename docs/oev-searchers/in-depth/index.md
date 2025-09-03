@@ -25,6 +25,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 | dApp                                                                                                                                               | Chain          | dApp alias                    |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------- |
 | [dTRINITY](https://dtrinity.org/)                                                                                                                  | Fraxtal, Sonic | `dtrinity`                    |
+| [Enclabs](https://www.enclabs.finance/)                                                                                                            | Sonic          | `enclabs`                     |
 | [INIT Capital](https://app.init.capital/?chain=5000)                                                                                               | Mantle         | `init`                        |
 | [Lendle](https://lendle.xyz/)                                                                                                                      | Mantle         | `lendle`                      |
 | [MachFi](https://www.machfi.xyz/)                                                                                                                  | Sonic          | `mach-finance`                |
