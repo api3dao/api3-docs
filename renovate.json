@@ -7,6 +7,10 @@
       "enabled": false
     },
     {
+      "matchPackageNames": ["@api3/*"],
+      "groupName": "api3"
+    },
+    {
       "matchDepTypes": ["packageManager"],
       "matchPackageNames": ["pnpm"],
       "extends": ["schedule:quarterly"]
