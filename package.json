@@ -33,6 +33,6 @@
     "typescript": "^5.9.2",
     "vitepress": "1.6.4",
     "vitest": "^3.2.4",
-    "walk-sync": "^3.0.0"
+    "walk-sync": "^4.0.1"
   }
 }
