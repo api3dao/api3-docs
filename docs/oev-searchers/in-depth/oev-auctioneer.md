@@ -58,9 +58,9 @@ The auction length is chain dependent.
 | Chain           | Length (seconds) |
 | --------------- | ---------------- |
 | ApeChain        | 30               |
-| Arbitrum One    | 30               |
+| Arbitrum One    | 15               |
 | Avalanche       | 30               |
-| Base            | 15               |
+| Base            | 30               |
 | Berachain       | 30               |
 | Bitlayer        | 30               |
 | Blast           | 30               |
