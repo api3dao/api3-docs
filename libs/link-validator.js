@@ -49,9 +49,7 @@ function tempCB(dirPath, dirs, files) {
 // Load and display ignore list
 var fs = require('fs');
 const { link } = require('fs-extra');
-var ignore = JSON.parse(
-  fs.readFileSync('./libs/link-validator-ignore.json', 'utf8')
-);
+var ignore = JSON.parse(fs.readFileSync('./libs/link-validator-ignore.json', 'utf8'));
 console.log(colors.bold('| > Ignore list'));
 ignore.forEach((element) => {
   console.log('|', colors.bold.yellow(element));
@@ -119,14 +117,9 @@ async function testLink(url, filePath, ignoreTimeout) {
       //console.log('> Target URL:', url);
 
       // Look for urlAnchor in response.data.
-      if (
-        urlAnchor &&
-        response.data.indexOf('href="' + urlAnchor + '"') === -1
-      ) {
+      if (urlAnchor && response.data.indexOf('href="' + urlAnchor + '"') === -1) {
         //console.log(colors.red('> Anchor was NOT found in the response data.'));
-        throw new Error(
-          'Did not find anchor in the response data: ' + urlAnchor
-        );
+        throw new Error('Did not find anchor in the response data: ' + urlAnchor);
       }
       // else {
       //console.log('> Anchor was found in the response data.');
@@ -150,11 +143,7 @@ async function testLink(url, filePath, ignoreTimeout) {
     return 0;
   } catch (error) {
     // If a timeout try one more time
-    if (
-      !ignoreTimeout &&
-      error.code == 'ECONNABORTED' &&
-      error.toString().indexOf('Error: timeout') > -1
-    ) {
+    if (!ignoreTimeout && error.code == 'ECONNABORTED' && error.toString().indexOf('Error: timeout') > -1) {
       testLink(url, filePath, true);
     } else {
       process.stdout.write(colors.bold.red('X'));
@@ -165,8 +154,7 @@ async function testLink(url, filePath, ignoreTimeout) {
 }
 
 async function run(task) {
-  (console.log('Checking (' + task + ')', Object.keys(linksObj).length),
-    'links.');
+  (console.log('Checking (' + task + ')', Object.keys(linksObj).length), 'links.');
   for (var key in linksObj) {
     if (linksObj.hasOwnProperty(key)) {
       let fail = await testLink(key, linksObj[key], false);
@@ -202,11 +190,7 @@ function loadLinks() {
           // If the URL starts with an anchor (#) tag
           // or is to the root (/)
           // do nothing
-        } else if (
-          url &&
-          url.indexOf('http://') === -1 &&
-          url.indexOf('https://') === -1
-        ) {
+        } else if (url && url.indexOf('http://') === -1 && url.indexOf('https://') === -1) {
           // These are internal links within the docs
           url = baseURL + url;
 
