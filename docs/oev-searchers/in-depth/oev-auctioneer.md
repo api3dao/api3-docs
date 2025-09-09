@@ -70,6 +70,7 @@ The auction length is chain dependent.
 | Ethereum        | 30               |
 | Fraxtal         | 30               |
 | Gnosis Chain    | 30               |
+| Hyperliquid     | 30               |
 | Ink             | 30               |
 | Katana          | 30               |
 | Kava            | 30               |
