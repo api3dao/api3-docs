@@ -11,6 +11,12 @@
       "options": {
         "parser": "markdown"
       }
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "printWidth": 120
+      }
     }
   ],
   "endOfLine": "lf"

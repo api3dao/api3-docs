@@ -41,9 +41,6 @@ importers:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
       vitepress:
         specifier: 1.6.4
         version: 1.6.4(@algolia/client-search@5.20.4)(@types/node@22.18.0)(axios@1.11.0)(postcss@8.4.49)(search-insights@2.16.2)(typescript@5.9.2)

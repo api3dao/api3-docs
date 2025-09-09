@@ -84,9 +84,7 @@ function generateLlmsFullTxt() {
     for (const link of links) {
       const match = link.match(/- \[(.*?)\]\((.*?)\)/);
       if (match) {
-        const url = match[2]
-          .replace('https://docs.api3.org', '')
-          .replace('.html', '.md');
+        const url = match[2].replace('https://docs.api3.org', '').replace('.html', '.md');
         const filePath = path.join(docsDir, url);
         if (fs.existsSync(filePath)) {
           let fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -103,15 +101,10 @@ function generateLlmsFullTxt() {
           if (pageHeaderIndex === -1) {
             throw new Error(`Could not find PageHeader in ${filePath}`);
           }
-          fileContent = fileContent.substring(
-            pageHeaderIndex + pageHeader.length
-          );
+          fileContent = fileContent.substring(pageHeaderIndex + pageHeader.length);
           const titleMatch = fileContent.match(/# (.*)/);
           if (titleMatch && pageHeaderValue) {
-            fileContent = fileContent.replace(
-              /# (.*)/,
-              `# ${titleMatch[1]} (${pageHeaderValue})`
-            );
+            fileContent = fileContent.replace(/# (.*)/, `# ${titleMatch[1]} (${pageHeaderValue})`);
           }
           fullContent += fileContent + '\n\n';
         }
