@@ -8,7 +8,8 @@
     },
     {
       "matchPackageNames": ["@api3/*"],
-      "groupName": "api3"
+      "groupName": "api3",
+      "minimumReleaseAge": "2 days"
     },
     {
       "matchDepTypes": ["packageManager"],
