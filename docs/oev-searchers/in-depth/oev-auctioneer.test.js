@@ -14,10 +14,7 @@ const supportedMainnets = getChains()
 
 test('the auction length section lists all the supported chains', () => {
   const content = readMarkdownFile();
-  const chains = extractContentBetweenMarkers(
-    content,
-    'chain-auction-length-table'
-  )
+  const chains = extractContentBetweenMarkers(content, 'chain-auction-length-table')
     .split('\n')
     .filter(Boolean) // Get rid of blank lines
     .slice(2) // Get rid of the header rows
@@ -27,13 +24,7 @@ test('the auction length section lists all the supported chains', () => {
 });
 
 function readMarkdownFile() {
-  const docPath = path.join(
-    process.cwd(),
-    'docs',
-    'oev-searchers',
-    'in-depth',
-    'oev-auctioneer.md'
-  );
+  const docPath = path.join(process.cwd(), 'docs', 'oev-searchers', 'in-depth', 'oev-auctioneer.md');
   if (!fs.existsSync(docPath)) {
     throw new Error(`Could not find file "oev-auctioneer.md" at "${docPath}"`);
   }
@@ -46,9 +37,7 @@ function extractContentBetweenMarkers(content, key) {
   const beginIndex = content.indexOf(beginMarker);
   const endIndex = content.indexOf(endMarker);
   if (beginIndex === -1 || endIndex === -1) {
-    throw new Error(
-      `Could not find markers "${beginMarker}" and "${endMarker}"`
-    );
+    throw new Error(`Could not find markers "${beginMarker}" and "${endMarker}"`);
   }
   return content.slice(beginIndex + beginMarker.length, endIndex).trim();
 }
