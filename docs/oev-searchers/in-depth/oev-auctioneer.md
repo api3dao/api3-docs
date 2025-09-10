@@ -91,6 +91,7 @@ The auction length is chain dependent.
 | Ronin           | 30               |
 | Scroll          | 30               |
 | Sei             | 30               |
+| Somnia          | 30               |
 | Soneium         | 30               |
 | Sonic           | 30               |
 | Taiko           | 30               |
