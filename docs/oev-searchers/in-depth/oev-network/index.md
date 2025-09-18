@@ -55,8 +55,8 @@ Here are some of the key properties of the OEV Network:
 3. Using Anytrust - By using AnyTrust DAC, the OEV Network achieves further cost
    reduction.
 
-See [Arbitrum Nitro details](https://docs.caldera.xyz/about/nitro#benefits) and
-[AnyTrust details](https://docs.caldera.xyz/about/nitro#anytrust) for more
+See [Arbitrum Nitro details](https://docs.caldera.xyz/rollup-engine/about/nitro#benefits) and
+[AnyTrust details](https://docs.caldera.xyz/rollup-engine/about/nitro#anytrust) for more
 information.
 
 ## Bridging ETH
