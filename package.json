@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@api3/contracts": "^27.4.0",
-    "@api3/dapi-management": "^3.54.0",
-    "@types/node": "^22.18.0",
-    "axios": "^1.12.0",
+    "@api3/dapi-management": "^3.55.0",
+    "@types/node": "^22.18.3",
+    "axios": "^1.12.1",
     "colors": "^1.4.0",
     "file": "^0.2.2",
     "fs-extra": "^11.3.1",
