@@ -7,11 +7,6 @@
       "enabled": false
     },
     {
-      "matchPackageNames": ["@api3/*"],
-      "groupName": "api3",
-      "minimumReleaseAge": "2 days"
-    },
-    {
       "matchDepTypes": ["packageManager"],
       "matchPackageNames": ["pnpm"],
       "extends": ["schedule:quarterly"]
@@ -34,6 +29,12 @@
       "matchUpdateTypes": ["patch", "minor"],
       "schedule": ["before 4am on Monday"],
       "groupName": "non-major-dependencies"
+    },
+    {
+      "matchPackageNames": ["@api3/*"],
+      "schedule": ["before 6pm"],
+      "minimumReleaseAge": "2 days",
+      "groupName": "api3"
     }
   ],
   "rangeStrategy": "bump",
@@ -41,6 +42,7 @@
     "enabled": false
   },
   "reviewers": ["Siegrift"],
+  "internalChecksFilter": "strict",
   "minimumReleaseAge": "5 days",
   "dependencyDashboard": false
 }
