@@ -43,6 +43,5 @@
   },
   "reviewers": ["Siegrift"],
   "internalChecksFilter": "strict",
-  "minimumReleaseAge": "5 days",
   "dependencyDashboard": false
 }
