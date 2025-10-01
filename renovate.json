@@ -33,7 +33,7 @@
     {
       "matchPackageNames": ["@api3/*"],
       "schedule": ["before 6pm"],
-      "minimumReleaseAge": "2 days",
+      "minimumReleaseAge": "0 days",
       "groupName": "api3"
     }
   ],
@@ -43,6 +43,6 @@
   },
   "reviewers": ["Siegrift"],
   "internalChecksFilter": "strict",
-  "minimumReleaseAge": "5 days",
-  "dependencyDashboard": false
+  "dependencyDashboard": false,
+  "minimumReleaseAge": "3 days"
 }

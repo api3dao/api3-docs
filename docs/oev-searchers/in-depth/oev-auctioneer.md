@@ -87,7 +87,6 @@ The auction length is chain dependent.
 | opBNB           | 30               |
 | Optimism        | 30               |
 | Polygon         | 30               |
-| Polygon zkEVM   | 30               |
 | Ronin           | 30               |
 | Scroll          | 30               |
 | Sei             | 30               |
