@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@api3/contracts':
-        specifier: ^30.0.0
-        version: 30.0.0(typescript@5.9.2)
+        specifier: ^31.0.0
+        version: 31.0.0(typescript@5.9.2)
       '@api3/dapi-management':
         specifier: ^3.63.0
         version: 3.63.0(eslint@8.57.1)(typescript@5.9.2)
@@ -178,8 +178,8 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/contracts@30.0.0':
-    resolution: {integrity: sha512-qDTAKfDPcSejHNpPGdkhN0roNpGTV1SPDG0isi+Y3VUkz3Db+jNHf8t3dJy8FUhgRvEgJGf55vneGlr84ftGiw==}
+  '@api3/contracts@31.0.0':
+    resolution: {integrity: sha512-nSOh8BhtCalrFfq0etWKNgqJp/kvmXsCjOi8u5j0GxiymO05bwUpMIHtoEjiM5frMeZsg+RH1hHVeqLXohWh4Q==}
     engines: {node: '>=22.18.0'}
     hasBin: true
 
@@ -4433,7 +4433,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/contracts@30.0.0(typescript@5.9.2)':
+  '@api3/contracts@31.0.0(typescript@5.9.2)':
     dependencies:
       ethers: 6.15.0
       viem: 2.37.9(typescript@5.9.2)(zod@4.1.11)
