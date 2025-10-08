@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@api3/contracts':
-        specifier: ^31.0.0
-        version: 31.0.0(typescript@5.9.2)
+        specifier: ^31.1.0
+        version: 31.1.0(typescript@5.9.2)
       '@api3/dapi-management':
-        specifier: ^3.63.0
-        version: 3.63.0(eslint@8.57.1)(typescript@5.9.2)
+        specifier: ^3.65.0
+        version: 3.65.0(eslint@8.57.1)(typescript@5.9.2)
       '@types/node':
         specifier: ^22.18.8
         version: 22.18.8
@@ -178,13 +178,13 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/contracts@31.0.0':
-    resolution: {integrity: sha512-nSOh8BhtCalrFfq0etWKNgqJp/kvmXsCjOi8u5j0GxiymO05bwUpMIHtoEjiM5frMeZsg+RH1hHVeqLXohWh4Q==}
+  '@api3/contracts@31.1.0':
+    resolution: {integrity: sha512-oTzrWG4oC5uRUieR3B990f+y9f4JBSPhHTeim4BJLUN37sKQ716X3qvsXLnUIytoibvxifeDE8jkOxmbSNMUuA==}
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/dapi-management@3.63.0':
-    resolution: {integrity: sha512-a2SBSDUAshk1x4W7b+LV8FXHaYO+IYmCFU0uJqScQcbP6GRdeH6ojMazzNFt6iiRvZAIgc1FkFHHYfFpItoT5Q==}
+  '@api3/dapi-management@3.65.0':
+    resolution: {integrity: sha512-SoW1UZTp5lfse3eYD4RYuTjt7JB24FoVUySfJEMzEG1AAdgw+b0aHjicthzFwCDywaLRt6ttQtFzhz4PgSFrhA==}
 
   '@api3/ois@2.3.2':
     resolution: {integrity: sha512-hYQCbCAtWMGKV+pECRY5tbfCSOcheeo9s6wtrhn1dOWw151VeG0sKG3VbBEsyA6cvSaldewBWY3t/JGaupdThg==}
@@ -4433,7 +4433,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/contracts@31.0.0(typescript@5.9.2)':
+  '@api3/contracts@31.1.0(typescript@5.9.2)':
     dependencies:
       ethers: 6.15.0
       viem: 2.37.9(typescript@5.9.2)(zod@4.1.11)
@@ -4444,11 +4444,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/dapi-management@3.63.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/dapi-management@3.65.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@api3/api-integrations': 8.1.0(eslint@8.57.1)(typescript@5.9.2)
       '@api3/commons': 0.13.4
-      '@api3/contracts': 28.0.0(typescript@5.9.2)
+      '@api3/contracts': 31.1.0(typescript@5.9.2)
       ethers: 6.15.0
       zod: 3.25.76
     transitivePeerDependencies:
