@@ -71,6 +71,7 @@ The auction length is chain dependent.
 | Fraxtal         | 30               |
 | Gnosis Chain    | 30               |
 | Hyperliquid     | 30               |
+| Injective EVM   | 30               |
 | Ink             | 30               |
 | Katana          | 30               |
 | Kava            | 30               |
