@@ -75,6 +75,12 @@ searchers.
 
 ## How do auctions work?
 
+::: info ⚠️ Warning
+
+At the moment, we're working on the major updates to the OEV mechanism and as part of that there is no OEV Network nor OEV Auctioneer. In the meantime, we're working with partnered searchers to continue with seamless OEV recapture for our dApps. Note, that there is no change to how our data works and [MEV with Signed APIs](in-depth/mev-with-signed-apis.md) works as before.
+
+:::
+
 Api3 uses a combination of the [OEV Network](#oev-network) and the
 [OEV Auctioneer](#oev-auctioneer) to power the OEV auctions in a secure and
 transparent way.
