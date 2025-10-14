@@ -110,6 +110,14 @@ not updated for a particular amount time.
 
 ## OEV updates
 
+::: info ⚠️ Warning
+
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there is currently no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+
+Note that there is no change to how our data works, and [MEV with Signed APIs](in-depth/mev-with-signed-apis.md) works as before.
+
+:::
+
 After a dAPI is updated, the changed value is reflected across all protocols
 that use the particular dAPI. We call these "base feed updates" to differentiate
 them from the OEV updates, which are dApp-specific. These are made by the

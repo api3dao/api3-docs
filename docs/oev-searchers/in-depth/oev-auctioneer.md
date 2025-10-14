@@ -8,6 +8,14 @@ outline: deep
 
 # OEV Auctioneer
 
+::: info ⚠️ Warning
+
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there is currently no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+
+Note that there is no change to how our data works, and [MEV with Signed APIs](in-depth/mev-with-signed-apis.md) works as before.
+
+:::
+
 OEV Auctioneer is the off-chain system managed by the Api3 DAO to process
 auctions hosted on the OEV network. The honesty of OEV Auctioneer
 can be verified on-chain because the logic is based solely on the
