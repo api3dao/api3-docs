@@ -8,7 +8,7 @@ outline: deep
 
 # OEV Network
 
-::: info ⚠️ Warning
+::: warning ⚠️ Warning
 
 At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there is currently no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
 
