@@ -8,6 +8,14 @@ outline: deep
 
 # OEV searching
 
+::: warning ⚠️ Warning
+
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+
+All funds need to be [bridged out from the OEV Network](/oev-searchers/in-depth/oev-network/#bridging-eth) until the end of November 2025.
+
+:::
+
 We assume that a searcher has an existing MEV bot and is familiar with the OEV
 Network and OEV Auctioneer. Let's glue these concepts together and detail the
 steps to start OEV searching.

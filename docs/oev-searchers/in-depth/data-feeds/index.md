@@ -110,6 +110,14 @@ not updated for a particular amount time.
 
 ## OEV updates
 
+::: warning ⚠️ Warning
+
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+
+All funds need to be [bridged out from the OEV Network](/oev-searchers/in-depth/oev-network/#bridging-eth) until the end of November 2025.
+
+:::
+
 After a dAPI is updated, the changed value is reflected across all protocols
 that use the particular dAPI. We call these "base feed updates" to differentiate
 them from the OEV updates, which are dApp-specific. These are made by the
