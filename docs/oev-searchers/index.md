@@ -77,9 +77,9 @@ searchers.
 
 ::: warning ⚠️ Warning
 
-At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there is currently no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
 
-Note that there is no change to how our data works, and [MEV with Signed APIs](in-depth/mev-with-signed-apis.md) works as before.
+All funds need to be [bridged out from the OEV Network](/oev-searchers/in-depth/oev-network/#bridging-eth) until the end of November 2025.
 
 :::
 

@@ -10,9 +10,9 @@ outline: deep
 
 ::: warning ⚠️ Warning
 
-At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there is currently no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
 
-Note that there is no change to how our data works, and [MEV with Signed APIs](in-depth/mev-with-signed-apis.md) works as before.
+All funds need to be [bridged out from the OEV Network](/oev-searchers/in-depth/oev-network/#bridging-eth) until the end of November 2025.
 
 :::
 
@@ -34,6 +34,48 @@ By hosting auctions on-chain, we address two big issues:
 To participate in auctions, searchers need to have a sufficient amount of ETH
 bridged to the OEV network and interact with the
 [OevAuctionHouse](#oevauctionhouse) contract.
+
+## Using the OEV Network
+
+The OEV Network can be added as a custom network to any EVM compatible wallet.
+
+| Details            | Value                          |
+| ------------------ | ------------------------------ |
+| Network            | OEV Network                    |
+| Chain ID           | 4913                           |
+| RPC URL (HTTP)     | https://oev.rpc.api3.org/http  |
+| RPC URL (WS)       | https://oev.rpc.api3.org/ws    |
+| Symbol             | ETH                            |
+| Block Explorer URL | https://oev.explorer.api3.org/ |
+| Bridge URL         | https://oev.bridge.api3.org/   |
+
+## Properties
+
+Here are some of the key properties of the OEV Network:
+
+1. Block time - Under high load, the block time of the network can be as fast as
+   250ms. Note that the OEV Network only produces blocks when there are
+   transactions.
+2. Gas fees - The gas fees are paid in ETH, and because the network is an
+   optimistic L2 rollup, the gas fees are low and get cheaper with the increased number of transactions.
+3. Using Anytrust - By using AnyTrust DAC, the OEV Network achieves further cost
+   reduction.
+
+See [Arbitrum Nitro details](https://docs.caldera.xyz/rollup-engine/about/nitro#benefits) and
+[AnyTrust details](https://docs.caldera.xyz/rollup-engine/about/nitro#anytrust) for more
+information.
+
+## Bridging ETH
+
+Use the [OEV Network bridge](https://oev.bridge.api3.org/) to bridge your ETH to
+the OEV Network. Bridging is only possible from ETH mainnet.
+
+![OEV Network bridge](./oev-bridge.png)
+
+Clicking on `Transfer Tokens` will automatically add the OEV Network to your
+Metamask wallet. To bridge, confirm the transaction in your wallet and wait for
+confirmation. After the transaction is confirmed, you should see your ETH on the
+OEV Network.
 
 ## Api3ServerV1
 
@@ -238,3 +280,12 @@ how to use these functions, we need to understand how
 [OEV Auctioneer](/oev-searchers/in-depth/oev-auctioneer) works. Refer to the
 [Expediting a bid](/oev-searchers/in-depth/oev-searching#expediting-a-bid)
 section for more details.
+
+## Deployed contracts
+
+These are the relevant contracts deployed on the OEV Network:
+
+| Contract name   | Address                                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Api3ServerV1    | [0x709944a48cAf83535e43471680fDA4905FB3920a](https://oev.explorer.api3.org/address/0x709944a48cAf83535e43471680fDA4905FB3920a) |
+| OevAuctionHouse | [0x34f13A5C0AD750d212267bcBc230c87AEFD35CC5](https://oev.explorer.api3.org/address/0x34f13A5C0AD750d212267bcBc230c87AEFD35CC5) |
