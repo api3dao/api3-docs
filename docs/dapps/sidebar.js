@@ -33,9 +33,6 @@ module.exports = [
   {
     text: 'OEV Rewards',
     collapsed: false,
-    items: [
-      { text: 'Getting paid', link: '/dapps/oev-rewards/' },
-      { text: 'Best practices', link: '/dapps/oev-rewards/best-practices' },
-    ],
+    items: [{ text: 'Getting paid', link: '/dapps/oev-rewards/' }],
   },
 ];
