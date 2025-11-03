@@ -20,8 +20,8 @@
   "devDependencies": {
     "@api3/contracts": "^31.2.0",
     "@api3/dapi-management": "^3.69.0",
-    "@types/node": "^24.9.1",
-    "axios": "^1.12.2",
+    "@types/node": "^24.9.2",
+    "axios": "^1.13.1",
     "colors": "^1.4.0",
     "file": "^0.2.2",
     "fs-extra": "^11.3.2",
@@ -30,7 +30,7 @@
     "oust": "^2.0.4",
     "prettier": "^3.6.2",
     "vitepress": "1.6.4",
-    "vitest": "^4.0.2",
+    "vitest": "^4.0.5",
     "walk-sync": "^4.0.1"
   }
 }
