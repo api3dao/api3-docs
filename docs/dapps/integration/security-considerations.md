@@ -95,14 +95,7 @@ Similarly, our OEV implementation uses this mechanism, ensuring OEV updates cont
 OEV updates provide identical guarantees to regular updates—they are on-chain aggregations of API provider-signed data—so they introduce no additional [data correctness](#data-correctness) risk.
 The OEV auction mechanism allows winners to frontrun updates of an artificially delayed base feed, a tradeoff designed to benefit the dApp.
 
-Here's how the process works for auctions with a length of 30 seconds.
-The lifecycle of a data point consists of three phases:
-
-1. From 0-30 seconds: OEV searchers examine the data point and place bids on potential OEV opportunities.
-2. From 30-60 seconds: If valid bids exist, the auction winner can update the data feed to capture OEV opportunities.
-3. After 60 seconds: The data point becomes publicly available for updates, including our update parameter-based updates.
-
-dApps using our system will experience a 30–60 second delay in their data feed.
+dApps using our system will experience a 0–30 second delay in their data feed.
 While this delay concerns some users, we can evaluate its impact through a simple framework:
 Consider a dApp that generates `X1` revenue with its current oracle solution.
 Using Api3 data feeds would generate `X2` revenue (potentially lower than `X1` due to the delay) plus `Y` in OEV Rewards.

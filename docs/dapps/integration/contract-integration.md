@@ -144,34 +144,3 @@ We recommend directing them to this page.
 
 See the [`data-feed-proxy-combinators`](https://github.com/api3dao/data-feed-proxy-combinators) repository for various modular contracts that you can use to create combinations out of Api3ReaderProxyV1 contracts.
 For example, you can combine an `ETH/USD` Api3ReaderProxyV1 contract and a `wstETH/ETH Exchange Rate` Api3ReaderProxyV1 contract to read a `wstETH/USD` value.
-
-## Mixed oracle design
-
-Some dApps choose to mix oracle solutions, either by refusing service if they are not in consensus, or by using one primarily and deferring to another in case of inconsistency.
-
-In such setups, Api3 data feeds need to be treated differently due to OEV considerations.
-Specifically, the vast majority of OEV is extracted during times of volatility, and allowing other oracle solutions interfere during such times may result in the loss of a significant amount of OEV revenue.
-In practice, this will play out as an OEV searcher bidding a significant amount for a detected OEV opportunity, only to realize after the auction ends that the dApp now defers to a non-Api3 data feed and the OEV opportunity no longer exists.
-Such ambiguity will deter OEV searchers from your dApp or cause them to bid much less to hedge their risk, reducing your [OEV Rewards](/dapps/oev-rewards/).
-
-The golden standard is only using Api3 data feeds, in which case OEV searchers will be able to bid on OEV opportunities with full confidence, knowing that they will be able to extract if they win the auction.
-If you must use Api3 data feeds as your primary source with another solution as a fallback, you should tolerate as much inconsistency as possible.
-
-::: info 💡 Tip
-
-We recommend that you tolerate at least 10% inconsistency.
-Based on our analysis, any less will hinder OEV extraction during times of high volatility.
-
-:::
-
-Note that using Api3 data feeds for only some asset prices still counts as a mixed design.
-Consider a lending platform that uses the ETH/USD Api3 data feed and the USDT/USD data feed from another oracle solution.
-A user takes out a USDT loan with ETH collateral, and the following price action renders the position liquidatable once the ETH/USD data feed is updated.
-Even if an OEV searcher detects the opportunity, they must consider that a rogue USDT/USD update by the other oracle solution may expose it to the public before they can claim it, leading them to avoid bidding a fair amount.
-
-::: info 💰 Financial
-
-It is up to you to maximize your OEV Rewards by integrating correctly.
-Not maximizing OEV Rewards causes a loss of profits and therefore constitutes a security issue.
-
-:::
