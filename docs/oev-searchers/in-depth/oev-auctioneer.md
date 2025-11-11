@@ -69,7 +69,6 @@ The auction length is chain dependent.
 | Arbitrum One    | 15               |
 | Avalanche       | 30               |
 | Base            | 30               |
-| Berachain       | 30               |
 | Bitlayer        | 30               |
 | Blast           | 30               |
 | BNB Smart Chain | 30               |
@@ -80,20 +79,15 @@ The auction length is chain dependent.
 | Gnosis Chain    | 30               |
 | Hyperliquid     | 30               |
 | Injective EVM   | 30               |
-| Ink             | 30               |
 | Katana          | 30               |
 | Kava            | 30               |
 | Linea           | 30               |
 | Lumia           | 30               |
 | Manta           | 30               |
 | Mantle          | 30               |
-| Merlin          | 30               |
-| Metal L2        | 30               |
-| Metis           | 30               |
 | Mode            | 30               |
 | Moonbeam        | 30               |
 | Moonriver       | 30               |
-| opBNB           | 30               |
 | Optimism        | 30               |
 | Polygon         | 30               |
 | Ronin           | 30               |
