@@ -12,8 +12,8 @@ importers:
         specifier: ^31.4.0
         version: 31.4.0(typescript@5.9.2)
       '@api3/dapi-management':
-        specifier: ^3.71.0
-        version: 3.71.0(eslint@8.57.1)(typescript@5.9.2)
+        specifier: ^3.72.0
+        version: 3.72.0(eslint@8.57.1)(typescript@5.9.2)
       '@types/node':
         specifier: ^24.9.2
         version: 24.9.2
@@ -178,8 +178,13 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/dapi-management@3.71.0':
-    resolution: {integrity: sha512-c7jxDgTaPk47n1rbl4C0YcLsmRYTYbyHV9D1hyh5yyIPA7gDF2Rtq/rMN+J/cirxFEY6elVCUaX4+lS9l5WIvw==}
+  '@api3/contracts@32.0.0':
+    resolution: {integrity: sha512-6U7AfmFwZNe0kx6Nhl5YBqrEt6uJeUC/tosotyN4RmY9woVPem459JHcpxa4v3pYlq/rNI0JStb5btPeMrbSMw==}
+    engines: {node: '>=22.18.0'}
+    hasBin: true
+
+  '@api3/dapi-management@3.72.0':
+    resolution: {integrity: sha512-uiQDb8j/svXAtXpxS1RF8okwihwrMoXoTDv/IDdduocOfL0MyhtmLmN9+ymi4j1YDRJZiS7rvxKjNIjv+gbInA==}
 
   '@api3/ois@2.3.2':
     resolution: {integrity: sha512-hYQCbCAtWMGKV+pECRY5tbfCSOcheeo9s6wtrhn1dOWw151VeG0sKG3VbBEsyA6cvSaldewBWY3t/JGaupdThg==}
@@ -4719,11 +4724,22 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/dapi-management@3.71.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/contracts@32.0.0(typescript@5.9.2)':
+    dependencies:
+      ethers: 6.15.0
+      viem: 2.38.6(typescript@5.9.2)(zod@4.1.12)
+      yargs: 17.7.2
+      zod: 4.1.12
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
+
+  '@api3/dapi-management@3.72.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@api3/api-integrations': 8.4.0(eslint@8.57.1)(typescript@5.9.2)
       '@api3/commons': 0.13.4
-      '@api3/contracts': 31.4.0(typescript@5.9.2)
+      '@api3/contracts': 32.0.0(typescript@5.9.2)
       ethers: 6.15.0
       zod: 3.25.76
     transitivePeerDependencies:
