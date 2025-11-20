@@ -12,8 +12,8 @@ importers:
         specifier: ^32.0.0
         version: 32.0.0(typescript@5.9.2)
       '@api3/dapi-management':
-        specifier: ^3.71.0
-        version: 3.71.0(eslint@8.57.1)(typescript@5.9.2)
+        specifier: ^3.73.0
+        version: 3.73.0(eslint@8.57.1)(typescript@5.9.2)
       '@types/node':
         specifier: ^24.9.2
         version: 24.9.2
@@ -183,8 +183,8 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/dapi-management@3.71.0':
-    resolution: {integrity: sha512-c7jxDgTaPk47n1rbl4C0YcLsmRYTYbyHV9D1hyh5yyIPA7gDF2Rtq/rMN+J/cirxFEY6elVCUaX4+lS9l5WIvw==}
+  '@api3/dapi-management@3.73.0':
+    resolution: {integrity: sha512-T6h9a2QsofONQot4wb8KyPc4kSHF61hYeGiK93Mcp4M5VtQGbL7BZR/6sjTRobqTMa6bA94VtvoKDcn2T0rWKA==}
 
   '@api3/ois@2.3.2':
     resolution: {integrity: sha512-hYQCbCAtWMGKV+pECRY5tbfCSOcheeo9s6wtrhn1dOWw151VeG0sKG3VbBEsyA6cvSaldewBWY3t/JGaupdThg==}
@@ -1206,6 +1206,7 @@ packages:
   '@smithy/core@3.18.0':
     resolution: {integrity: sha512-vGSDXOJFZgOPTatSI1ly7Gwyy/d/R9zh2TO3y0JZ0uut5qQ88p9IaWaZYIWSSqtdekNM4CGok/JppxbAff4KcQ==}
     engines: {node: '>=18.0.0'}
+    deprecated: Please upgrade your lockfile to use the latest 3.x version of @smithy/core for various fixes, see https://github.com/smithy-lang/smithy-typescript/blob/main/packages/core/CHANGELOG.md
 
   '@smithy/credential-provider-imds@4.2.5':
     resolution: {integrity: sha512-BZwotjoZWn9+36nimwm/OLIcVe+KYRwzMjfhd4QT7QxPm9WY0HiOV8t/Wlh+HVUif0SBVV7ksq8//hPaBC/okQ==}
@@ -4735,11 +4736,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/dapi-management@3.71.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/dapi-management@3.73.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@api3/api-integrations': 8.4.0(eslint@8.57.1)(typescript@5.9.2)
       '@api3/commons': 0.13.4
-      '@api3/contracts': 31.4.0(typescript@5.9.2)
+      '@api3/contracts': 32.0.0(typescript@5.9.2)
       ethers: 6.15.0
       zod: 3.25.76
     transitivePeerDependencies:
