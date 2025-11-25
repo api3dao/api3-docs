@@ -45,6 +45,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 | [Stout](https://stout.fi/)                                                                                                                         | Sonic          | `stout`                       |
 | [Stability](https://stability.market/)                                                                                                             | Sonic          | `stability`                   |
 | [Takara](https://app.takaralend.com/)                                                                                                              | Sei            | `takara`                      |
+| [Tokos](https://app.tokos.fi/)                                                                                                                     | Somnia         | `tokos`                       |
 | [Yei Finance](https://www.yei.finance/)                                                                                                            | Sei            | `yei`                         |
 
 ### Legacy integrations
