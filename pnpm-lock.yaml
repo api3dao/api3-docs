@@ -12,8 +12,8 @@ importers:
         specifier: ^32.0.0
         version: 32.0.0(typescript@5.9.2)
       '@api3/dapi-management':
-        specifier: ^3.71.0
-        version: 3.71.0(eslint@8.57.1)(typescript@5.9.2)
+        specifier: ^3.75.0
+        version: 3.75.0(eslint@8.57.1)(typescript@5.9.2)
       '@types/node':
         specifier: ^24.9.2
         version: 24.9.2
@@ -157,8 +157,8 @@ packages:
     resolution: {integrity: sha512-VS/ZX0q6g8/kfjpKuqblXN8pAjdWG5uRpTSZ8dvgjoTi//+9DVlBan06FCvPkxMBBJjo8/Mf4xG78tRFNr0GDQ==}
     hasBin: true
 
-  '@api3/api-integrations@8.4.0':
-    resolution: {integrity: sha512-dIwGilH2kw+qxvwQiO9Di7ukbwqWGeloypRu9Rq9gU7tIUjhaVamX77FygeZ72wn/BLst0ey4Zc5MVBZDdXUcQ==}
+  '@api3/api-integrations@8.6.0':
+    resolution: {integrity: sha512-vWmRcH/Gp4bPTq5sDszAIVjrqcp7raU9uXsedV0XpDBo9d6Sawt4H/9Z5q0bVHb5D2EZg4e9znw2MWKywOvqIQ==}
 
   '@api3/chains@8.1.1':
     resolution: {integrity: sha512-2woMgPksMEzH2tU7ZH5tHNHr9qbZDG+bEWcAGcs+A3/GJKNBaTmxVerIyTo4IZA9f6vN91i7fH3UPAq/S8KQDw==}
@@ -173,18 +173,13 @@ packages:
     peerDependencies:
       eslint: ^8.57.0
 
-  '@api3/contracts@31.4.0':
-    resolution: {integrity: sha512-wCjtCNHslRYpC1BaKk5NXY7vkBUAmVLHCUG2/EYaADEzroSrOqWfBWZUbIYxp0BaqU/J8p58o5/AhFgyH899qA==}
-    engines: {node: '>=22.18.0'}
-    hasBin: true
-
   '@api3/contracts@32.0.0':
     resolution: {integrity: sha512-6U7AfmFwZNe0kx6Nhl5YBqrEt6uJeUC/tosotyN4RmY9woVPem459JHcpxa4v3pYlq/rNI0JStb5btPeMrbSMw==}
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/dapi-management@3.71.0':
-    resolution: {integrity: sha512-c7jxDgTaPk47n1rbl4C0YcLsmRYTYbyHV9D1hyh5yyIPA7gDF2Rtq/rMN+J/cirxFEY6elVCUaX4+lS9l5WIvw==}
+  '@api3/dapi-management@3.75.0':
+    resolution: {integrity: sha512-CTno4qfX+ZMtpILZB+qJdMqc08kWVvN9HGngzfSNbOvSn62j+hnttvOGtj/uoL7PCbkFg7tjBPQEPz5hAwXv9A==}
 
   '@api3/ois@2.3.2':
     resolution: {integrity: sha512-hYQCbCAtWMGKV+pECRY5tbfCSOcheeo9s6wtrhn1dOWw151VeG0sKG3VbBEsyA6cvSaldewBWY3t/JGaupdThg==}
@@ -1206,6 +1201,7 @@ packages:
   '@smithy/core@3.18.0':
     resolution: {integrity: sha512-vGSDXOJFZgOPTatSI1ly7Gwyy/d/R9zh2TO3y0JZ0uut5qQ88p9IaWaZYIWSSqtdekNM4CGok/JppxbAff4KcQ==}
     engines: {node: '>=18.0.0'}
+    deprecated: Please upgrade your lockfile to use the latest 3.x version of @smithy/core for various fixes, see https://github.com/smithy-lang/smithy-typescript/blob/main/packages/core/CHANGELOG.md
 
   '@smithy/credential-provider-imds@4.2.5':
     resolution: {integrity: sha512-BZwotjoZWn9+36nimwm/OLIcVe+KYRwzMjfhd4QT7QxPm9WY0HiOV8t/Wlh+HVUif0SBVV7ksq8//hPaBC/okQ==}
@@ -4625,10 +4621,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/api-integrations@8.4.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/api-integrations@8.6.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@api3/airnode-abi': 0.15.0
-      '@api3/contracts': 31.4.0(typescript@5.9.2)
+      '@api3/contracts': 32.0.0(typescript@5.9.2)
       '@api3/ois': 2.3.2
       '@api3/signed-api': 3.3.0(eslint@8.57.1)(typescript@5.9.2)
       ethers: 5.8.0
@@ -4713,17 +4709,6 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/contracts@31.4.0(typescript@5.9.2)':
-    dependencies:
-      ethers: 6.15.0
-      viem: 2.38.6(typescript@5.9.2)(zod@4.1.12)
-      yargs: 17.7.2
-      zod: 4.1.12
-    transitivePeerDependencies:
-      - bufferutil
-      - typescript
-      - utf-8-validate
-
   '@api3/contracts@32.0.0(typescript@5.9.2)':
     dependencies:
       ethers: 6.15.0
@@ -4735,11 +4720,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/dapi-management@3.71.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/dapi-management@3.75.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
-      '@api3/api-integrations': 8.4.0(eslint@8.57.1)(typescript@5.9.2)
+      '@api3/api-integrations': 8.6.0(eslint@8.57.1)(typescript@5.9.2)
       '@api3/commons': 0.13.4
-      '@api3/contracts': 31.4.0(typescript@5.9.2)
+      '@api3/contracts': 32.0.0(typescript@5.9.2)
       ethers: 6.15.0
       zod: 3.25.76
     transitivePeerDependencies:

@@ -87,7 +87,6 @@ The auction length is chain dependent.
 | Mantle          | 30               |
 | Mode            | 30               |
 | Moonbeam        | 30               |
-| Moonriver       | 30               |
 | Optimism        | 30               |
 | Polygon         | 30               |
 | Ronin           | 30               |
