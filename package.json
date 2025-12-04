@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@api3/contracts": "^32.0.0",
-    "@api3/dapi-management": "^3.75.0",
+    "@api3/dapi-management": "^3.76.0",
     "@types/node": "^24.9.2",
     "axios": "^1.13.2",
     "colors": "^1.4.0",
