@@ -12,8 +12,8 @@ importers:
         specifier: ^32.0.0
         version: 32.0.0(typescript@5.9.2)
       '@api3/dapi-management':
-        specifier: ^3.75.0
-        version: 3.75.0(eslint@8.57.1)(typescript@5.9.2)
+        specifier: ^3.76.0
+        version: 3.76.0(eslint@8.57.1)(typescript@5.9.2)
       '@types/node':
         specifier: ^24.9.2
         version: 24.9.2
@@ -157,8 +157,8 @@ packages:
     resolution: {integrity: sha512-VS/ZX0q6g8/kfjpKuqblXN8pAjdWG5uRpTSZ8dvgjoTi//+9DVlBan06FCvPkxMBBJjo8/Mf4xG78tRFNr0GDQ==}
     hasBin: true
 
-  '@api3/api-integrations@8.6.0':
-    resolution: {integrity: sha512-vWmRcH/Gp4bPTq5sDszAIVjrqcp7raU9uXsedV0XpDBo9d6Sawt4H/9Z5q0bVHb5D2EZg4e9znw2MWKywOvqIQ==}
+  '@api3/api-integrations@8.8.0':
+    resolution: {integrity: sha512-37rhLSAk8FS1lU665tErP2B50+C2tO1oYS76Bd8KiojblDOqXke1E3DdxfsZbHB5olzc4h8ndCBQnJYYtRq4KQ==}
 
   '@api3/chains@8.1.1':
     resolution: {integrity: sha512-2woMgPksMEzH2tU7ZH5tHNHr9qbZDG+bEWcAGcs+A3/GJKNBaTmxVerIyTo4IZA9f6vN91i7fH3UPAq/S8KQDw==}
@@ -178,8 +178,8 @@ packages:
     engines: {node: '>=22.18.0'}
     hasBin: true
 
-  '@api3/dapi-management@3.75.0':
-    resolution: {integrity: sha512-CTno4qfX+ZMtpILZB+qJdMqc08kWVvN9HGngzfSNbOvSn62j+hnttvOGtj/uoL7PCbkFg7tjBPQEPz5hAwXv9A==}
+  '@api3/dapi-management@3.76.0':
+    resolution: {integrity: sha512-cf3Cx/4olB8tEG5BlUpJzqZ2wjlNF/u3jIQ7MXke61zpVr4DlBfmejWJeD9/ecyS1Mm335Auy5NXDdsTallN7g==}
 
   '@api3/ois@2.3.2':
     resolution: {integrity: sha512-hYQCbCAtWMGKV+pECRY5tbfCSOcheeo9s6wtrhn1dOWw151VeG0sKG3VbBEsyA6cvSaldewBWY3t/JGaupdThg==}
@@ -2587,6 +2587,10 @@ packages:
     resolution: {integrity: sha512-Kf/3ZW54L4UT0pZtsY/rf+EkBU7Qi5nnhonjUb8yTXcxH3cdcWrV2cRyk0Xk/4jK6OoHhxxZHriyhje20If2hQ==}
     engines: {node: '>=14.0.0'}
 
+  ethers@6.16.0:
+    resolution: {integrity: sha512-U1wulmetNymijEhpSEQ7Ct/P/Jw9/e7R1j5XIbPRydgV2DjLVMsULDlNksq3RQnFgKoLlZf88ijYtWEXcPa07A==}
+    engines: {node: '>=14.0.0'}
+
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
@@ -4625,7 +4629,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/api-integrations@8.6.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/api-integrations@8.8.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@api3/airnode-abi': 0.15.0
       '@api3/contracts': 32.0.0(typescript@5.9.2)
@@ -4724,12 +4728,12 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@api3/dapi-management@3.75.0(eslint@8.57.1)(typescript@5.9.2)':
+  '@api3/dapi-management@3.76.0(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
-      '@api3/api-integrations': 8.6.0(eslint@8.57.1)(typescript@5.9.2)
+      '@api3/api-integrations': 8.8.0(eslint@8.57.1)(typescript@5.9.2)
       '@api3/commons': 0.13.4
       '@api3/contracts': 32.0.0(typescript@5.9.2)
-      ethers: 6.15.0
+      ethers: 6.16.0
       zod: 3.25.76
     transitivePeerDependencies:
       - aws-crt
@@ -7926,6 +7930,19 @@ snapshots:
       - utf-8-validate
 
   ethers@6.15.0:
+    dependencies:
+      '@adraffy/ens-normalize': 1.10.1
+      '@noble/curves': 1.2.0
+      '@noble/hashes': 1.3.2
+      '@types/node': 22.7.5
+      aes-js: 4.0.0-beta.5
+      tslib: 2.7.0
+      ws: 8.17.1
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  ethers@6.16.0:
     dependencies:
       '@adraffy/ens-normalize': 1.10.1
       '@noble/curves': 1.2.0
