@@ -34,9 +34,8 @@ schema.
 
 ### Airnode address
 
-All [API providers](#api-provider) [sign their data](#signed-data) with an EOA
-wallet. The address of this wallet is announced by the respective API provider
-in the DNS records of the base URL of their API.
+All [API providers](#api-provider) [sign their data](#signed-data) with an EOA wallet. The authorized signing address is published at the provider’s signed-api subdomain and announced via the certifiedAirnodes field in the returned JSON.  
+For example, CoinGecko publishes its certified signing address at https://signed-api.coingecko.com/.
 
 ### Airnode feed
 
