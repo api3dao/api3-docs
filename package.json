@@ -28,9 +28,9 @@
     "husky": "^9.1.7",
     "medium-zoom": "^1.1.0",
     "oust": "^2.0.4",
-    "prettier": "^3.7.3",
+    "prettier": "^3.7.4",
     "vitepress": "1.6.4",
-    "vitest": "^4.0.14",
+    "vitest": "^4.0.15",
     "walk-sync": "^4.0.1"
   }
 }
