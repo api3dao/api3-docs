@@ -187,10 +187,10 @@ If you want to see what happens under the hood, you can click "Verified," which 
   "currentTimestamp": "1740583493",
   "deploymentTimestamp": "1739870993",
   "configHash": "0xbd159fb423d5eef7abd7947cf8ad1731f0c60cc2e093877837988907580539c9",
-  "certifiedAirnodes": ["0x6b56E47DccFbC82D63Df3da417d26e8B1B877f0f"]
+  "certifiedAirnodes": ["0xf19572194e6aD6d84666906D5287e2c9427655C2"]
 }
 ```
 
 We know that CoinGecko is a reputable API provider, they own the `coingecko.com` domain, and this response comes from that domain.
-`certifiedAirnodes` is the list of addresses of the accounts that CoinGecko uses to sign its data (only `0x6b56E47DccFbC82D63Df3da417d26e8B1B877f0f` in this case), and the Market frontend confirms that the respective data feed is configured to use data signed by one of these certified accounts.
-Finally, all recent data points signed by CoinGecko can be fetched directly from them through https://signed-api.coingecko.com/public/0x6b56E47DccFbC82D63Df3da417d26e8B1B877f0f.
+`certifiedAirnodes` is the list of addresses of the accounts that CoinGecko uses to sign its data (only `0xf19572194e6aD6d84666906D5287e2c9427655C2` in this case), and the Market frontend confirms that the respective data feed is configured to use data signed by one of these certified accounts.
+Finally, all recent data points signed by CoinGecko can be fetched directly from them through https://signed-api.coingecko.com/public/0xf19572194e6aD6d84666906D5287e2c9427655C2.
