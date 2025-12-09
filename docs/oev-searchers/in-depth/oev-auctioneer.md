@@ -360,8 +360,8 @@ Auctioneer wallets.
 
 | Address                                    | Description           |
 | ------------------------------------------ | --------------------- |
-| 0x0350178E8E8731415287E6DbE1f0746A46510868 | Auction resolver      |
-| 0xfaf0490A34036a3FE2b740545D67b81b8d3ADfB8 | Fulfillment processor |
+| 0xfaf0490A34036a3FE2b740545D67b81b8d3ADfB8 | Auction resolver      |
+|                                            | Fulfillment processor |
 
 ## Maintenance
 
