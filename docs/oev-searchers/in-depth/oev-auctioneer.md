@@ -82,7 +82,6 @@ The auction length is chain dependent.
 | Katana          | 30               |
 | Kava            | 30               |
 | Linea           | 30               |
-| Lumia           | 30               |
 | Manta           | 30               |
 | Mantle          | 30               |
 | Mode            | 30               |
