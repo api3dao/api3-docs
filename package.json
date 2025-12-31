@@ -24,13 +24,13 @@
     "axios": "^1.13.2",
     "colors": "^1.4.0",
     "file": "^0.2.2",
-    "fs-extra": "^11.3.2",
+    "fs-extra": "^11.3.3",
     "husky": "^9.1.7",
     "medium-zoom": "^1.1.0",
     "oust": "^2.0.4",
     "prettier": "^3.7.4",
     "vitepress": "1.6.4",
-    "vitest": "^4.0.15",
+    "vitest": "^4.0.16",
     "walk-sync": "^4.0.1"
   }
 }
