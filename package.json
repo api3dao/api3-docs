@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.27.0",
   "resolutions": {},
   "scripts": {
     "docs:dev": "pnpm generate-llms-files && pnpm vitepress dev docs",
