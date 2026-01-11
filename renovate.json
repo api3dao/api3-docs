@@ -1,35 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["local>api3dao/renovate-config"],
   "packageRules": [
-    {
-      "matchPackageNames": ["node", "actions/node-versions", "@types/node"],
-      "enabled": false
-    },
-    {
-      "matchDepTypes": ["packageManager"],
-      "matchPackageNames": ["pnpm"],
-      "extends": ["schedule:quarterly"]
-    },
-    {
-      "matchPackageNames": ["vitepress"],
-      "groupName": "vitepress",
-      "schedule": ["before 4am on Monday"]
-    },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "excludePackageNames": ["vitepress"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "schedule": ["before 4am on Monday"],
-      "groupName": "non-major-dev-dependencies"
-    },
-    {
-      "matchDepTypes": ["dependencies"],
-      "excludePackageNames": ["vitepress"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "schedule": ["before 4am on Monday"],
-      "groupName": "non-major-dependencies"
-    },
     {
       "matchPackageNames": ["@api3/*"],
       "schedule": ["before 6pm"],
@@ -37,12 +9,5 @@
       "groupName": "api3"
     }
   ],
-  "rangeStrategy": "bump",
-  "lockFileMaintenance": {
-    "enabled": false
-  },
-  "reviewers": ["Siegrift"],
-  "internalChecksFilter": "strict",
-  "dependencyDashboard": false,
-  "minimumReleaseAge": "3 days"
+  "reviewers": ["Siegrift"]
 }
