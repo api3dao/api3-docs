@@ -67,8 +67,6 @@ The auction length is chain dependent.
 | Arbitrum One    | 15               |
 | Avalanche       | 30               |
 | Base            | 30               |
-| Bitlayer        | 30               |
-| Blast           | 30               |
 | BNB Smart Chain | 30               |
 | BOB             | 30               |
 | Core            | 30               |
@@ -80,7 +78,6 @@ The auction length is chain dependent.
 | Katana          | 30               |
 | Kava            | 30               |
 | Linea           | 30               |
-| Lumia           | 30               |
 | Manta           | 30               |
 | Mantle          | 30               |
 | Mode            | 30               |
@@ -96,7 +93,6 @@ The auction length is chain dependent.
 | Taiko           | 30               |
 | Unichain        | 30               |
 | World Chain     | 30               |
-| X Layer         | 30               |
 | Zircuit         | 30               |
 
 <!-- END:chain-auction-length-table -->

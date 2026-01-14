@@ -3,3 +3,5 @@ blockExoticSubdeps: true
 minimumReleaseAge: 20160 # 14 days (keep in sync with Renovate config)
 minimumReleaseAgeExclude:
   - '@api3/*'
+  # TODO Remove the below exclusions in the last week of Jan 2026
+  - 'zod@4.3.5'
