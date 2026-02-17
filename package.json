@@ -21,7 +21,7 @@
     "firebase:emulator": "pnpm docs:build; firebase emulators:start"
   },
   "devDependencies": {
-    "@api3/contracts": "^33.0.0",
+    "@api3/contracts": "^36.0.0",
     "@api3/dapi-management": "^4.3.0",
     "@types/node": "^24.9.2",
     "axios": "^1.13.2",
