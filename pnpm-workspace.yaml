@@ -5,3 +5,5 @@ minimumReleaseAgeExclude:
   - '@api3/*'
   # TODO Remove the below exclusions in the last week of Jan 2026
   - 'zod@4.3.5'
+  # Renovate security update: axios@1.13.5
+  - axios@1.13.5
