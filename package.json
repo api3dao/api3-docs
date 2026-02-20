@@ -24,16 +24,16 @@
     "@api3/contracts": "^36.0.0",
     "@api3/dapi-management": "^4.9.0",
     "@types/node": "^24.9.2",
-    "axios": "^1.13.2",
+    "axios": "^1.13.4",
     "colors": "^1.4.0",
     "file": "^0.2.2",
     "fs-extra": "^11.3.3",
     "husky": "^9.1.7",
     "medium-zoom": "^1.1.0",
     "oust": "^2.0.4",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "vitepress": "1.6.4",
-    "vitest": "^4.0.16",
+    "vitest": "^4.0.18",
     "walk-sync": "^4.0.1"
   }
 }
