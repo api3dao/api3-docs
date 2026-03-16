@@ -70,7 +70,7 @@ Consequently, when dApps use Pyth data on Ethereum, users pay Ethereum gas fees 
 
 Once a plan is purchased on Api3 Market, the respective data feed will maintain the advertised deviation threshold and heartbeat interval until plan expiration.
 This depends on the Api3 technical team to keep the wallets that will send the update transactions funded, and maintain the infrastructure that will use these wallets to send the update transactions.
-The operation is backed by dedicated monitoring personnel, automated alerts, and redundant infrastructure layers.
+The operation is backed by the technical team's continuous monitoring, automated alerts, and redundant infrastructure layers.
 
 ::: info ℹ️ Info
 
