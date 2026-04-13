@@ -1,6 +1,6 @@
 ---
 title: OEV Network
-pageHeader: OEV Searchers → In Depth
+pageHeader: OEV → In Depth
 outline: deep
 ---
 

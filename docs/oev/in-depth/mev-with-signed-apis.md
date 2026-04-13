@@ -1,6 +1,6 @@
 ---
 title: MEV with Signed APIs
-pageHeader: OEV Searchers → In Depth
+pageHeader: OEV → In Depth
 outline: deep
 ---
 
