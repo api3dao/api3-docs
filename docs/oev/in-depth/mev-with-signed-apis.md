@@ -8,9 +8,9 @@ outline: deep
 
 # MEV with Signed APIs
 
-An intermediate step towards OEV searching is to extend MEV bots to utilize the
+The straightforward way to start OEV searching is to extend MEV bots to utilize the
 public
-[base feed endpoints](/oev/in-depth/data-feeds/#base-feed-endpoints). This data is delayed compared to data in the [OEV endpoints](/oev/in-depth/data-feeds/#oev-endpoints), so it's expected searchers won't be able to extract much value this way. That said, it is a good backup in case OEV auctions are paused or encountering unexpected technical issues. It also the only way to extract value for [legacy integrations](/oev/in-depth/#legacy-integrations).
+[base feed endpoints](/oev/in-depth/data-feeds/#base-feed-endpoints). This data is delayed compared to data in the [OEV endpoints](/oev/in-depth/data-feeds/#oev-endpoints), so it's expected searchers won't be able to extract much value this way.
 
 The existing MEV bot can utilize the off-chain open-source data and make a base
 feed update on-chain whenever there is OEV to be captured. Refer to
@@ -24,7 +24,7 @@ source values and predicting the next oracle update.
 
 ::: info 💰 Financial
 
-This improvement on its own provides a major competitive advantage over existing MEV competition and leads to a significant increase in profits. That said, this strategy will not work when the competition is doing OEV searching.
+This improvement on its own provides a major competitive advantage over existing MEV competition and leads to a significant increase in profits. That said, this strategy will not work when the competition is utilizing OEV updates.
 
 :::
 

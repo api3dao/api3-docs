@@ -92,8 +92,8 @@ Similarly, our OEV implementation uses this mechanism, ensuring OEV updates cont
 
 ## Oracle Extractable Value (OEV)
 
-OEV updates provide identical guarantees to regular updates—they are on-chain aggregations of API provider-signed data—so they introduce no additional [data correctness](#data-correctness) risk.
-The OEV auction mechanism allows winners to frontrun updates of an artificially delayed base feed, a tradeoff designed to benefit the dApp.
+[OEV](/oev/) updates provide identical guarantees to regular updates—they are on-chain aggregations of API provider-signed data—so they introduce no additional [data correctness](#data-correctness) risk.
+The OEV updates allows winners to frontrun updates of an artificially delayed base feed, a tradeoff designed to benefit the dApp.
 
 dApps using our system will experience a 0–20 second delay in their data feed.
 While this delay concerns some users, we can evaluate its impact through a simple framework:

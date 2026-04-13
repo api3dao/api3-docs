@@ -25,28 +25,6 @@ module.exports = [
         text: 'MEV with Signed APIs',
         link: '/oev/in-depth/mev-with-signed-apis',
       },
-      {
-        text: 'OEV Network',
-        link: '/oev/in-depth/oev-network/',
-      },
-      {
-        text: 'OEV Auctioneer',
-        link: '/oev/in-depth/oev-auctioneer',
-      },
-      {
-        text: 'OEV searching',
-        link: '/oev/in-depth/oev-searching',
-      },
-    ],
-  },
-  {
-    text: '',
-    collapsed: false,
-    items: [
-      {
-        text: 'Glossary',
-        link: '/oev/glossary',
-      },
     ],
   },
 ];

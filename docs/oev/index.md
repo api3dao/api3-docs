@@ -17,16 +17,14 @@ to block validators in the process. This dynamic is unhealthy, because the
 majority of the value should be split between the dApp and the searcher that
 realizes the opportunity.
 
-OEV solves this problem by auctioning off the exclusive rights to execute the
+OEV solves this problem by offering the exclusive rights to execute the
 oracle update(s), allowing searchers to atomically update the price feed(s) used
-by the dApps and capture opportunities in the market. The exclusive update
+by the dApps and profit from the opportunities on the market. The exclusive update
 rights guarantee no competition and searchers avoid paying premiums on gas fees.
 
-With OEV, searchers announce their intent to perform oracle updates along with
-the amount they are willing to pay for it. The process is facilitated by open auctions,
-bound by rules enforced on-chain. The auction winner must pay the announced
-amount, which in return allows them to perform the oracle update and capture
-profitable opportunities.
+Api3 facilitates OEV using two ways:
+1. Private auctions performed via partnered searchers on non-delayed data.
+2. Searching using public Signed APIs on delayed data, open for anyone to participate.
 
 ::: info 💡 Tip
 
@@ -49,91 +47,31 @@ price drop that causes many positions using that asset as collateral to approach
 the 90% liquidation threshold.
 
 In this scenario, the next price update that causes a position to become
-unhealthy is valuable. From the protocol's perspective, this affects its
-solvency and presents a threat. For a searcher, this presents a
-profitable opportunity. In theory, the value of the price update equals to the
-profit the searcher can make.
-
-Searcher monitors the dApp and public Api3 data sources and sees that a position will become unhealthy
-using the oracle data. They announce that they want to purchase exclusive
-priority for updating the price feeds and pay X in return. They win the auction,
-pay X to the dApp, and execute the price feed updates and liquidation
+unhealthy is valuable. Api3 partnered searchers monitor the dApp and public Api3 data sources and notice that a position will become unhealthy after the next oracle update. They submit a transaction that executes the oracle update and perform the liquidation
 atomically.
 
-The concept of OEV is not limited to liquidations but can occur anywhere where
+The concept of OEV is not limited to liquidations, but can occur anywhere where
 price feed updates potentially expose profitable opportunities, such as
 arbitrage and many others.
 
 ## OEV distribution
 
-To update the data feed, the auction winner must pay the bid amount they
-announced during the auction. These payments constitute auction proceeds. Majority of these proceeds go back to the dApp in the form of [OEV Rewards](/dapps/oev-rewards/). Searchers, in return, get exclusive rights to capture
-the OEV and get to capitalize on the remaining revenue of the opportunity.
-
 Thus, the majority of the OEV is distributed to the dApp and the
 searchers.
 
-## How do auctions work?
+Api3 searching revenue is split between:
+1. Paying the dApps in the form of [OEV Rewards](/dapps/oev-rewards/).
+2. Api3 protocol fee.
 
-::: warning ⚠️ Warning
-
-At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
-
-:::
-
-Api3 uses a combination of the [OEV Network](#oev-network) and the
-[OEV Auctioneer](#oev-auctioneer) to power the OEV auctions in a secure and
-transparent way.
-
-At a high level, auctions repeat continuously and indefinitely. There is a
-separate auction for each dApp and each auction takes a fixed amount of time. Each time an auction ends, a new one begins and the same process
-repeats.
-
-<!-- NOTE: Source = https://excalidraw.com/#json=VHSz5AhV0HA88hUvabVJv,AhhEkjO7HE_4MOqbkrBGsw -->
-<img src="./auctions-overview.svg" />
-
-### Bid phase
-
-Auctions run in two phases - the bid phase and the award phase. During the
-bid phase, searchers look for OEV opportunities for the particular dApp
-by monitoring the off-chain data. When an opportunity is detected, they
-place their bid based on its value.
-
-It is important to understand that bids must be placed before the end of the bid phase, which establishes a cutoff period. The auction winner is able to use only price feed data with timestamp up to this cutoff period.
-
-### Award phase
-
-The award phase starts immediately after the end of the bid phase. All bids placed during the bid phase are evaluated and the eligible bid with highest amount is selected as winner and provided a cryptographic signature allowing them to make the price feed updates up to the cutoff period. This signature is usable only by the auction winner. A requirement for updating the price feed is paying the announced bid amount in the same transaction.
-
-### Fulfillment
-
-Auction winner is required to make use of the auction data and pay for the winning bid to fulfill the purpose of the auction. After paying for the auction, they are required to report the fulfillment to the auction platform with the transaction hash of the update.
-
-The fulfillment is verified and provided the update was correct, the auction winner's collateral is released. If the fulfillment is not reported or incorrect information is submitted, the collateral is slashed. Fulfillment has a large reporting period and the auction winner is in full control of when they choose to report.
-
-### OEV Network
-
-The OEV Network hosts auctions transparently, ensuring that any disputes can be
-resolved by analyzing the on-chain data. Searchers submit their bids on-chain,
-where the winner is announced and given exclusive rights to execute the oracle
-update.
-
-### OEV Auctioneer
-
-A key component of OEV is an off-chain auction system that processes the
-auctions taking place on the OEV network. We call this system OEV Auctioneer,
-and it is managed by the Api3 DAO. The integrity of OEV Auctioneer is ensured by
-using the OEV Network for all important actions, such as announcing the auction
-winner.
+For Api3 curated markets, the entirety of the OEV belongs to Api3.
 
 ## Get started with OEV
 
 Here are resources to help you get started with OEV:
 
-1. Dive deeper into OEV by reading the
+1. See [OEV Dashboard](https://oev-dashboard.api3.org/) to browse the past OEV performance.
+2. Dive deeper into OEV by reading the
    [OEV Litepaper](https://raw.githubusercontent.com/api3dao/oev-litepaper/main/oev-litepaper.pdf).
-2. Check out the [Getting started](/oev/in-depth/) section to see how
-   to start searching.
 3. Connect with other developers and OEV enthusiasts in our
    [OEV Discord channel](https://discord.com/channels/758003776174030948/1062909222347603989).
 4. Follow Api3 on [X](https://x.com/api3dao) for the latest news and updates on
