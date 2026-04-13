@@ -195,7 +195,7 @@ hardcoded in the OEV proxies of the dApp.
 The ID has no meaning other than to group proxies of the same dApp together.
 
 Searchers can derive the dApp ID from the information provided in the
-[OEV dApps catalog](/oev-searchers/in-depth/#oev-dapps) in two ways.
+[OEV dApps catalog](/oev/in-depth/#oev-dapps) in two ways.
 
 #### Programmatically
 

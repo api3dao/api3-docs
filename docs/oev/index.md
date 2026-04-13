@@ -132,7 +132,7 @@ Here are resources to help you get started with OEV:
 
 1. Dive deeper into OEV by reading the
    [OEV Litepaper](https://raw.githubusercontent.com/api3dao/oev-litepaper/main/oev-litepaper.pdf).
-2. Check out the [Getting started](/oev-searchers/in-depth/) section to see how
+2. Check out the [Getting started](/oev/in-depth/) section to see how
    to start searching.
 3. Connect with other developers and OEV enthusiasts in our
    [OEV Discord channel](https://discord.com/channels/758003776174030948/1062909222347603989).

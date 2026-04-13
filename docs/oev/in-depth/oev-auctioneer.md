@@ -17,7 +17,7 @@ At the moment, we're working on major updates to the OEV mechanism. As part of t
 OEV Auctioneer is the off-chain system managed by the Api3 DAO to process
 auctions hosted on the OEV network. The honesty of OEV Auctioneer
 can be verified on-chain because the logic is based solely on the
-[OevAuctionHouse](/oev-searchers/in-depth/oev-network/#oevauctionhouse) contract
+[OevAuctionHouse](/oev/in-depth/oev-network/#oevauctionhouse) contract
 state.
 
 OEV Auctioneer has two main responsibilities:

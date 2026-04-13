@@ -49,7 +49,7 @@ The following table includes dApps which integrated OEV proxies and are good can
 ### Legacy integrations
 
 Some dApps are still using the legacy design of oracle proxies, which do not support OEV auctions. It's expected these will migrate the OEV supported ones soon. That said, searchers can already
-perform [MEV with Signed APIs](/oev-searchers/in-depth/mev-with-signed-apis)
+perform [MEV with Signed APIs](/oev/in-depth/mev-with-signed-apis)
 extraction.
 
 <!-- NOTE: Make sure these are sorted alphabetically; title matches information in @api3/contracts; homepage points to the dApp market (can differ from dApp landing page) -->
@@ -85,9 +85,9 @@ bot to participate in OEV searching:
 
 Most of these steps require small additions to the existing MEV bot, but it is
 required to understand the mental model behind OEV and our
-[data feeds](/oev-searchers/in-depth/data-feeds/). Because of this, we recommend starting
+[data feeds](/oev/in-depth/data-feeds/). Because of this, we recommend starting
 with an in-between solution we call
-[MEV with Signed APIs](/oev-searchers/in-depth/mev-with-signed-apis).
+[MEV with Signed APIs](/oev/in-depth/mev-with-signed-apis).
 
 ## OEV Dashboard
 

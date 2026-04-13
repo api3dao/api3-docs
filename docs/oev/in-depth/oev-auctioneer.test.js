@@ -24,7 +24,7 @@ test('the auction length section lists all the supported chains', () => {
 });
 
 function readMarkdownFile() {
-  const docPath = path.join(process.cwd(), 'docs', 'oev-searchers', 'in-depth', 'oev-auctioneer.md');
+  const docPath = path.join(process.cwd(), 'docs', 'oev', 'in-depth', 'oev-auctioneer.md');
   if (!fs.existsSync(docPath)) {
     throw new Error(`Could not find file "oev-auctioneer.md" at "${docPath}"`);
   }

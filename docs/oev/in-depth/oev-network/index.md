@@ -95,7 +95,7 @@ Tech-savvy users can refer to the contract's source for details.
 
 To be eligible to win OEV auctions, searchers need to have enough collateral
 deposited in the OevAuctionHouse contract. See
-[bid eligibility](/oev-searchers/in-depth/oev-auctioneer#bid-eligibility)
+[bid eligibility](/oev/in-depth/oev-auctioneer#bid-eligibility)
 section for more details.
 
 We recommend using the same hot wallet for the bot on the OEV network (to
@@ -117,7 +117,7 @@ function depositForBidder(
 ```
 
 For an advanced usage where the bidder is a contract, refer to
-[bidding contract](/oev-searchers/in-depth/oev-searching#bidding-contract)
+[bidding contract](/oev/in-depth/oev-searching#bidding-contract)
 section.
 
 ### Withdrawing collateral
@@ -152,7 +152,7 @@ function withdraw(
 
 For a searcher to win an auction, they are required to have enough ETH deposited
 in the OevAuctionHouse contract. Refer to
-[bid eligibility](/oev-searchers/in-depth/oev-auctioneer#bid-eligibility)
+[bid eligibility](/oev/in-depth/oev-auctioneer#bid-eligibility)
 section for details.
 
 The collateral and protocol fee rates are configurable parameters within the
@@ -218,8 +218,8 @@ function placeBid(
 
 The OevAuctionHouse contract is designed in a generic way. To fully understand
 how to use these functions, we need to understand how
-[OEV Auctioneer](/oev-searchers/in-depth/oev-auctioneer) works. Refer to
-[placing a bid](/oev-searchers/in-depth/oev-searching#placing-a-bid) section for
+[OEV Auctioneer](/oev/in-depth/oev-auctioneer) works. Refer to
+[placing a bid](/oev/in-depth/oev-searching#placing-a-bid) section for
 more details.
 
 ### Expediting a bid
@@ -249,6 +249,6 @@ function expediteBidExpirationMaximally(
 
 The OevAuctionHouse contract is designed in a generic way. To fully understand
 how to use these functions, we need to understand how
-[OEV Auctioneer](/oev-searchers/in-depth/oev-auctioneer) works. Refer to the
-[Expediting a bid](/oev-searchers/in-depth/oev-searching#expediting-a-bid)
+[OEV Auctioneer](/oev/in-depth/oev-auctioneer) works. Refer to the
+[Expediting a bid](/oev/in-depth/oev-searching#expediting-a-bid)
 section for more details.

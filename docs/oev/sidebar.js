@@ -5,7 +5,7 @@ module.exports = [
     items: [
       {
         text: 'Overview',
-        link: '/oev-searchers/',
+        link: '/oev/',
       },
     ],
   },
@@ -15,27 +15,27 @@ module.exports = [
     items: [
       {
         text: 'Getting started',
-        link: '/oev-searchers/in-depth/',
+        link: '/oev/in-depth/',
       },
       {
         text: 'Data feeds',
-        link: '/oev-searchers/in-depth/data-feeds/',
+        link: '/oev/in-depth/data-feeds/',
       },
       {
         text: 'MEV with Signed APIs',
-        link: '/oev-searchers/in-depth/mev-with-signed-apis',
+        link: '/oev/in-depth/mev-with-signed-apis',
       },
       {
         text: 'OEV Network',
-        link: '/oev-searchers/in-depth/oev-network/',
+        link: '/oev/in-depth/oev-network/',
       },
       {
         text: 'OEV Auctioneer',
-        link: '/oev-searchers/in-depth/oev-auctioneer',
+        link: '/oev/in-depth/oev-auctioneer',
       },
       {
         text: 'OEV searching',
-        link: '/oev-searchers/in-depth/oev-searching',
+        link: '/oev/in-depth/oev-searching',
       },
     ],
   },
@@ -45,7 +45,7 @@ module.exports = [
     items: [
       {
         text: 'Glossary',
-        link: '/oev-searchers/glossary',
+        link: '/oev/glossary',
       },
     ],
   },

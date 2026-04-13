@@ -10,11 +10,11 @@ outline: deep
 
 An intermediate step towards OEV searching is to extend MEV bots to utilize the
 public
-[base feed endpoints](/oev-searchers/in-depth/data-feeds/#base-feed-endpoints). This data is delayed compared to data in the [OEV endpoints](/oev-searchers/in-depth/data-feeds/#oev-endpoints), so it's expected searchers won't be able to extract much value this way. That said, it is a good backup in case OEV auctions are paused or encountering unexpected technical issues. It also the only way to extract value for [legacy integrations](/oev-searchers/in-depth/#legacy-integrations).
+[base feed endpoints](/oev/in-depth/data-feeds/#base-feed-endpoints). This data is delayed compared to data in the [OEV endpoints](/oev/in-depth/data-feeds/#oev-endpoints), so it's expected searchers won't be able to extract much value this way. That said, it is a good backup in case OEV auctions are paused or encountering unexpected technical issues. It also the only way to extract value for [legacy integrations](/oev/in-depth/#legacy-integrations).
 
 The existing MEV bot can utilize the off-chain open-source data and make a base
 feed update on-chain whenever there is OEV to be captured. Refer to
-[updating data feed value](/oev-searchers/in-depth/data-feeds/#updating-data-feed-value)
+[updating data feed value](/oev/in-depth/data-feeds/#updating-data-feed-value)
 section for more details.
 
 One advantage of using this data is that searchers can easily simulate the data
@@ -31,13 +31,13 @@ This improvement on its own provides a major competitive advantage over existing
 ## Monitor signed data
 
 First, searchers need to have a list of data feeds used by the dApp and
-[obtain its beacons](/oev-searchers/in-depth/data-feeds/#dapp-sources). Note that
+[obtain its beacons](/oev/in-depth/data-feeds/#dapp-sources). Note that
 this can be cached because beacons change only when the
 underlying base feed dAPI changes, which happens rarely, only when a dAPI is reconfigured.
 
 Once the list of base feed beacons is known, searchers should periodically call
 the public
-[base feed endpoints](/oev-searchers/in-depth/data-feeds/#base-feed-endpoints) to get
+[base feed endpoints](/oev/in-depth/data-feeds/#base-feed-endpoints) to get
 the real-time values for the base feed beacons used by the dApp. This data may
 be used immediately to look for OEV opportunities.
 

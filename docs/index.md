@@ -14,6 +14,9 @@ hero:
       text: For dApps
       link: /dapps/
     - theme: brand
-      text: For OEV searchers
-      link: /oev-searchers/
+      text: About OEV
+      link: /oev/
+    - theme: brand
+      text: About curation
+      link: /curation/
 ---
