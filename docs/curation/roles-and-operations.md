@@ -12,14 +12,12 @@ All Api3 vaults share the same role structure and operational setup.
 
 ## Roles
 
-Api3 configures the Morpho vault roles identically across all its vaults:
-
-| Role | Held by |
-| --- | --- |
-| Owner | Api3 DAO Multisig |
-| Curator | Api3 DAO Multisig |
-| Allocator | Api3 DAO Multisig |
-| Guardian | Api3 monitoring team |
+| Role      | Held by              |
+| --------- | -------------------- |
+| Owner     | Api3 DAO Multisig    |
+| Curator   | Api3 DAO Multisig    |
+| Allocator | Api3 DAO Multisig    |
+| Guardian  | Api3 monitoring team |
 
 The Api3 DAO Multisig holds the owner, curator, and allocator roles, consolidating governance and operational control under a single trusted entity.
 

@@ -46,43 +46,41 @@ The OEV captured during volatile periods more than compensates, providing Api3 w
 Api3 operates three USDC vaults on Ethereum mainnet.
 All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework.](/curation/risk)
 
-| Vault                             | Strategy                           | Markets                                      |
-| --------------------------------- | ---------------------------------- | -------------------------------------------- |
-| [Api3 Core USDC](#api3-core-usdc) | Conservative, blue-chip collateral | wstETH, cbBTC                                |
-| [Kabu](#kabu)                     | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
-| [Api3 dCOMP](#api3-dcomp)         | Market specific to dCOMP           | dCOMP                                        |
+| Vault                               | Strategy                           | Markets                                      |
+| ----------------------------------- | ---------------------------------- | -------------------------------------------- |
+| [Api3 Core USDC](#api3-core-usdc)   | Conservative, blue-chip collateral | wstETH, cbBTC                                |
+| [Kabu USDC](#kabu-usdc)             | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
+| [Api3 dCOMP USDC](#api3-dcomp-usdc) | Market specific to dCOMP           | dCOMP                                        |
 
 ### Api3 Core USDC
 
-Api3 Core USDC is the conservative, flagship vault.
+Api3 Core is the conservative, flagship vault.
 It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH) and cbBTC (Coinbase wrapped BTC).
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
 
-### Kabu
+### Kabu USDC
 
 Kabu supplies USDC to lending markets backed by mid-cap governance and protocol tokens — COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, and BAL.
 These markets serve borrowers who wish to access liquidity against their governance token holdings without selling.
 Given the higher volatility and lower liquidity of these assets compared to blue-chip collateral, supply caps and risk parameters are set more conservatively on a per-market basis.
 
-### Api3 dCOMP
+### Api3 dCOMP USDC
 
-TODO: dCOMP description — what it is (wrapped governance token of Compound) and why it was created.
+Api3 dCOMP is a single-market vault collateralized by [dCOMP](https://github.com/api3dao/dcomp)—a lightweight, ownable wrapper for the COMP governance token configured with a specific delegate.
+
+While preserving the inherent voting power of the underlying COMP, this wrapper allows the owner to reassign the delegated address. Users can wrap their COMP to receive dCOMP tokens, which can then be deposited as collateral. By wrapping COMP into dCOMP, users can effectively amplify the voting power of the designated delegate.
+
+To support this mechanism, the Api3 dCOMP vault supplies USDC to the dCOMP-collateralized market, providing the borrow-side liquidity necessary to power this architecture.
 
 ## Fees
 
 All Api3 vaults use a V1 vault as an intermediary layer that handles the actual market allocations (see [vault architecture](/curation/roles-and-operations#vault-architecture)).
 A **5% performance fee** on earned interest is charged at the V1 vault layer. This is the only fee — the V2 (user-facing) vault charges nothing additional.
 
-| Layer                   | Fee type        | Amount |
-| ----------------------- | --------------- | ------ |
-| V2 Vault (user-facing)  | Performance fee | 0%     |
-| V1 Vault (intermediary) | Performance fee | 5%     |
+| Layer    | Fee type        | Amount |
+| -------- | --------------- | ------ |
+| V2 Vault | Performance fee | 0%     |
+| V1 Vault | Performance fee | 5%     |
 
 The fee is charged only on interest earned from borrowers, not on deposited principal.
-
-::: info ⚠️ Disclaimer
-
-TODO: Legal disclosure.
-
-:::

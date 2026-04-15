@@ -12,15 +12,17 @@ Api3's curation risk framework builds on the same rigorous evaluation processes 
 
 ## Market selection
 
-Before enabling a new lending market, Api3 evaluates:
+The primary prerequisite for listing a collateral asset is that it passes the Api3 data feed listing policy.
+This policy avoids many common industry pitfalls — for example, it prevents listing "stablecoin" assets with weakly protected minting functions.
+An asset that passes the listing policy is eligible for market creation.
 
-- **Borrowing demand** — Is there genuine, sustained demand to borrow against the collateral asset?
+Beyond the listing policy, Api3 evaluates:
+
 - **Token liquidity** — Is there sufficient on-chain liquidity to support healthy liquidations under adverse market conditions?
-- **Oracle quality** — Does a reliable, battle-tested price feed exist for the collateral asset?
+- **Token volatility** — Volatile tokens can be listed as long as there is enough liquidity. In these cases, market parameters (such as LLTV) are set conservatively.
 - **Smart contract risk** — Has the collateral token been audited and battle-tested in production?
-- **Collateral characteristics** — What is the asset's volatility profile, correlation to other vault collateral, and historical behavior during market stress?
 
-Markets are only enabled after passing this evaluation. Exceptions can be made after careful assessment of the benefits, but are rare.
+Api3 also lists assets that are unique on the market to fill gaps in the lending ecosystem, even when borrowing demand is not yet established.
 
 ## Supply caps
 
