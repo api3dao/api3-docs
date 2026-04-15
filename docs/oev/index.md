@@ -63,7 +63,7 @@ Api3 searching revenue is split between:
 1. Paying the dApps in the form of [OEV Rewards](/dapps/oev-rewards/).
 2. Api3 protocol fee.
 
-For Api3 curated markets, the entirety of the OEV belongs to Api3.
+For Api3-curated markets, the entirety of the OEV belongs to Api3.
 
 ## Get started with OEV
 

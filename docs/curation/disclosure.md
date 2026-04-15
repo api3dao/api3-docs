@@ -15,7 +15,7 @@ This disclosure is supplemental to the Api3 [terms and conditions,](https://api3
 
 ## Scope of curation
 
-Api3's role as a curator is limited to setting onchain vault parameters within the [Morpho Protocol](https://morpho.org/) — selecting enabled markets, configuring supply caps, assigning roles, and operating the automation described elsewhere in these docs.
+Api3's role as a curator is limited to setting on-chain vault parameters within the [Morpho Protocol](https://morpho.org/) — selecting enabled markets, configuring supply caps, assigning roles, and operating the automation described elsewhere in these docs.
 
 Api3 does not hold, control, or take custody of any user assets.
 All deposits, withdrawals, and market interactions occur directly through Morpho's open-source, non-custodial smart contracts.

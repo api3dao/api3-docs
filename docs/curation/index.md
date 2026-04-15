@@ -34,7 +34,7 @@ Api3 is uniquely positioned as a curator because it is also the oracle provider 
 This creates a competitive advantage that no other lending protocol or curator has.
 
 During market turmoil, liquidations on lending markets generate [Oracle Extractable Value (OEV)](/oev/) — value that the oracle has priority in capturing by batching additional operations with price updates.
-On Api3 curated markets, the entirety of this OEV belongs to Api3 as protocol revenue.
+On Api3-curated markets, the entirety of this OEV belongs to Api3 as protocol revenue.
 At best, other protocols receive only a smaller portion of the OEV generated on their markets.
 
 This allows Api3 to set lower curation fees to attract borrowers, which in turn decreases the cost of borrowing.
@@ -44,17 +44,17 @@ The OEV captured during volatile periods more than compensates, providing Api3 w
 ## Vaults
 
 Api3 operates three USDC vaults on Ethereum mainnet.
-All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework.](/curation/risk)
+All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework](/curation/risk-management).
 
-| Vault                     | Asset | Strategy                           | Markets                                      |
-| ------------------------- | ----- | ---------------------------------- | -------------------------------------------- |
+| Vault                          | Asset | Strategy                           | Collateral                                   |
+| ------------------------------ | ----- | ---------------------------------- | -------------------------------------------- |
 | [Api3&nbsp;Core](#api3-core)   | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC                                |
 | [Kabu](#kabu)                  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
-| [Api3&nbsp;dCOMP](#api3-dcomp) | USDC  | Market specific to dCOMP           | dCOMP                                        |
+| [Api3&nbsp;dCOMP](#api3-dcomp) | USDC  | Single dCOMP collateral market     | dCOMP                                        |
 
 ### Api3 Core
 
-Api3 Core is the conservative, flagship vault.
+Api3 Core is Api3's flagship conservative vault.
 It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH) and cbBTC (Coinbase wrapped BTC).
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
@@ -71,7 +71,7 @@ Api3 dCOMP is a single-market vault collateralized by [dCOMP](https://github.com
 
 While preserving the inherent voting power of the underlying COMP, this wrapper allows the owner to reassign the delegated address. Users can wrap their COMP to receive dCOMP tokens, which can then be deposited as collateral. By wrapping COMP into dCOMP, users can effectively amplify the voting power of the designated delegate.
 
-To support this mechanism, the Api3 dCOMP vault supplies USDC to the dCOMP-collateralized market, providing the borrow-side liquidity necessary to power this architecture.
+The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, making the mechanism viable.
 
 ## Fees
 

@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     text: 'Risk management',
-    link: '/curation/risk',
+    link: '/curation/risk-management',
   },
   {
     text: 'Disclosure',

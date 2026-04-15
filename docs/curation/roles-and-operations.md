@@ -19,7 +19,7 @@ All Api3 vaults share the same role structure and operational setup.
 | Allocator | Api3 DAO Multisig    |
 | Guardian  | Api3 monitoring team |
 
-The Api3 DAO Multisig holds the owner, curator, and allocator roles, consolidating governance and operational control under a single trusted entity.
+The Api3 DAO Multisig holds the owner, curator, and allocator roles, consolidating governance and operational control under a single entity.
 
 The guardian role is operated by the Api3 monitoring team, who can revoke pending actions in case of misconfiguration.
 The monitoring team also maintains an emergency fund for manual liquidations in the event that automated liquidation bots fail.
@@ -54,7 +54,7 @@ Api3 leverages its existing data feed infrastructure to monitor token liquidity 
 
 - **Liquidity bots** — Ensure smooth and automatic management of vault positions and market allocations.
 - **Risk engine alerts** — An alerts-based system that flags suspicious activity, unusual market conditions, or parameter deviations.
-- **24/7 monitoring team** — Api3's operations team handles escalations from the risk engine around the clock.
+- **24/7 monitoring team** — Api3's monitoring team handles escalations from the risk engine around the clock.
 
 ## Liquidations
 
