@@ -4,10 +4,6 @@ module.exports = [
     link: '/curation/',
   },
   {
-    text: 'Vaults',
-    link: '/curation/vaults',
-  },
-  {
     text: 'Operations',
     collapsed: false,
     items: [
