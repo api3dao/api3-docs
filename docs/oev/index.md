@@ -23,6 +23,7 @@ by the dApps and profit from the opportunities on the market. The exclusive upda
 rights guarantee no competition and searchers avoid paying premiums on gas fees.
 
 Api3 facilitates OEV using two ways:
+
 1. Private auctions performed via partnered searchers on non-delayed data.
 2. Searching using public Signed APIs on delayed data, open for anyone to participate.
 
@@ -60,6 +61,7 @@ Thus, the majority of the OEV is distributed to the dApp and the
 searchers.
 
 Api3 searching revenue is split between:
+
 1. Paying the dApps in the form of [OEV Rewards](/dapps/oev-rewards/).
 2. Api3 protocol fee.
 
