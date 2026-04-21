@@ -35,10 +35,10 @@ This creates a competitive advantage that no other lending protocol or curator h
 
 During market turmoil, liquidations on lending markets generate [Oracle Extractable Value (OEV)](/oev/) — value that the oracle has priority in capturing by batching additional operations with price updates.
 On Api3-curated markets, the entirety of this OEV belongs to Api3 as protocol revenue.
-At best, other protocols receive only a smaller portion of the OEV generated on their markets.
+Other protocols, at best, capture only a fraction of the OEV generated on their markets.
 
 This allows Api3 to set lower curation fees to attract borrowers, which in turn decreases the cost of borrowing.
-While this means supply-side APY is slightly lower during calm markets, it makes Api3 markets more attractive to borrowers, driving higher utilization and a healthier lending ecosystem.
+While this means supply-side APY may be lower during calm markets, it makes Api3 markets more attractive to borrowers, driving higher utilization and a healthier lending ecosystem.
 The OEV captured during volatile periods more than compensates, providing Api3 with a sustainable revenue stream that is independent of the fee structure.
 
 ## Vaults

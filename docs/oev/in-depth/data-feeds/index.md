@@ -112,7 +112,7 @@ not updated for a particular amount time.
 
 ::: warning ⚠️ Warning
 
-To OEV updates are possible only for the Api3 partnered searchers and not general public.
+Currently, OEV updates are possible only for the Api3 partnered searchers and not the general public.
 
 :::
 

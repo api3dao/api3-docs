@@ -36,7 +36,7 @@ Depositor → V2 Vault → V1 Vault → Morpho Markets
 
 2. **V1 Vault** — The intermediary vault that executes the actual market allocations. The V1 vault holds two allocators:
    - The **Morpho Public Allocator**, which enables permissionless reallocation to improve liquidity across markets.
-   - An **Api3 automated bot** that rebalances allocations to maintain reasonable APY across all enabled markets.
+   - An **Api3 automated bot** that rebalances allocations to maintain a competitive APY across all enabled markets.
 
 The owner of the V1 vault parameter adjustment abilities is also the Api3 Foundation Multisig. The 5% performance fee is charged at this layer (see [Fees](/curation/#fees)).
 
