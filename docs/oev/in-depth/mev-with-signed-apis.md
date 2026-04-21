@@ -53,24 +53,28 @@ code makes use of variables that are not defined in the context of the code snip
 purpose can be understood from the context. The snippet makes use of a well-known [Multicall3 contract](https://www.multicall3.com/).
 
 ```javascript
-const beaconsIds = []; // Assume the data feed is a beacon set with these beacons
+const beaconIds = []; // Assume the data feed is a beacon set with these beacons
 const dataFeedSignedData = []; // Assume we have some signed data to update
 
 // 1. Create the calldata for updating the base feed beacons
-const dataFeedUpdateCalldata = dataFeedSignedData.map((signedData) => ({
-  target: api3ServerAddress,
-  allowFailure: true,
-  callData: api3ServerV1.interface.encodeFunctionData(
-    'updateBeaconWithSignedData',
-    [airnode, templateId, timestamp, encodedValue, signature]
-  ),
-}));
+const dataFeedUpdateCalldata = dataFeedSignedData.map((signedData) => {
+  const { airnode, templateId, timestamp, encodedValue, signature } =
+    signedData;
+  return {
+    target: api3ServerAddress,
+    allowFailure: true,
+    callData: api3ServerV1.interface.encodeFunctionData(
+      'updateBeaconWithSignedData',
+      [airnode, templateId, timestamp, encodedValue, signature]
+    ),
+  };
+});
 dataFeedUpdateCalldata.push({
   target: api3ServerAddress,
   allowFailure: true,
   callData: api3ServerV1.interface.encodeFunctionData(
     'updateBeaconSetWithBeacons',
-    [beaconsIds.map((beaconsId) => beaconId)]
+    [beaconIds]
   ),
 });
 
@@ -87,7 +91,7 @@ const liquidationOpportunityCalldata = {
 const calldata = [...dataFeedUpdateCalldata, liquidationOpportunityCalldata];
 
 // 4. Execute the staticcall multicall, using a standard Multicall3 contract
-const result = await multicall3.aggregate3.staticCall(calls);
+const result = await multicall3.aggregate3.staticCall(calldata);
 ```
 
 ## Capture MEV

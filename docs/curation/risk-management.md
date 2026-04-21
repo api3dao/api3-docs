@@ -41,7 +41,7 @@ Caps are reviewed and adjusted as market conditions evolve.
 A distinguishing feature of Api3's curation is that Api3 deploys a majority of its own treasury as vault supply.
 This creates a direct alignment of incentives:
 
-- Api3 bears the first and largest loss in the event of bad debt.
+- Api3 bears the primary and largest loss in the event of bad debt.
 - Every risk parameter decision — market selection, supply caps, LLTV configuration — directly affects Api3's own capital.
 - External depositors benefit from the same risk management applied to protect the Api3 treasury.
 

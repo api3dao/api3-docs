@@ -12,12 +12,12 @@ All Api3 vaults share the same role structure and operational setup stewarded by
 
 ## Roles
 
-| Role      | Held by              |
-| --------- | -------------------- |
-| Owner     | Api3 Foundation Multisig    |
-| Curator   | Api3 Foundation Multisig    |
-| Allocator | Api3 Foundation Multisig    |
-| Guardian  | Api3 monitoring team |
+| Role      | Held by                  |
+| --------- | ------------------------ |
+| Owner     | Api3 Foundation Multisig |
+| Curator   | Api3 Foundation Multisig |
+| Allocator | Api3 Foundation Multisig |
+| Guardian  | Api3 monitoring team     |
 
 The Api3 Foundation Multisig holds the owner, curator, and allocator roles, consolidating governance and operational control under a single entity whose express mission is the development, operation, and maintenance of Api3 services and operations. Role names correspond to terminology in underlying smart contracts and protocols, and do not carry any legal nor other significance or meaning.
 
