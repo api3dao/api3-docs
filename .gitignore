@@ -1,7 +1,7 @@
 /.DS_Store/
 .DS_Store
-.idea
-.vscode
+.idea/
+.vscode/
 node_modules/
 
 docs/.vitepress/cache/

@@ -84,7 +84,8 @@ export default {
     },
     sidebar: {
       '/dapps/': require('../dapps/sidebar.js'),
-      '/oev-searchers/': require('../oev-searchers/sidebar.js'),
+      '/oev/': require('../oev/sidebar.js'),
+      '/curation/': require('../curation/sidebar.js'),
     },
     nav: nav(),
   },
@@ -99,9 +100,14 @@ function nav() {
       activeMatch: '/dapps/.*',
     },
     {
-      text: 'OEV Searchers',
-      link: '/oev-searchers/',
-      activeMatch: '/oev-searchers/.*',
+      text: 'OEV',
+      link: '/oev/',
+      activeMatch: '/oev/.*',
+    },
+    {
+      text: 'Curation',
+      link: '/curation/',
+      activeMatch: '/curation/.*',
     },
   ];
 }

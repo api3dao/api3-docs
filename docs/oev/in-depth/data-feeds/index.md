@@ -1,6 +1,6 @@
 ---
 title: Data feeds
-pageHeader: OEV Searchers → In Depth
+pageHeader: OEV → In Depth
 outline: deep
 ---
 
@@ -12,7 +12,7 @@ Searchers need a way to monitor real-time off-chain prices to find profitable
 opportunities. Traditionally, searchers have needed to buy API subscriptions
 from underlying oracle sources, creating additional friction in the process.
 Api3 simplifies this process by providing the same data that is used for
-updating data feeds to searchers publicly and without cost.
+updating data feeds to searchers publicly and without cost. But before that, one needs to understand how Api3 oracles work.
 
 ## How data feeds work?
 
@@ -112,14 +112,13 @@ not updated for a particular amount time.
 
 ::: warning ⚠️ Warning
 
-At the moment, we're working on major updates to the OEV mechanism. As part of this transition, there will be no public OEV Network and OEV Auctioneer. In the meantime, we're working with partnered searchers to continue seamless OEV recapture for our partnered dApps. These changes are transitional and will allow us to feature a more efficient OEV platform.
+Currently, OEV updates are possible only for the Api3 partnered searchers and not the general public.
 
 :::
 
 After a dAPI is updated, the changed value is reflected across all protocols
 that use the particular dAPI. We call these "base feed updates" to differentiate
-them from the OEV updates, which are dApp-specific. These are made by the
-searchers who win auctions on the OEV Network.
+them from the OEV updates, which are dApp-specific.
 
 For dApps, OEV is an extension to base feeds, supported by the Api3ReaderProxyV1
 contract. This contract is a simple proxy that reads the value either from the
@@ -130,29 +129,23 @@ base feed or the OEV feed, whichever is fresher.
 
 The OEV feed is specific to the dApp, and its update only reflects the price for
 the dApp that uses this proxy. This is accomplished by the proxy being tied to an
-immutable dApp ID field. This allows separate auctions to be held for each dApp.
-
-To guarantee searchers' exclusivity privilege to capture OEV, the base feed
-updates are delayed. Searchers bid for real-time data that can be used to update
-the OEV feed. By winning an auction, a searcher is guaranteed that the data is
-fresher than the base feed.
+immutable dApp ID field. This allows separate value capturing for each dApp.
 
 ::: info ℹ️ Info
 
-Base feed delay is accomplished by Signed APIs being configured to serve the signed data with 60s delay and provide a real-time version of this data, usable only for the auction winner. This design choice guarantees searchers the exclusive rights for data feeds update.
+Base feeds are configured to serve the signed data with a delay. This design choice guarantees searchers the exclusive rights for OEV update.
 
 :::
 
 ### OEV feed
 
-The OEV feed is derived from the base feed by changing its beacons to OEV
-beacons.
+The OEV feed is derived from the base feed by changing its beacons to "OEV
+beacons".
 
 An OEV beacon is derived from the base feed beacon by hashing its template ID
 using `keccak256`. This makes it possible to share the signed data for OEV
 beacons freely, because they cannot be used to update the base feed. The
-Api3ServerV1OevExtension contract allows them to be used only by the auction
-winner who has paid the adequate amount.
+Api3ServerV1OevExtension contract allows them to be used only with a valid signature and after paying the adequate auction amount.
 
 ::: info ℹ️ Example
 
@@ -193,9 +186,6 @@ to update any of the price feeds associated with this dApp ID. This ID is
 hardcoded in the OEV proxies of the dApp.
 
 The ID has no meaning other than to group proxies of the same dApp together.
-
-Searchers can derive the dApp ID from the information provided in the
-[OEV dApps catalog](/oev-searchers/in-depth/#oev-dapps) in two ways.
 
 #### Programmatically
 
@@ -414,8 +404,8 @@ Say the following is the output after decoding the data feed details:
 
 Signed APIs store the data pushed by Airnode feeds and expose them to the public
 via an API. As mentioned, base feed updates are delayed, permissionless and can be
-updated by anyone. The OEV feeds are real-time and can only be updated by the OEV auction winner.
-Api3 runs Signed APIs and makes them publicly available. They are deployed on
+updated by anyone. The OEV feeds are real-time and can only be updated by the Api3 partnered searchers.
+The Signed APIs are publicly available. They are deployed on
 AWS, ensuring maximum uptime and reliability.
 
 Signed APIs only support querying data for a particular Airnode feed at a time. The

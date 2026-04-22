@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const dappsSidebar = require('../docs/dapps/sidebar.js');
-const oevSearchersSidebar = require('../docs/oev-searchers/sidebar.js');
+const oevSidebar = require('../docs/oev/sidebar.js');
+const curationSidebar = require('../docs/curation/sidebar.js');
 
 const docsDir = path.join(__dirname, '..', 'docs');
 const staticDir = path.join(__dirname, '..', 'docs', 'public');
@@ -27,7 +28,8 @@ function generateLlmsTxt() {
 
   const sidebars = {
     dapps: dappsSidebar,
-    'oev-searchers': oevSearchersSidebar,
+    oev: oevSidebar,
+    curation: curationSidebar,
   };
 
   for (const key in sidebars) {
