@@ -73,6 +73,16 @@ While preserving the inherent voting power of the underlying COMP, this wrapper 
 
 The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, making the mechanism viable.
 
+### Accessing the vaults
+
+All three vaults are deployed on Ethereum mainnet and can be viewed and accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
+
+| Vault      | Address                                      | Link                                                                                                |
+| ---------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Api3 Core  | `0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b` | [View on Morpho](https://app.morpho.org/ethereum/vault/0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b)  |
+| Kabu       | `0x54210d3f1A066413891AF9E17210E787d5C6e3f4` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x54210d3f1A066413891AF9E17210E787d5C6e3f4)  |
+| Api3 dCOMP | `0x36cfe1568461E499391ef0A555300F1ae2da2439` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x36cfe1568461E499391ef0A555300F1ae2da2439)  |
+
 ## Fees
 
 Each Api3 vault charges a single **5% performance fee** on the interest earned from borrowers (see [vault architecture](/curation/roles-and-operations#vault-architecture)).

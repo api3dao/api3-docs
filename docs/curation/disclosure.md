@@ -38,7 +38,7 @@ Interacting with Api3-curated vaults involves significant risks. These include, 
 - **Market risk** — Collateral assets may experience extreme volatility or illiquidity, leading to bad debt in the underlying lending markets that cannot be fully liquidated.
 - **Smart contract risk** — Vulnerabilities or bugs in the Morpho Protocol, the collateral tokens, the oracle infrastructure, or any other contract in the stack may result in partial or total loss of funds.
 - **Oracle risk** — Although Api3 operates as the oracle provider for its own markets, oracle systems can fail, be manipulated, or behave unexpectedly during adverse market conditions.
-- **Parameter and governance risk** — Market configurations, supply caps, role assignments, and other parameters may be changed. Such changes may adversely affect vault performance or withdrawal availability.
+- **Parameter and governance risk** — Market configurations, supply caps, role assignments, and other parameters may be changed. Changes that increase risk to depositors, such as adding markets or raising supply caps, are subject to a timelock to ensure users have enough time to review the changes.
 - **Liquidity risk** — Under stressed market conditions, withdrawals may be temporarily delayed pending the availability of idle liquidity or successful rebalancing across markets.
 - **Regulatory risk** — Legal and regulatory treatment of vaults, tokenized positions, and DeFi lending may change in ways that adversely affect users.
 
