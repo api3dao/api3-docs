@@ -12,41 +12,37 @@ All Api3 vaults share the same role structure and operational setup stewarded by
 
 ## Roles
 
-| Role      | Held by                  |
-| --------- | ------------------------ |
-| Owner     | Api3 Foundation Multisig |
-| Curator   | Api3 Foundation Multisig |
-| Allocator | Api3 Foundation Multisig |
-| Guardian  | Api3 monitoring team     |
+| Role      | Held by                                          |
+| --------- | ------------------------------------------------ |
+| Owner     | Api3 Foundation Multisig                         |
+| Curator   | Api3 Foundation                                  |
+| Allocator | Api3 allocation bot and Api3 Foundation Multisig |
+| Sentinel  | Api3 monitoring team                             |
 
-The Api3 Foundation Multisig holds the owner, curator, and allocator roles, consolidating governance and operational control under a single entity whose express mission is the development, operation, and maintenance of Api3 services and operations. Role names correspond to terminology in underlying smart contracts and protocols, and do not carry any legal nor other significance or meaning.
+All four roles are controlled by Api3, consolidating governance and operational control under a single entity whose express mission is the development, operation, and maintenance of Api3 services and operations. The Api3 Foundation Multisig holds the owner role, which controls top-level permissions and appoints the curator and sentinels. The curator configures risk parameters - enabled markets, supply caps, fees, and interest rate limits. The allocator role, held by an automated Api3 bot alongside the multisig, moves capital between enabled markets. Role names correspond to terminology in underlying smart contracts and protocols, and do not carry any legal nor other significance or meaning.
 
-The guardian role is operated by the Api3 monitoring team, who can revoke pending actions in case of misconfiguration.
+The sentinel role is operated by the Api3 monitoring team, who can reactively reduce risk - deallocating assets, decreasing caps, or revoking pending timelocked actions - in case of misconfiguration or adverse market conditions.
 The monitoring team also maintains an emergency fund for manual liquidations in the event that automated liquidation bots fail. Api3 provides no guarantee of the effectiveness or sufficiency of such bots or emergency fund's operation.
 
 ## Vault architecture
 
-All Api3 vaults follow a two-layer architecture:
+Each Api3 vault is a [Morpho Vault V2](https://docs.morpho.org/learn/concepts/vault-v2/) that supplies USDC directly to a curated set of isolated Morpho markets:
 
 ```
-Depositor → V2 Vault → V1 Vault → Morpho Markets
+Depositor → Vault → Adapter → Morpho Markets
 ```
 
-1. **V2 Vault** — The user-facing vault where depositors supply USDC and receive vault shares. Configured with the Api3 role structure and governance controls described above.
+Depositors supply USDC to the vault and receive vault shares. The vault routes capital into the underlying Morpho markets through a market adapter, and the Api3 role structure and governance controls described above apply at the vault level. The 5% performance fee is charged here (see [Fees](/curation/#fees)).
 
-2. **V1 Vault** — The intermediary vault that executes the actual market allocations. The V1 vault holds two allocators:
-   - The **Morpho Public Allocator**, which enables permissionless reallocation to improve liquidity across markets.
-   - An **Api3 automated bot** that rebalances allocations to maintain a competitive APY across all enabled markets.
-
-The owner of the V1 vault parameter adjustment abilities is also the Api3 Foundation Multisig. The 5% performance fee is charged at this layer (see [Fees](/curation/#fees)).
+Changes that could increase risk to depositors - adding a market adapter or raising a supply cap - are subject to a 7-day timelock, giving depositors advance notice before they take effect. The sentinel can act immediately to reduce risk.
 
 ## Allocation and rebalancing
 
 Capital allocation across markets is automated.
 The Api3 allocation bot monitors market conditions and rebalances the vault's positions to maintain target utilization and competitive APY.
-The Morpho Public Allocator complements this by enabling permissionless reallocation when liquidity is needed.
+When an enabled market lacks borrowing demand, the bot can supply the vault's otherwise-idle USDC to a deep, blue-chip market (such as wstETH/USDC) so that it continues to earn yield.
 
-A portion of vault deposits is kept idle to assist with depositor withdrawals and mitigate delays, but does not guarantee delay-free withdrawal.
+A portion of vault liquidity is kept readily withdrawable to assist with depositor withdrawals and mitigate delays. In addition, the Vault V2 design lets anyone permissionlessly pull supplied liquidity back from a market into the vault - a forced deallocation, subject to a small penalty - when liquidity is needed. Neither mechanism guarantees delay-free withdrawal.
 
 ## Monitoring
 
