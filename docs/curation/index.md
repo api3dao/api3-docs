@@ -50,7 +50,7 @@ All vaults share the same [role structure](/curation/roles-and-operations) and [
 | ------------------------------ | ----- | ---------------------------------- | -------------------------------------------- |
 | [Api3&nbsp;Core](#api3-core)   | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC                                |
 | [Kabu](#kabu)                  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
-| [Api3&nbsp;dCOMP](#api3-dcomp) | USDC  | Single dCOMP collateral market     | dCOMP                                        |
+| [Api3&nbsp;dCOMP](#api3-dcomp) | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
 
 ### Api3 Core
 
@@ -67,7 +67,7 @@ Given the higher volatility and lower liquidity of these assets compared to blue
 
 ### Api3 dCOMP
 
-Api3 dCOMP is a single-market vault collateralized by [dCOMP](https://github.com/api3dao/dcomp) — a lightweight, ownable wrapper for the COMP governance token configured with a specific delegate.
+Api3 dCOMP is a vault built around a dedicated lending market collateralized by [dCOMP](https://github.com/api3dao/dcomp) — a lightweight, ownable wrapper for the COMP governance token configured with a specific delegate.
 
 While preserving the inherent voting power of the underlying COMP, this wrapper allows the owner to reassign the delegated address. Users can wrap their COMP to receive dCOMP tokens, which can then be deposited as collateral. By wrapping COMP into dCOMP, users can effectively amplify the voting power of the designated delegate.
 
@@ -75,12 +75,12 @@ The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, ma
 
 ## Fees
 
-All Api3 vaults use a V1 vault as an intermediary layer that handles the actual market allocations (see [vault architecture](/curation/roles-and-operations#vault-architecture)).
-A **5% performance fee** on earned interest is charged at the V1 vault layer. This is the only fee — the V2 (user-facing) vault charges nothing additional.
+Each Api3 vault charges a single **5% performance fee** on the interest earned from borrowers (see [vault architecture](/curation/roles-and-operations#vault-architecture)).
+There is no management fee on assets under management.
 
-| Layer    | Fee type        | Amount |
-| -------- | --------------- | ------ |
-| V2 Vault | Performance fee | 0%     |
-| V1 Vault | Performance fee | 5%     |
+| Fee type        | Amount |
+| --------------- | ------ |
+| Performance fee | 5%     |
+| Management fee  | 0%     |
 
-The fee is charged only on interest earned from borrowers, not on deposited principal.
+The performance fee is charged only on interest earned from borrowers, not on deposited principal.
