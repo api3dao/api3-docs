@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.34.4",
   "engines": {
-    "pnpm": "^10.26.2"
+    "pnpm": "^10.34.4"
   },
   "resolutions": {},
   "scripts": {
@@ -21,7 +21,7 @@
     "firebase:emulator": "pnpm docs:build; firebase emulators:start"
   },
   "devDependencies": {
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.13.2",
     "axios": "^1.16.1",
     "colors": "^1.4.0",
     "file": "^0.2.2",
