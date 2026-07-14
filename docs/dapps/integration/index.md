@@ -182,15 +182,15 @@ If you want to see what happens under the hood, you can click "Verified," which 
 
 ```json
 {
-  "stage": "aws",
-  "version": "3.0.1",
-  "currentTimestamp": "1740583493",
-  "deploymentTimestamp": "1739870993",
-  "configHash": "0xbd159fb423d5eef7abd7947cf8ad1731f0c60cc2e093877837988907580539c9",
-  "certifiedAirnodes": ["0xf19572194e6aD6d84666906D5287e2c9427655C2"]
+  "stage": "production",
+  "version": "4.5.0",
+  "currentTimestamp": "1784020220",
+  "deploymentTimestamp": "1783579600",
+  "configHash": "0x2e55b08ec13ce549a02e86ec14a9855b8e7395e6fe607fd914acd5177c867ff8",
+  "certifiedAirnodes": ["0x9dB03a07bE313B3C08261B1d1606D511f3560D9e"]
 }
 ```
 
 We know that CoinGecko is a reputable API provider, they own the `coingecko.com` domain, and this response comes from that domain.
-`certifiedAirnodes` is the list of addresses of the accounts that CoinGecko uses to sign its data (only `0xf19572194e6aD6d84666906D5287e2c9427655C2` in this case), and the Market frontend confirms that the respective data feed is configured to use data signed by one of these certified accounts.
-Finally, all recent data points signed by CoinGecko can be fetched directly from them through https://signed-api.coingecko.com/public/0xf19572194e6aD6d84666906D5287e2c9427655C2.
+`certifiedAirnodes` is the list of addresses of the accounts that CoinGecko uses to sign its data (only `0x9dB03a07bE313B3C08261B1d1606D511f3560D9e` in this case), and the Market frontend confirms that the respective data feed is configured to use data signed by one of these certified accounts.
+Finally, all recent data points signed by CoinGecko can be fetched directly from them through https://signed-api.coingecko.com/public/0x9dB03a07bE313B3C08261B1d1606D511f3560D9e.

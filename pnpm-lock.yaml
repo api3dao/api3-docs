@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: ^24.9.2
-        version: 24.9.2
+        specifier: ^24.13.2
+        version: 24.13.2
       axios:
         specifier: ^1.16.1
         version: 1.16.1
@@ -37,10 +37,10 @@ importers:
         version: 3.8.3
       vitepress:
         specifier: 1.6.4
-        version: 1.6.4(@algolia/client-search@5.20.4)(@types/node@24.9.2)(axios@1.16.1)(postcss@8.5.6)(search-insights@2.16.2)(typescript@5.9.2)
+        version: 1.6.4(@algolia/client-search@5.20.4)(@types/node@24.13.2)(axios@1.16.1)(postcss@8.5.6)(search-insights@2.16.2)(typescript@5.9.2)
       vitest:
         specifier: ^4.1.7
-        version: 4.1.7(@types/node@24.9.2)(vite@7.1.12(@types/node@24.9.2))
+        version: 4.1.7(@types/node@24.13.2)(vite@7.1.12(@types/node@24.13.2))
       walk-sync:
         specifier: ^4.0.2
         version: 4.0.2
@@ -737,8 +737,8 @@ packages:
   '@types/minimatch@3.0.5':
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
 
-  '@types/node@24.9.2':
-    resolution: {integrity: sha512-uWN8YqxXxqFMX2RqGOrumsKeti4LlmIMIyV0lgut4jx7KQBcBiW6vkDtIBvHnHIquwNfJhk8v2OtmO8zXWHfPA==}
+  '@types/node@24.13.2':
+    resolution: {integrity: sha512-fRa09kZTgu8o71KFcDjUFuc7F+dEbZYZmkI0mg5YBTRs0yMKjYHsq/c0urDKeDb+D5qVgXOdFcuu+DZPKOITwA==}
 
   '@types/unist@3.0.2':
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
@@ -1365,8 +1365,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+  undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
   undici@6.19.7:
     resolution: {integrity: sha512-HR3W/bMGPSr90i8AAp2C4DM3wChFdJPLrWYpIS++LxS8K+W535qftjt+4MyjNYHeWabMj1nvtmLIi7l++iq91A==}
@@ -2041,9 +2041,9 @@ snapshots:
 
   '@types/minimatch@3.0.5': {}
 
-  '@types/node@24.9.2':
+  '@types/node@24.13.2':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.18.2
 
   '@types/unist@3.0.2': {}
 
@@ -2051,9 +2051,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@24.9.2))(vue@3.5.13(typescript@5.9.2))':
+  '@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@24.13.2))(vue@3.5.13(typescript@5.9.2))':
     dependencies:
-      vite: 5.4.14(@types/node@24.9.2)
+      vite: 5.4.14(@types/node@24.13.2)
       vue: 3.5.13(typescript@5.9.2)
 
   '@vitest/expect@4.1.7':
@@ -2065,13 +2065,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.7(vite@7.1.12(@types/node@24.9.2))':
+  '@vitest/mocker@4.1.7(vite@7.1.12(@types/node@24.13.2))':
     dependencies:
       '@vitest/spy': 4.1.7
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.1.12(@types/node@24.9.2)
+      vite: 7.1.12(@types/node@24.13.2)
 
   '@vitest/pretty-format@4.1.7':
     dependencies:
@@ -2792,7 +2792,7 @@ snapshots:
   typescript@5.9.2:
     optional: true
 
-  undici-types@7.16.0: {}
+  undici-types@7.18.2: {}
 
   undici@6.19.7: {}
 
@@ -2831,16 +2831,16 @@ snapshots:
       '@types/unist': 3.0.2
       vfile-message: 4.0.2
 
-  vite@5.4.14(@types/node@24.9.2):
+  vite@5.4.14(@types/node@24.13.2):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.49
       rollup: 4.24.0
     optionalDependencies:
-      '@types/node': 24.9.2
+      '@types/node': 24.13.2
       fsevents: 2.3.3
 
-  vite@7.1.12(@types/node@24.9.2):
+  vite@7.1.12(@types/node@24.13.2):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2849,10 +2849,10 @@ snapshots:
       rollup: 4.52.5
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.9.2
+      '@types/node': 24.13.2
       fsevents: 2.3.3
 
-  vitepress@1.6.4(@algolia/client-search@5.20.4)(@types/node@24.9.2)(axios@1.16.1)(postcss@8.5.6)(search-insights@2.16.2)(typescript@5.9.2):
+  vitepress@1.6.4(@algolia/client-search@5.20.4)(@types/node@24.13.2)(axios@1.16.1)(postcss@8.5.6)(search-insights@2.16.2)(typescript@5.9.2):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.20.4)(search-insights@2.16.2)
@@ -2861,7 +2861,7 @@ snapshots:
       '@shikijs/transformers': 2.5.0
       '@shikijs/types': 2.5.0
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.2.1(vite@5.4.14(@types/node@24.9.2))(vue@3.5.13(typescript@5.9.2))
+      '@vitejs/plugin-vue': 5.2.1(vite@5.4.14(@types/node@24.13.2))(vue@3.5.13(typescript@5.9.2))
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.8.2(typescript@5.9.2)
@@ -2870,7 +2870,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.1.2
       shiki: 2.5.0
-      vite: 5.4.14(@types/node@24.9.2)
+      vite: 5.4.14(@types/node@24.13.2)
       vue: 3.5.13(typescript@5.9.2)
     optionalDependencies:
       postcss: 8.5.6
@@ -2901,10 +2901,10 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vitest@4.1.7(@types/node@24.9.2)(vite@7.1.12(@types/node@24.9.2)):
+  vitest@4.1.7(@types/node@24.13.2)(vite@7.1.12(@types/node@24.13.2)):
     dependencies:
       '@vitest/expect': 4.1.7
-      '@vitest/mocker': 4.1.7(vite@7.1.12(@types/node@24.9.2))
+      '@vitest/mocker': 4.1.7(vite@7.1.12(@types/node@24.13.2))
       '@vitest/pretty-format': 4.1.7
       '@vitest/runner': 4.1.7
       '@vitest/snapshot': 4.1.7
@@ -2921,10 +2921,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
-      vite: 7.1.12(@types/node@24.9.2)
+      vite: 7.1.12(@types/node@24.13.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.9.2
+      '@types/node': 24.13.2
     transitivePeerDependencies:
       - msw
 
