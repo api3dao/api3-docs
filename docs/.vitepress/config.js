@@ -49,9 +49,7 @@ export default {
           /**
            * @type {Pick<import('minisearch').Options, 'extractField' | 'tokenize' | 'processTerm'>}
            */
-          options: {
-            /* ... */
-          },
+          options: {/* ... */},
           /**
            * @type {import('minisearch').SearchOptions}
            * @default
