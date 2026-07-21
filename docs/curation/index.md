@@ -48,7 +48,7 @@ All vaults share the same [role structure](/curation/roles-and-operations) and [
 
 | Vault                          | Network   | Asset | Strategy                           | Collateral                                   |
 | ------------------------------ | --------- | ----- | ---------------------------------- | -------------------------------------------- |
-| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC                                |
+| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC, kBTC                          |
 | [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
 | [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
 | [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      | PEPE, SPX6900, SHIB                          |
@@ -57,7 +57,7 @@ All vaults share the same [role structure](/curation/roles-and-operations) and [
 ### Api3 Core
 
 Api3 Core is Api3's flagship conservative vault.
-It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH) and cbBTC (Coinbase wrapped BTC).
+It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH), cbBTC (Coinbase wrapped BTC), and kBTC (Kraken wrapped BTC).
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
 
