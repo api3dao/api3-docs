@@ -26,7 +26,7 @@ Api3 also lists assets that are unique on the market to fill gaps in the lending
 
 ## Supply caps
 
-Each enabled market is assigned a supply cap that limits the maximum amount of USDC the vault can allocate to that market.
+Each enabled market is assigned a supply cap that limits the maximum amount the vault can allocate to that market.
 Supply caps are set according to Api3's internal risk guidelines and are calibrated based on:
 
 - The collateral asset's on-chain liquidity depth
