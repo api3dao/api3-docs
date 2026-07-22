@@ -43,7 +43,7 @@ The OEV captured during volatile periods more than compensates, providing Api3 w
 
 ## Vaults
 
-Api3 operates five vaults across Ethereum mainnet and the Robinhood chain.
+Api3 operates multiple vaults across Ethereum mainnet and the Robinhood chain.
 All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework](/curation/risk-management).
 
 | Vault                          | Network   | Asset | Strategy                           | Collateral                                   |
@@ -86,7 +86,7 @@ These markets are surfaced to borrowers through [Purinta app](https://purinta.xy
 
 ### Accessing the vaults
 
-All five vaults can be viewed and accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
+Each of the vaults can be also accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
 
 | Vault           | Network   | Address                                      | Link                                                                                                                   |
 | --------------- | --------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
