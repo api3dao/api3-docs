@@ -26,13 +26,13 @@ The monitoring team also maintains an emergency fund for manual liquidations in 
 
 ## Vault architecture
 
-Each Api3 vault is a [Morpho Vault V2](https://docs.morpho.org/learn/concepts/vault-v2/) that supplies USDC directly to a curated set of isolated Morpho markets:
+Each Api3 vault is a [Morpho Vault V2](https://docs.morpho.org/learn/concepts/vault-v2/) that supplies the assets directly to a curated set of isolated Morpho markets:
 
 ```
 Depositor → Vault → Adapter → Morpho Markets
 ```
 
-Depositors supply USDC to the vault and receive vault shares. The vault routes capital into the underlying Morpho markets through a market adapter, and the Api3 role structure and governance controls described above apply at the vault level. The 5% performance fee is charged here (see [Fees](/curation/#fees)).
+Depositors supply the vault's asset (such as USDC) and receive vault shares. The vault routes capital into the underlying Morpho markets through a market adapter, and the Api3 role structure and governance controls described above apply at the vault level. The 5% performance fee is charged here (see [Fees](/curation/#fees)).
 
 Changes that could increase risk to depositors - adding a market adapter or raising a supply cap - are subject to a 7-day timelock, giving depositors advance notice before they take effect. The sentinel can act immediately to reduce risk.
 
@@ -40,7 +40,7 @@ Changes that could increase risk to depositors - adding a market adapter or rais
 
 Capital allocation across markets is automated.
 The Api3 allocation bot monitors market conditions and rebalances the vault's positions to maintain target utilization and competitive APY.
-When an enabled market lacks borrowing demand, the bot can supply the vault's otherwise-idle USDC to a deep, blue-chip market (such as wstETH/USDC) so that it continues to earn yield.
+When an enabled market lacks borrowing demand, the bot can supply the vault's otherwise-idle assets to a deep, blue-chip market (such as wstETH/USDC) so that they continue to earn yield.
 
 A portion of vault liquidity is kept readily withdrawable to assist with depositor withdrawals and mitigate delays. In addition, the Vault V2 design lets anyone permissionlessly pull supplied liquidity back from a market into the vault - a forced deallocation, subject to a small penalty - when liquidity is needed. Neither mechanism guarantees delay-free withdrawal.
 

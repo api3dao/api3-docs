@@ -13,7 +13,7 @@ Morpho is a permissionless protocol that allows anyone to create isolated lendin
 Morpho Vaults aggregate deposits and allocate them across these markets, abstracting the complexity of individual market selection for depositors.
 
 As a curator, Api3 selects lending markets, manages risk parameters, and allocates capital to generate yield for vault depositors.
-Api3 operates a set of USDC vaults on Ethereum mainnet, each targeting different markets and strategies.
+Api3 operates a set of vaults across multiple networks, each targeting different markets and strategies.
 
 ::: info 💡 Tip
 
@@ -43,19 +43,21 @@ The OEV captured during volatile periods more than compensates, providing Api3 w
 
 ## Vaults
 
-Api3 operates three USDC vaults on Ethereum mainnet.
+Api3 operates multiple vaults across Ethereum mainnet and the Robinhood chain.
 All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework](/curation/risk-management).
 
-| Vault                          | Asset | Strategy                           | Collateral                                   |
-| ------------------------------ | ----- | ---------------------------------- | -------------------------------------------- |
-| [Api3&nbsp;Core](#api3-core)   | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC                                |
-| [Kabu](#kabu)                  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
-| [Api3&nbsp;dCOMP](#api3-dcomp) | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
+| Vault                          | Network   | Asset | Strategy                           | Collateral                                   |
+| ------------------------------ | --------- | ----- | ---------------------------------- | -------------------------------------------- |
+| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC, kBTC                          |
+| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
+| [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
+| [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      | PEPE, SPX6900, SHIB                          |
+| [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets      | CASHCAT                                      |
 
 ### Api3 Core
 
 Api3 Core is Api3's flagship conservative vault.
-It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH) and cbBTC (Coinbase wrapped BTC).
+It supplies USDC to lending markets backed by blue-chip collateral assets — wstETH (Lido wrapped staked ETH), cbBTC (Coinbase wrapped BTC), and kBTC (Kraken wrapped BTC).
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
 
@@ -73,15 +75,26 @@ While preserving the inherent voting power of the underlying COMP, this wrapper 
 
 The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, making the mechanism viable.
 
+### Purinta
+
+Purinta is a pair of meme token lending vaults curated by Api3: a USDC vault on Ethereum mainnet and a USDG vault on the Robinhood chain.
+Each supplies the borrow-side liquidity for a set of isolated meme token markets — PEPE, SPX6900 and SHIB on Ethereum, and CASHCAT on Robinhood.
+
+Meme tokens are more volatile and higher-risk than blue-chip collateral, so a market is only listed when its token has enough on-chain liquidity to support healthy swaps and liquidations. Supply caps and LLTVs are configured conservatively to limit that exposure.
+
+These markets are surfaced to borrowers through [Purinta app](https://purinta.xyz), a meme token lending interface.
+
 ### Accessing the vaults
 
-All three vaults are deployed on Ethereum mainnet and can be viewed and accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
+Each of the vaults can be also accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
 
-| Vault      | Address                                      | Link                                                                                                               |
-| ---------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Api3 Core  | `0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b` | [View on Morpho](https://app.morpho.org/ethereum/vault/0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b/api3-core-usdc)  |
-| Kabu       | `0x54210d3f1A066413891AF9E17210E787d5C6e3f4` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x54210d3f1A066413891AF9E17210E787d5C6e3f4/kabu-usdc)       |
-| Api3 dCOMP | `0x36cfe1568461E499391ef0A555300F1ae2da2439` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x36cfe1568461E499391ef0A555300F1ae2da2439/api3-dcomp-usdc) |
+| Vault           | Network   | Address                                      | Link                                                                                                                   |
+| --------------- | --------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Api3&nbsp;Core  | Ethereum  | `0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b` | [View on Morpho](https://app.morpho.org/ethereum/vault/0xe2221Aa07ec3266DA87763E2b1e28d07A8a4e53b/api3-core-usdc)      |
+| Kabu            | Ethereum  | `0x54210d3f1A066413891AF9E17210E787d5C6e3f4` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x54210d3f1A066413891AF9E17210E787d5C6e3f4/kabu-usdc)           |
+| Api3&nbsp;dCOMP | Ethereum  | `0x36cfe1568461E499391ef0A555300F1ae2da2439` | [View on Morpho](https://app.morpho.org/ethereum/vault/0x36cfe1568461E499391ef0A555300F1ae2da2439/api3-dcomp-usdc)     |
+| Purinta         | Ethereum  | `0xc92A37Fd0250F4eecF092960a2F70A1334217528` | [View on Morpho](https://app.morpho.org/ethereum/vault/0xc92A37Fd0250F4eecF092960a2F70A1334217528/purinta-usdc)        |
+| Purinta         | Robinhood | `0x37788ff0c1d4e45A7FE06BC7e71e0cc00121d0A8` | [View on Morpho](https://app.morpho.org/robinhood-chain/vault/0x37788ff0c1d4e45A7FE06BC7e71e0cc00121d0A8/purinta-usdg) |
 
 ## Fees
 
