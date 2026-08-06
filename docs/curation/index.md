@@ -66,11 +66,11 @@ It supplies USDC to lending markets backed by blue-chip collateral — Lido wrap
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
 
-| Market                                                                                                                     | LLTV | Supply cap |
-| -------------------------------------------------------------------------------------------------------------------------- | ---- | ---------- |
-| [wstETH / USDC](https://app.morpho.org/ethereum/market/0x6d2fba32b8649d92432d036c16aa80779034b7469b63abc259b17678857f31c2) | 86%  | 10M USDC   |
-| [cbBTC / USDC](https://app.morpho.org/ethereum/market/0xba3ba077d9c838696b76e29a394ae9f0d1517a372e30fd9a0fc19c516fb4c5a7)  | 86%  | 10M USDC   |
-| [kBTC / USDC](https://app.morpho.org/ethereum/market/0x7f1224a8598b97a8455d298bd58b0f720f1b4f19a815198b8cdecc9feedada93)   | 86%  | 1M USDC    |
+| Market                                                                                                                     | Market ID         | LLTV | Supply cap |
+| -------------------------------------------------------------------------------------------------------------------------- | ----------------- | ---- | ---------- |
+| [wstETH / USDC](https://app.morpho.org/ethereum/market/0x6d2fba32b8649d92432d036c16aa80779034b7469b63abc259b17678857f31c2) | `0x6d2fba32…31c2` | 86%  | 10M USDC   |
+| [cbBTC / USDC](https://app.morpho.org/ethereum/market/0xba3ba077d9c838696b76e29a394ae9f0d1517a372e30fd9a0fc19c516fb4c5a7)  | `0xba3ba077…c5a7` | 86%  | 10M USDC   |
+| [kBTC / USDC](https://app.morpho.org/ethereum/market/0x7f1224a8598b97a8455d298bd58b0f720f1b4f19a815198b8cdecc9feedada93)   | `0x7f1224a8…da93` | 86%  | 1M USDC    |
 
 ### Kabu
 
@@ -80,24 +80,24 @@ Given the higher volatility and lower liquidity of these assets compared to blue
 
 **Ethereum (USDC)**
 
-| Market                                                                                                                     | LLTV  | Supply cap |
-| -------------------------------------------------------------------------------------------------------------------------- | ----- | ---------- |
-| [MORPHO / USDC](https://app.morpho.org/ethereum/market/0x6d95bf5fad1b0427205ee2b595f80b52e22394173de0832efa79fde88abb8525) | 62.5% | 2M USDC    |
-| [EIGEN / USDC](https://app.morpho.org/ethereum/market/0x6d1dae6238f6f296abb77d9e17a8429132458146bc89d1d2b20516b87a40dee7)  | 62.5% | 1M USDC    |
-| [ONDO / USDC](https://app.morpho.org/ethereum/market/0x7dea3baf843210ce0a4a9e6374cea47dcd55384fb36d2d701e69b221867b39e5)   | 62.5% | 1M USDC    |
-| [BAL / USDC](https://app.morpho.org/ethereum/market/0xf57808b9489bcbe7e7c67fd5227b0a4267a384ebb80301a097e4fa1f3fcb3234)    | 62.5% | 250k USDC  |
-| [SYRUP / USDC](https://app.morpho.org/ethereum/market/0x38fa7d75c15a0f11cc46e2d1987a05c26a836d0da6b4430657ec5ece38a25a45)  | 62.5% | 200k USDC  |
-| [COMP / USDC](https://app.morpho.org/ethereum/market/0x9b966d26e14749cdf3be6fcf44ef404f1428b3c2f8c9e9a5172437e440597715)   | 62.5% | 100k USDC  |
-| [FLUID / USDC](https://app.morpho.org/ethereum/market/0xaf53761f4931911877474ab8c7ff856987207ee7ec15e8513ff9cf86939229a0)  | 62.5% | 60k USDC   |
+| Market                                                                                                                     | Market ID         | LLTV  | Supply cap |
+| -------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
+| [MORPHO / USDC](https://app.morpho.org/ethereum/market/0x6d95bf5fad1b0427205ee2b595f80b52e22394173de0832efa79fde88abb8525) | `0x6d95bf5f…8525` | 62.5% | 2M USDC    |
+| [EIGEN / USDC](https://app.morpho.org/ethereum/market/0x6d1dae6238f6f296abb77d9e17a8429132458146bc89d1d2b20516b87a40dee7)  | `0x6d1dae62…dee7` | 62.5% | 1M USDC    |
+| [ONDO / USDC](https://app.morpho.org/ethereum/market/0x7dea3baf843210ce0a4a9e6374cea47dcd55384fb36d2d701e69b221867b39e5)   | `0x7dea3baf…39e5` | 62.5% | 1M USDC    |
+| [BAL / USDC](https://app.morpho.org/ethereum/market/0xf57808b9489bcbe7e7c67fd5227b0a4267a384ebb80301a097e4fa1f3fcb3234)    | `0xf57808b9…3234` | 62.5% | 250k USDC  |
+| [SYRUP / USDC](https://app.morpho.org/ethereum/market/0x38fa7d75c15a0f11cc46e2d1987a05c26a836d0da6b4430657ec5ece38a25a45)  | `0x38fa7d75…5a45` | 62.5% | 200k USDC  |
+| [COMP / USDC](https://app.morpho.org/ethereum/market/0x9b966d26e14749cdf3be6fcf44ef404f1428b3c2f8c9e9a5172437e440597715)   | `0x9b966d26…7715` | 62.5% | 100k USDC  |
+| [FLUID / USDC](https://app.morpho.org/ethereum/market/0xaf53761f4931911877474ab8c7ff856987207ee7ec15e8513ff9cf86939229a0)  | `0xaf53761f…29a0` | 62.5% | 60k USDC   |
 
 **Base (WETH)**
 
-| Market                                                                                                                  | LLTV  | Supply cap |
-| ----------------------------------------------------------------------------------------------------------------------- | ----- | ---------- |
-| [AERO / WETH](https://app.morpho.org/base/market/0x17cbb67e84acfbaf2a3b73f9fe697d9503a8fd2fce30f851429726fa04bc5afe)    | 77%   | 350 WETH   |
-| [VVV / WETH](https://app.morpho.org/base/market/0xa84351c9d5be1d05f6b2d93df58ff8764ba54b70daa6c41529278ac4d1bc3c5b)     | 62.5% | 110 WETH   |
-| [MORPHO / WETH](https://app.morpho.org/base/market/0x71511d934dddf124c73b7d7328e2ed4a7d13deeecf9ef061dad924a56b72a87f)  | 77%   | 80 WETH    |
-| [VIRTUAL / WETH](https://app.morpho.org/base/market/0x23c2ad09b57469016831bc5ff9b13a7ddfc559698b42876d3625298e6dd7ef9d) | 77%   | 55 WETH    |
+| Market                                                                                                                  | Market ID         | LLTV  | Supply cap |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
+| [AERO / WETH](https://app.morpho.org/base/market/0x17cbb67e84acfbaf2a3b73f9fe697d9503a8fd2fce30f851429726fa04bc5afe)    | `0x17cbb67e…5afe` | 77%   | 350 WETH   |
+| [VVV / WETH](https://app.morpho.org/base/market/0xa84351c9d5be1d05f6b2d93df58ff8764ba54b70daa6c41529278ac4d1bc3c5b)     | `0xa84351c9…3c5b` | 62.5% | 110 WETH   |
+| [MORPHO / WETH](https://app.morpho.org/base/market/0x71511d934dddf124c73b7d7328e2ed4a7d13deeecf9ef061dad924a56b72a87f)  | `0x71511d93…a87f` | 77%   | 80 WETH    |
+| [VIRTUAL / WETH](https://app.morpho.org/base/market/0x23c2ad09b57469016831bc5ff9b13a7ddfc559698b42876d3625298e6dd7ef9d) | `0x23c2ad09…ef9d` | 77%   | 55 WETH    |
 
 ### Api3 dCOMP
 
@@ -107,9 +107,9 @@ While preserving the inherent voting power of the underlying COMP, this wrapper 
 
 The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, making the mechanism viable.
 
-| Market                                                                                                                    | LLTV  | Supply cap |
-| ------------------------------------------------------------------------------------------------------------------------- | ----- | ---------- |
-| [dCOMP / USDC](https://app.morpho.org/ethereum/market/0x24852d8d7464402ddcd717415e009d42bf7427d6a8893487f83c75ee0f4a0ea6) | 62.5% | 10M USDC   |
+| Market                                                                                                                    | Market ID         | LLTV  | Supply cap |
+| ------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
+| [dCOMP / USDC](https://app.morpho.org/ethereum/market/0x24852d8d7464402ddcd717415e009d42bf7427d6a8893487f83c75ee0f4a0ea6) | `0x24852d8d…0ea6` | 62.5% | 10M USDC   |
 
 ### Purinta
 
@@ -120,17 +120,17 @@ Meme tokens are more volatile and higher-risk than blue-chip collateral, so a ma
 
 **Ethereum (USDC)**
 
-| Market                                                                                                                      | LLTV  | Supply cap |
-| --------------------------------------------------------------------------------------------------------------------------- | ----- | ---------- |
-| [PEPE / USDC](https://app.morpho.org/ethereum/market/0xde2bb82278de27e7851625e2d7c25280adc6d499c000cc6904eb0ab29124a481)    | 62.5% | 1M USDC    |
-| [SPX6900 / USDC](https://app.morpho.org/ethereum/market/0x31a277fde40c1bd37dd00cb2167fe1d5831b450efecc63323679228a101e9979) | 62.5% | 500k USDC  |
-| [SHIB / USDC](https://app.morpho.org/ethereum/market/0x87753839ac836a59dd13f66ea6ea5481ba2374ae76dfdfbe8c4861e835833646)    | 62.5% | 80k USDC   |
+| Market                                                                                                                      | Market ID         | LLTV  | Supply cap |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
+| [PEPE / USDC](https://app.morpho.org/ethereum/market/0xde2bb82278de27e7851625e2d7c25280adc6d499c000cc6904eb0ab29124a481)    | `0xde2bb822…a481` | 62.5% | 1M USDC    |
+| [SPX6900 / USDC](https://app.morpho.org/ethereum/market/0x31a277fde40c1bd37dd00cb2167fe1d5831b450efecc63323679228a101e9979) | `0x31a277fd…9979` | 62.5% | 500k USDC  |
+| [SHIB / USDC](https://app.morpho.org/ethereum/market/0x87753839ac836a59dd13f66ea6ea5481ba2374ae76dfdfbe8c4861e835833646)    | `0x87753839…3646` | 62.5% | 80k USDC   |
 
 **Robinhood (USDG)**
 
-| Market                                                                                                                             | LLTV  | Supply cap |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ----- | ---------- |
-| [CASHCAT / USDG](https://app.morpho.org/robinhood-chain/market/0x039503b6308d6d818d181e626d3fbc667d6e68393c3d74332a6124cd2dd6e755) | 38.5% | 500k USDG  |
+| Market                                                                                                                             | Market ID         | LLTV  | Supply cap |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
+| [CASHCAT / USDG](https://app.morpho.org/robinhood-chain/market/0x039503b6308d6d818d181e626d3fbc667d6e68393c3d74332a6124cd2dd6e755) | `0x039503b6…e755` | 38.5% | 500k USDG  |
 
 These markets are surfaced to borrowers through [Purinta app](https://purinta.xyz), a meme token lending interface.
 
@@ -144,11 +144,11 @@ It also holds whatever the collateral markets cannot currently absorb, so that l
 
 Because this market is a yield destination for unallocated liquidity, not part of a vault's collateral strategy, it is listed separately from the tables above.
 
-| Vault                                          | Network   | Market                                                                                                                          | LLTV  |
-| ---------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| Api3&nbsp;Core, Kabu, Api3&nbsp;dCOMP, Purinta | Ethereum  | [wstETH / USDC](https://app.morpho.org/ethereum/market/0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc)      | 86%   |
-| Kabu                                           | Base      | [wstETH / WETH](https://app.morpho.org/base/market/0x3a4048c64ba1b375330d376b1ce40e4047d03b47ab4d48af484edec9fec801ba)          | 94.5% |
-| Purinta                                        | Robinhood | [USDe / USDG](https://app.morpho.org/robinhood-chain/market/0xc845da65a020ddca5f132efa8fea79676d8edfdea504226a4c01e7a9e34cddd6) | 91.5% |
+| Vault                                             | Network   | Market                                                                                                                          | Market ID         | LLTV  |
+| ------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- |
+| Api3&nbsp;Core, Kabu,<br>Api3&nbsp;dCOMP, Purinta | Ethereum  | [wstETH / USDC](https://app.morpho.org/ethereum/market/0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc)      | `0xb323495f…86cc` | 86%   |
+| Kabu                                              | Base      | [wstETH / WETH](https://app.morpho.org/base/market/0x3a4048c64ba1b375330d376b1ce40e4047d03b47ab4d48af484edec9fec801ba)          | `0x3a4048c6…01ba` | 94.5% |
+| Purinta                                           | Robinhood | [USDe / USDG](https://app.morpho.org/robinhood-chain/market/0xc845da65a020ddca5f132efa8fea79676d8edfdea504226a4c01e7a9e34cddd6) | `0xc845da65…ddd6` | 91.5% |
 
 ### Accessing the vaults
 
