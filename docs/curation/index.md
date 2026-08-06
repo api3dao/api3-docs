@@ -134,7 +134,7 @@ Meme tokens are more volatile and higher-risk than blue-chip collateral, so a ma
 
 These markets are surfaced to borrowers through [Purinta app](https://purinta.xyz), a meme token lending interface.
 
-### Liquidity adapter
+## Liquidity adapter
 
 Alongside its collateral markets, each vault designates one deep, blue-chip market as its **liquidity adapter**, which serves two purposes.
 
@@ -150,7 +150,7 @@ Because this market is a yield destination for unallocated liquidity, not part o
 | Kabu                                              | Base      | [wstETH / WETH](https://app.morpho.org/base/market/0x3a4048c64ba1b375330d376b1ce40e4047d03b47ab4d48af484edec9fec801ba)          | `0x3a4048c6…01ba` | 94.5% |
 | Purinta                                           | Robinhood | [USDe / USDG](https://app.morpho.org/robinhood-chain/market/0xc845da65a020ddca5f132efa8fea79676d8edfdea504226a4c01e7a9e34cddd6) | `0xc845da65…ddd6` | 91.5% |
 
-### Accessing the vaults
+## Accessing the vaults
 
 Each of the vaults can be also accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
 
