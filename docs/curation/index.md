@@ -49,19 +49,21 @@ All vaults share the same [role structure](/curation/roles-and-operations) and [
 | Vault                          | Network   | Asset | Strategy                           | Collateral                                   |
 | ------------------------------ | --------- | ----- | ---------------------------------- | -------------------------------------------- |
 | [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC, kBTC                          |
-| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          | COMP, MORPHO, EIGEN, SYRUP, FLUID, ONDO, BAL |
-| [Kabu](#kabu)                  | Base      | WETH  | Mid-cap governance tokens          | AERO, VIRTUAL, MORPHO, VVV                   |
+| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          | MORPHO, EIGEN, ONDO, BAL, SYRUP, COMP, FLUID |
+| [Kabu](#kabu)                  | Base      | WETH  | Mid-cap governance tokens          | AERO, VVV, MORPHO, VIRTUAL                   |
 | [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
 | [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      | PEPE, SPX6900, SHIB                          |
 | [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets      | CASHCAT                                      |
 
 Each vault section below lists the markets it supplies, with the liquidation loan-to-value (LLTV) ratio and supply cap configured for each.
-An LLTV is fixed for the lifetime of a Morpho market, while [supply caps](/curation/risk-management#supply-caps) are reviewed and adjusted as conditions evolve — follow the market links for current values.
+An LLTV is fixed for the lifetime of a Morpho market, while [supply caps](/curation/risk-management#supply-caps) are reviewed and adjusted as conditions evolve — follow the vault links below for current values.
 
 ### Api3 Core
 
 Api3 Core is Api3's flagship conservative vault.
-It supplies USDC to lending markets backed by blue-chip collateral — high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
+It supplies USDC to lending markets backed by blue-chip collateral — Lido wrapped staked ETH (wstETH), and wrapped BTC issued by Coinbase (cbBTC) and Kraken (kBTC).
+
+These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
 
 | Market                                                                                                                     | LLTV | Supply cap |
@@ -132,11 +134,15 @@ Meme tokens are more volatile and higher-risk than blue-chip collateral, so a ma
 
 These markets are surfaced to borrowers through [Purinta app](https://purinta.xyz), a meme token lending interface.
 
-### Idle liquidity
+### Liquidity adapter
 
-Alongside its collateral markets, each vault designates one deep, blue-chip market as its **liquidity adapter**.
-Deposits that the collateral markets cannot currently absorb are supplied there rather than sitting idle in the vault, so they keep earning yield (see [allocation and rebalancing](/curation/roles-and-operations#allocation-and-rebalancing)).
-These markets are a yield destination for unallocated liquidity, not part of a vault's collateral strategy, so they are listed separately from the tables above.
+Alongside its collateral markets, each vault designates one deep, blue-chip market as its **liquidity adapter**, which serves two purposes.
+
+It is the route deposits and withdrawals take: every deposit is allocated into that market as it arrives, and withdrawals are deallocated back out of it.
+
+It also holds whatever the collateral markets cannot currently absorb, so that liquidity keeps earning yield rather than sitting idle in the vault (see [allocation and rebalancing](/curation/roles-and-operations#allocation-and-rebalancing)).
+
+Because this market is a yield destination for unallocated liquidity, not part of a vault's collateral strategy, it is listed separately from the tables above.
 
 | Vault                                          | Network   | Market                                                                                                                          | LLTV  |
 | ---------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- | ----- |
