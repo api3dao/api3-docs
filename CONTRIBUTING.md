@@ -1,7 +1,7 @@
 # Contributors' guide
 
-Welcome to the Api3 documentation repository. This guide will help you get
-started with contributing to the Api3 documentation. The docs use [VitePress](https://vitepress.dev/), a Vue-powered static
+Welcome to the API3 documentation repository. This guide will help you get
+started with contributing to the API3 documentation. The docs use [VitePress](https://vitepress.dev/), a Vue-powered static
 site generator. Follow the steps below to get started.
 
 ## Submitting an issue
