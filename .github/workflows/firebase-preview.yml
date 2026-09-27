@@ -1,8 +1,6 @@
 name: Deploy Preview to Firebase Hosting
 on:
   pull_request:
-    branches-ignore:
-      - live-site
 
 jobs:
   build_and_preview:
@@ -24,7 +22,7 @@ jobs:
       - name: Build Docs
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-        run: npm run docs:build
+        run: pnpm docs:build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

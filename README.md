@@ -2,7 +2,7 @@
 
 > Source of the API3 documentation published at https://docs.api3.org
 
-The site is built with [VitePress](https://vitepress.dev/). Content lives under [`docs/`](./docs), one directory per top-level section. Each section owns its `sidebar.js` and is registered in [`docs/.vitepress/config.js`](./docs/.vitepress/config.js) and in [`scripts/generate-llms-files.js`](./scripts/generate-llms-files.js). The landing page is [`docs/index.md`](./docs/index.md).
+The site is built with [VitePress](https://vitepress.dev/). Content lives under [`docs/`](./docs), one directory per top-level section. Each section owns its `sidebar.js` and is registered in [`docs/.vitepress/config.js`](./docs/.vitepress/config.js), which the llms generator reads too. The landing page is [`docs/index.md`](./docs/index.md).
 
 ## Development
 

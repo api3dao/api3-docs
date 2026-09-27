@@ -1,4 +1,3 @@
-/.DS_Store/
 .DS_Store
 .idea/
 .vscode/
@@ -12,19 +11,5 @@ docs/.vitepress/.temp
 docs/public/llms.txt
 docs/public/llms-full.txt
 
-/indexes/content-files/
-
-yarn-error.log
 package-lock.json
 firebase-debug.log
-libs/myGitHubToken.json
-
-
-# Ignoring a Previously Committed Files #
-# The files in your working copy can be either tracked or untracked.
-# To ignore a file that has been previously committed, you’ll need to 
-# unstage and remove the file from the index, and then add a rule for the file in .gitignore:
-# git rm --cached filename
-# The --cached option tells git not to delete the file from the working tree 
-# but only to remove it from the index.
-# To recursively remove a directory, use the -r option:

@@ -3,8 +3,6 @@ import { onMounted, watch, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import mediumZoom from 'medium-zoom';
 import PageHeader from '../../_components/PageHeader.vue';
-import CopyIcon from '../../_components/CopyIcon.vue';
-import Video from '../../_components/Video.vue';
 
 import './zoom.css';
 
@@ -26,7 +24,5 @@ export default {
 
   enhanceApp({ app }) {
     app.component('PageHeader', PageHeader);
-    app.component('CopyIcon', CopyIcon);
-    app.component('Video', Video);
   },
 };
