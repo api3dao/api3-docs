@@ -1,13 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>api3dao/renovate-config"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["@api3/*"],
-      "schedule": ["before 6pm"],
-      "minimumReleaseAge": "0 days",
-      "groupName": "api3"
-    }
-  ],
   "reviewers": ["Siegrift"]
 }
