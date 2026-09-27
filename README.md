@@ -1,40 +1,32 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/public/img/Api3_Docs-Logo-Primary-Light.svg">
+    <img alt="API3 documentation" src="docs/public/img/Api3_Docs-Logo-Primary-Dark.svg" width="360">
+  </picture>
+</p>
+
 # API3 documentation
 
-> Source of the API3 documentation published at https://docs.api3.org
+> Source of the API3 documentation published at [docs.api3.org](https://docs.api3.org).
 
-The site is built with [VitePress](https://vitepress.dev/). Content lives under [`docs/`](./docs), one directory per top-level section. Each section owns its `sidebar.js` and is registered in [`docs/.vitepress/config.js`](./docs/.vitepress/config.js), which the llms generator reads too. The landing page is [`docs/index.md`](./docs/index.md).
+## Contents
 
-## Development
+New to API3 data feeds? Start with the [Quickstart](https://docs.api3.org/dapps/quickstart/).
 
-```sh
-pnpm install
-pnpm docs:dev
-```
+- **[dApps](https://docs.api3.org/dapps/)**: activating a data feed on [API3 Market](https://market.api3.org), reading it from a contract through `Api3ReaderProxyV1`, integration and security considerations, and how OEV Rewards pay dApps for using the feeds.
+- **[OEV](https://docs.api3.org/oev/)**: what Oracle Extractable Value is, how API3 data feeds and OEV feeds work at the contract level, and how searchers use the public Signed APIs.
+- **[Curation](https://docs.api3.org/curation/)**: the Morpho vaults API3 curates, their roles and operations, risk management and disclosure.
 
-`pnpm docs:build` produces the production build in `docs/.vitepress/dist` and `pnpm docs:serve` serves it locally.
+## AI assistants
 
-Prettier is the only formatter. Run `pnpm format` to format the whole project and `pnpm format:check` to verify. The husky pre-push hook runs the check, and CI runs it again on every pull request.
+The site publishes an [`llms.txt`](https://docs.api3.org/llms.txt) index and an [`llms-full.txt`](https://docs.api3.org/llms-full.txt) file with the full content of every page, following the [llms.txt convention](https://llmstxt.org/). Paste one of them into a chat, or reference it from your project's agent instructions such as `AGENTS.md`, `CLAUDE.md` or `.cursor/rules`, to give an assistant current context on API3.
 
-## Generated files
-
-`docs:dev` and `docs:build` first run [`scripts/generate-llms-files.js`](./scripts/generate-llms-files.js), which writes `llms.txt` and `llms-full.txt` into `docs/public` from the section sidebars. Both files are gitignored. The generator reads the `title` and `pageHeader` frontmatter of every page listed in a sidebar and requires the page body to start with `<PageHeader/>`, failing the build otherwise.
-
-## Link validation
-
-VitePress dead link detection is disabled in the config on purpose. CI instead builds the site, serves it and checks every internal and external link, including anchors, with [`libs/link-validator.js`](./libs/link-validator.js). Reproduce it locally with:
-
-```sh
-pnpm docs:build
-pnpm docs:serve &
-node ./libs/link-validator.js http://localhost:8082 ./docs/.vitepress/dist/
-```
-
-Hosts that block automated requests are listed in [`libs/link-validator-ignore.json`](./libs/link-validator-ignore.json).
-
-## Deployment
-
-The site is hosted on Firebase Hosting under the project named in [`.firebaserc`](./.firebaserc). The [live workflow](./.github/workflows/firebase-live.yml) deploys every push to `main`, and the [preview workflow](./.github/workflows/firebase-preview.yml) deploys an expiring preview channel for every pull request.
+Coding agents working on this repository read [AGENTS.md](./AGENTS.md).
 
 ## Contributing
 
-Head to [CONTRIBUTING.md](./CONTRIBUTING.md) for the issue and pull request workflow.
+Issues and pull requests are welcome. [CONTRIBUTING.md](./CONTRIBUTING.md) covers the local setup, page conventions, checks and the deployment flow. Questions go to the [API3 Discord](https://discord.gg/api3dao).
+
+## License
+
+[MIT](./LICENSE). The documentation content is subject to the [API3 terms and conditions](https://api3.org/terms-and-conditions/).
