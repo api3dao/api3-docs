@@ -22,7 +22,7 @@ oracle update(s), allowing searchers to atomically update the price feed(s) used
 by the dApps and profit from the opportunities on the market. The exclusive update
 rights guarantee no competition and searchers avoid paying premiums on gas fees.
 
-Api3 facilitates OEV using two ways:
+API3 facilitates OEV using two ways:
 
 1. Private auctions performed via partnered searchers on non-delayed data.
 2. Searching using public Signed APIs on delayed data, open for anyone to participate.
@@ -35,7 +35,7 @@ For quick reference, you can copy-paste [`llms-full.txt`](https://docs.api3.org/
 
 ## Practical example
 
-Imagine an overcollateralized lending platform that uses Api3 price feeds.
+Imagine an overcollateralized lending platform that uses API3 price feeds.
 Borrowers in the protocol can be liquidated with an incentive whenever their
 position becomes unhealthy to ensure the protocol remains solvent. Say
 liquidations can occur if the loan-to-value ratio exceeds 90%. Let's look at
@@ -48,7 +48,7 @@ price drop that causes many positions using that asset as collateral to approach
 the 90% liquidation threshold.
 
 In this scenario, the next price update that causes a position to become
-unhealthy is valuable. Api3 partnered searchers monitor the dApp and public Api3 data sources and notice that a position will become unhealthy after the next oracle update. They submit a transaction that executes the oracle update and perform the liquidation
+unhealthy is valuable. API3 partnered searchers monitor the dApp and public API3 data sources and notice that a position will become unhealthy after the next oracle update. They submit a transaction that executes the oracle update and perform the liquidation
 atomically.
 
 The concept of OEV is not limited to liquidations, but can occur anywhere where
@@ -60,12 +60,12 @@ arbitrage and many others.
 Thus, the majority of the OEV is distributed to the dApp and the
 searchers.
 
-Api3 searching revenue is split between:
+API3 searching revenue is split between:
 
 1. Paying the dApps in the form of [OEV Rewards](/dapps/oev-rewards/).
-2. Api3 protocol fee.
+2. API3 protocol fee.
 
-For [Api3-curated markets](/curation/), the entirety of the OEV belongs to Api3.
+For [API3-curated markets](/curation/), the entirety of the OEV belongs to API3.
 
 ## Get started with OEV
 
@@ -76,5 +76,5 @@ Here are resources to help you get started with OEV:
    [OEV Litepaper](https://raw.githubusercontent.com/api3dao/oev-litepaper/main/oev-litepaper.pdf).
 3. Connect with other developers and OEV enthusiasts in our
    [OEV Discord channel](https://discord.com/channels/758003776174030948/1062909222347603989).
-4. Follow Api3 on [X](https://x.com/api3dao) for the latest news and updates on
+4. Follow API3 on [X](https://x.com/api3dao) for the latest news and updates on
    OEV.

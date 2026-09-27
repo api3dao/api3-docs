@@ -11,16 +11,16 @@ outline: deep
 Searchers need a way to monitor real-time off-chain prices to find profitable
 opportunities. Traditionally, searchers have needed to buy API subscriptions
 from underlying oracle sources, creating additional friction in the process.
-Api3 simplifies this process by providing the same data that is used for
-updating data feeds to searchers publicly and without cost. But before that, one needs to understand how Api3 oracles work.
+API3 simplifies this process by providing the same data that is used for
+updating data feeds to searchers publicly and without cost. But before that, one needs to understand how API3 oracles work.
 
 ## How data feeds work?
 
 Let's start from the ground up. The data feed logic is dictated by the Api3ServerV1
-contract. The central part of Api3 feeds is first-party oracles, relying on
+contract. The central part of API3 feeds is first-party oracles, relying on
 cryptographic signatures verified on-chain.
 
-Internally, we refer to our data feeds as dAPIs. This is also the terminology used across Api3 contracts. We'll be following the same terminology in this section.
+Internally, we refer to our data feeds as dAPIs. This is also the terminology used across API3 contracts. We'll be following the same terminology in this section.
 
 ### dAPI structure
 
@@ -53,7 +53,7 @@ to a data feed ID.
 ### Updating data feed value
 
 So far, we've referred to dAPIs and data feeds as sources of data, not
-mentioning how they are kept up-to-date. Api3 feeds are permissionless and
+mentioning how they are kept up-to-date. API3 feeds are permissionless and
 anyone can perform an update, provided they have valid data. To update a beacon,
 anyone can call `updateBeaconWithSignedData` on the Api3ServerV1 contract:
 
@@ -96,7 +96,7 @@ date:
 2. [Signed API](https://github.com/api3dao/signed-api/tree/main/packages/signed-api) -
    Signed API accepts signed data from API providers and provides an API layer
    for off-chain querying.
-3. [Airseeker](https://github.com/api3dao/airseeker) - Airseeker is an Api3 push
+3. [Airseeker](https://github.com/api3dao/airseeker) - Airseeker is an API3 push
    oracle. It monitors the off-chain and on-chain data and triggers an update
    when needed.
 
@@ -112,7 +112,7 @@ not updated for a particular amount time.
 
 ::: warning ⚠️ Warning
 
-Currently, OEV updates are possible only for the Api3 partnered searchers and not the general public.
+Currently, OEV updates are possible only for the API3 partnered searchers and not the general public.
 
 :::
 
@@ -193,7 +193,7 @@ Searchers can use [unsafeComputeDappId](https://github.com/api3dao/contracts/blo
 
 ::: info ℹ️ Example
 
-Say we want to determine dApp ID for [dTRINITY](https://dtrinity.org/). From the OEV dapps catalog, we see the dApp alias is `dtrinity` and the chain is Fraxtal. Fraxtal has chain ID `252`. To derive the dApp ID we call `unsafeComputeDappId` with arguments `dtrinity` and `252`.
+Say we want to determine dApp ID for [dTRINITY](https://dtrinity.org/). Its dApp alias is `dtrinity`, as listed in the [dApp registry](https://github.com/api3dao/contracts/tree/main/data/dapps) of `@api3/contracts`, and the chain is Fraxtal. Fraxtal has chain ID `252`. To derive the dApp ID we call `unsafeComputeDappId` with arguments `dtrinity` and `252`.
 
 ```js
 const dTrinityDappId = unsafeComputeDappId('dtrinity', 252);
@@ -274,7 +274,7 @@ length depends on the number of beacons encoded.
 
 ::: warning ⚠️ Airnode Mnemonic Rotation
 
-Data providers rotate their Airnode mnemonics every 6 months as part of Api3's security practices. This results in new Airnode addresses being generated. Please refer to the [Api3 Market](https://market.api3.org) or directly on-chain data for the latest Airnode addresses.
+Data providers rotate their Airnode mnemonics every 6 months as part of API3's security practices. This results in new Airnode addresses being generated. Please refer to the [API3 Market](https://market.api3.org) or directly on-chain data for the latest Airnode addresses.
 
 :::
 
@@ -284,8 +284,8 @@ Say there is a dApp proxy that uses the `ETH/USD` dAPI. We can compute the
 details for this dAPI off-chain by:
 
 ```js
-const encodedDapiName = ethers.utils.formatBytes32String('ETH/USD'); // 0x4554482f55534400000000000000000000000000000000000000000000000000
-const encodedDapiNameHash = ethers.utils.keccak256(encodedDapiName); // 0x9e6138f8f57d7b493a8364edb0a0ac92399dfd890eecb9121050836a1749ba42
+const encodedDapiName = ethers.encodeBytes32String('ETH/USD'); // 0x4554482f55534400000000000000000000000000000000000000000000000000
+const encodedDapiNameHash = ethers.keccak256(encodedDapiName); // 0x9e6138f8f57d7b493a8364edb0a0ac92399dfd890eecb9121050836a1749ba42
 ```
 
 To determine the data feed ID for this dAPI, we can use the
@@ -318,7 +318,7 @@ version of that decodes the data off-chain:
 
 ```js
 const deriveBeaconId = (airnodeAddress, templateId) => {
-  return ethers.utils.solidityKeccak256(
+  return ethers.solidityPackedKeccak256(
     ['address', 'bytes32'],
     [airnodeAddress, templateId]
   );
@@ -331,19 +331,19 @@ const decodeDataFeedDetails = (dataFeed) => {
   // This is a hex encoded string, the contract works with bytes directly
   // 2 characters for the '0x' preamble + 32 * 2 hexadecimals for 32 bytes + 32 * 2 hexadecimals for 32 bytes
   if (dataFeed.length === 2 + 32 * 2 + 32 * 2) {
-    const [airnodeAddress, templateId] = ethers.utils.defaultAbiCoder.decode(
-      ['address', 'bytes32'],
-      dataFeed
-    );
+    const [airnodeAddress, templateId] =
+      ethers.AbiCoder.defaultAbiCoder().decode(
+        ['address', 'bytes32'],
+        dataFeed
+      );
 
     const dataFeedId = deriveBeaconId(airnodeAddress, templateId);
     return [{ beaconId: dataFeedId, airnodeAddress, templateId }];
   }
 
-  const [airnodeAddresses, templateIds] = ethers.utils.defaultAbiCoder.decode(
-    ['address[]', 'bytes32[]'],
-    dataFeed
-  );
+  const [airnodeAddresses, templateIds] = ethers.AbiCoder.defaultAbiCoder()
+    .decode(['address[]', 'bytes32[]'], dataFeed)
+    .toArray(true);
 
   const beacons = airnodeAddresses.map((airnodeAddress, idx) => {
     const templateId = templateIds[idx];
@@ -404,9 +404,8 @@ Say the following is the output after decoding the data feed details:
 
 Signed APIs store the data pushed by Airnode feeds and expose them to the public
 via an API. As mentioned, base feed updates are delayed, permissionless and can be
-updated by anyone. The OEV feeds are real-time and can only be updated by the Api3 partnered searchers.
-The Signed APIs are publicly available. They are deployed on
-AWS, ensuring maximum uptime and reliability.
+updated by anyone. The OEV feeds are real-time and can only be updated by the API3 partnered searchers.
+The Signed APIs are publicly available.
 
 Signed APIs only support querying data for a particular Airnode feed at a time. The
 Airnode address is supplied as an HTTP path parameter. The endpoint is cached
@@ -417,11 +416,11 @@ rate limiting or full access denial.
 
 The following are the base feed endpoints that are publicly available:
 
-1. `https://signed-api.api3.org/public/<AIRNODE_ADDRESS>` - The official Api3
+1. `https://signed-api.api3.org/public/<AIRNODE_ADDRESS>` - The official API3
    Signed APIs used by the push oracle to update the base feeds.
 
 For example, see the
-[Api3 response for Nodary Airnode feed](https://signed-api.api3.org/public/0xc52EeA00154B4fF1EbbF8Ba39FDe37F1AC3B9Fd4).
+[API3 response for Nodary Airnode feed](https://signed-api.api3.org/public/0xc52EeA00154B4fF1EbbF8Ba39FDe37F1AC3B9Fd4).
 
 ### OEV endpoints
 
@@ -430,7 +429,7 @@ The following are the OEV endpoints that are publicly available:
 1. `https://signed-api.api3.org/public-oev/<AIRNODE_ADDRESS>`
 
 For example, see the
-[Api3 response for Nodary Airnode feed](https://signed-api.api3.org/public-oev/0xc52EeA00154B4fF1EbbF8Ba39FDe37F1AC3B9Fd4).
+[API3 response for Nodary Airnode feed](https://signed-api.api3.org/public-oev/0xc52EeA00154B4fF1EbbF8Ba39FDe37F1AC3B9Fd4).
 
 ### Response
 

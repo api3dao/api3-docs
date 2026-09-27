@@ -1,20 +1,20 @@
 ---
-title: Using Api3 Market
+title: Using API3 Market
 pageHeader: dApps → Integration
 outline: deep
 ---
 
 <PageHeader/>
 
-# Using Api3 Market
+# Using API3 Market
 
-See the [Quickstart](/dapps/quickstart/index.md) page for a basic guide on how to use [Api3 Market.](https://market.api3.org/)
+See the [Quickstart](/dapps/quickstart/index.md) page for a basic guide on how to use [API3 Market.](https://market.api3.org/)
 This page provides further details about using it in production.
 
 ## Update parameters
 
 Update parameters specify the conditions that trigger a data feed update.
-Api3 Market supports two update parameters: [deviation threshold](#deviation-threshold) and [heartbeat interval](#heartbeat-interval).
+API3 Market supports two update parameters: [deviation threshold](#deviation-threshold) and [heartbeat interval](#heartbeat-interval).
 
 ### Deviation threshold
 
@@ -30,7 +30,7 @@ When we refer to a 1% deviation threshold, we mean that at the time of a deviati
 
 :::
 
-Api3 Market offers the following deviation threshold options:
+API3 Market offers the following deviation threshold options:
 
 - 5%
 - 2.5%
@@ -42,7 +42,7 @@ Api3 Market offers the following deviation threshold options:
 
 We assume that lower deviation thresholds are always more desirable, and thus do not validate if updates are necessary according to the update parameters.
 In simpler terms, a data feed with a 1% deviation threshold can be updated even if it has only deviated by 0.5%.
-For rare use cases that require different behavior, we do not recommend using Api3 data feeds.
+For rare use cases that require different behavior, we do not recommend using API3 data feeds.
 
 :::
 
@@ -53,7 +53,7 @@ Consequently, you can expect higher [prices](#pricing) for lower deviation thres
 
 A heartbeat is a data feed update that is made to uphold a maximum period of time between two consecutive updates, which is called the **heartbeat interval**.
 
-Api3 Market only offers a 24-hour heartbeat interval.
+API3 Market only offers a 24-hour heartbeat interval.
 
 ::: info ℹ️ Info
 
@@ -66,7 +66,7 @@ Note that this still does not provide a hard guarantee, and your contract should
 
 ## Plan durations
 
-Api3 Market offers 7-day plans on testnets and 3-month plans on mainnets.
+API3 Market offers 7-day plans on testnets and 3-month plans on mainnets.
 Each purchased plan has an expiration date, and the respective update parameters will stop being upheld after that.
 Let's go over a few example cases:
 
@@ -83,13 +83,13 @@ Let's go over a few example cases:
   The user purchases a 1% deviation threshold for 3 months (with a [discount](#discounts)).
   The data feed will continue running with a 0.5% deviation threshold for 1 month, switch to a 1% deviation threshold, run for another 2 months, and deactivate.
 
-When plans with different deviation parameters are queued, the Api3 Market interface displays them as shown below.
+When plans with different deviation parameters are queued, the API3 Market interface displays them as shown below.
 
 <center><img src="./images/queue.png"></center>
 
 ::: info 💡 Tip
 
-Once a plan has been purchased, Api3 guarantees that the [update parameters](#update-parameters) will be upheld for the [plan duration](#plan-durations).
+Once a plan has been purchased, API3 guarantees that the [update parameters](#update-parameters) will be upheld for the [plan duration](#plan-durations).
 However, it is the user's responsibility to ensure that plans are purchased to keep the data feed active as long as necessary.
 You can use the "Set Reminder" button under the expiration date to avoid forgetting to renew your plans.
 
@@ -107,7 +107,7 @@ We maintain a history of data feed update gas costs and update counts required t
 
 ::: info 💰 Financial
 
-The prices you see on Api3 Market are the exact operational costs that we estimate (or $0.05/day, whichever is higher).
+The prices you see on API3 Market are the exact operational costs that we estimate (or $0.05/day, whichever is higher).
 This means that it is unlikely that you will find a better bargain.
 
 We do not plan to monetize data feed plans at any point.
@@ -127,7 +127,7 @@ To resume updates in such cases, simply purchase a new plan.
 
 :::
 
-If we overestimate the price, the remainder rolls over to the next plan purchased for the same network–data feed pair, which appears as a **discount** on Api3 Market as seen below.
+If we overestimate the price, the remainder rolls over to the next plan purchased for the same network-data feed pair, which appears as a **discount** on API3 Market as seen below.
 Similarly, when a user purchases a plan for a data feed that is already active, the remainder of the payments made for earlier purchases will appear as a discount.
 
 <center><img src="./images/discount.png"></center>
@@ -165,14 +165,14 @@ Follow the OEV Rewards [onboarding steps](/dapps/oev-rewards/index.md#how-to-get
 
 ## Verifying first-party sources
 
-The term _first-party oracle_ is coined in the Api3 whitepaper and refers to an API provider that provides oracle services without depending on any middlemen.
+The term _first-party oracle_ is coined in the API3 whitepaper and refers to an API provider that provides oracle services without depending on any middlemen.
 There are three conditions to be verified to check if an oracle service is first-party:
 
 - The operator of each individual node must also operate an independent API service as their primary business model for them to be called API providers.
 - Each API provider must certify their public key and sign their data with the respective private key.
 - Each API provider must make their signed data available themselves, without depending on third-party APIs, blockchains, or state channels.
 
-Api3 provides the only first-party oracle solution.
+API3 provides the only first-party oracle solution.
 Furthermore, we have implemented functionality for the public to be able to easily audit this.
 On a data feed page, when you hover your mouse over the logo of a source, you can observe the Market frontend verifying the conditions above in real-time.
 
