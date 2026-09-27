@@ -1,6 +1,6 @@
-export default {
-  title: 'Api3 documentation',
-  description: 'Api3 documentation',
+module.exports = {
+  title: 'API3 documentation',
+  description: 'API3 documentation',
   markdown: {
     lineNumbers: true,
     toc: ['h2', 'h3', 'h4', 'h5'],

@@ -1,13 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-const dappsSidebar = require('../docs/dapps/sidebar.js');
-const oevSidebar = require('../docs/oev/sidebar.js');
-const curationSidebar = require('../docs/curation/sidebar.js');
+const config = require('../docs/.vitepress/config.js');
 
 const docsDir = path.join(__dirname, '..', 'docs');
 const staticDir = path.join(__dirname, '..', 'docs', 'public');
 const llmsTxtPath = path.join(staticDir, 'llms.txt');
 const llmsFullTxtPath = path.join(staticDir, 'llms-full.txt');
+
+const sections = Object.entries(config.themeConfig.sidebar).map(([prefix, sidebar]) => ({
+  title: config.themeConfig.nav.find((item) => item.link === prefix)?.text ?? prefix,
+  sidebar,
+}));
 
 function getMarkdownFiles(items) {
   let files = [];
@@ -23,26 +26,32 @@ function getMarkdownFiles(items) {
 }
 
 function generateLlmsTxt() {
-  let content = '# Api3 Docs\n\n';
-  content += `> Api3 Docs helps developers build dApps using Api3 data feeds and searchers recapture oracle extractable value (OEV).\n\n`;
+  let content = `# ${config.title}\n\n`;
+  content += `> Documentation for API3, covering ${sections.map((section) => section.title).join(', ')}.\n\n`;
 
-  const sidebars = {
-    dapps: dappsSidebar,
-    oev: oevSidebar,
-    curation: curationSidebar,
-  };
-
-  for (const key in sidebars) {
-    const sidebar = sidebars[key];
-    if (sidebar) {
-      content += `## ${key}\n\n`;
-      const files = getMarkdownFiles(sidebar);
-      for (const file of files) {
-        const filePath = path.join(docsDir, `${file}.md`);
-        if (fs.existsSync(filePath)) {
-          const fileContent = fs.readFileSync(filePath, 'utf-8');
+  for (const { title, sidebar } of sections) {
+    content += `## ${title}\n\n`;
+    const files = getMarkdownFiles(sidebar);
+    for (const file of files) {
+      const filePath = path.join(docsDir, `${file}.md`);
+      if (fs.existsSync(filePath)) {
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const lines = fileContent.split('\n');
+        let title = path.basename(file, '.md');
+        for (const line of lines) {
+          if (line.startsWith('title: ')) {
+            title = line.substring('title: '.length);
+            break;
+          }
+        }
+        const url = `https://docs.api3.org${file}`;
+        content += `- [${title}](${url.replace(/\/$/, '/index')}.html)\n`;
+      } else {
+        const indexPath = path.join(docsDir, file, 'index.md');
+        if (fs.existsSync(indexPath)) {
+          const fileContent = fs.readFileSync(indexPath, 'utf-8');
           const lines = fileContent.split('\n');
-          let title = path.basename(file, '.md');
+          let title = path.basename(file);
           for (const line of lines) {
             if (line.startsWith('title: ')) {
               title = line.substring('title: '.length);
@@ -50,26 +59,11 @@ function generateLlmsTxt() {
             }
           }
           const url = `https://docs.api3.org${file}`;
-          content += `- [${title}](${url.replace(/\/$/, '/index')}.html)\n`;
-        } else {
-          const indexPath = path.join(docsDir, file, 'index.md');
-          if (fs.existsSync(indexPath)) {
-            const fileContent = fs.readFileSync(indexPath, 'utf-8');
-            const lines = fileContent.split('\n');
-            let title = path.basename(file);
-            for (const line of lines) {
-              if (line.startsWith('title: ')) {
-                title = line.substring('title: '.length);
-                break;
-              }
-            }
-            const url = `https://docs.api3.org${file}`;
-            content += `- [${title}](${url.replace(/\/$/, '/index.html')})\n`;
-          }
+          content += `- [${title}](${url.replace(/\/$/, '/index.html')})\n`;
         }
       }
-      content += '\n';
     }
+    content += '\n';
   }
 
   fs.writeFileSync(llmsTxtPath, content);

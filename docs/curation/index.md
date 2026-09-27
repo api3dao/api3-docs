@@ -8,12 +8,12 @@ outline: deep
 
 # Curation
 
-Api3 operates as a vault curator on [Morpho,](https://morpho.org/) the largest decentralized lending protocol on Ethereum.
+API3 operates as a vault curator on [Morpho,](https://morpho.org/) a decentralized lending protocol.
 Morpho is a permissionless protocol that allows anyone to create isolated lending markets with custom parameters.
 Morpho Vaults aggregate deposits and allocate them across these markets, abstracting the complexity of individual market selection for depositors.
 
-As a curator, Api3 selects lending markets, manages risk parameters, and allocates capital to generate yield for vault depositors.
-Api3 operates a set of vaults across multiple networks, each targeting different markets and strategies.
+As a curator, API3 selects lending markets, manages risk parameters, and allocates capital to generate yield for vault depositors.
+API3 operates a set of vaults across multiple networks, each targeting different markets and strategies.
 
 ::: info 💡 Tip
 
@@ -23,45 +23,45 @@ For quick reference, you can copy-paste [`llms-full.txt`](https://docs.api3.org/
 
 ## Skin in the game
 
-Unlike most curators who manage third-party capital exclusively, Api3 deploys a majority of its own treasury as the primary supplier in its vaults.
-This means Api3 has direct financial exposure to every market it enables and every risk decision it makes.
+Unlike most curators who manage third-party capital exclusively, API3 deploys a majority of its own treasury as the primary supplier in its vaults.
+This means API3 has direct financial exposure to every market it enables and every risk decision it makes.
 
-External depositors are welcome to supply alongside the Api3 treasury, benefiting from the same risk management and yield strategies, with the assurance that Api3's own capital is subject to identical conditions.
+External depositors are welcome to supply alongside the API3 treasury, benefiting from the same risk management and yield strategies, with the assurance that API3's own capital is subject to identical conditions.
 
 ## OEV advantage
 
-Api3 is uniquely positioned as a curator because it is also the oracle provider for its own markets.
+API3 is uniquely positioned as a curator because it is also the oracle provider for its own markets.
 This creates a competitive advantage that no other lending protocol or curator has.
 
-During market turmoil, liquidations on lending markets generate [Oracle Extractable Value (OEV)](/oev/) — value that the oracle has priority in capturing by batching additional operations with price updates.
-On Api3-curated markets, the entirety of this OEV belongs to Api3 as protocol revenue.
+During market turmoil, liquidations on lending markets generate [Oracle Extractable Value (OEV)](/oev/) - value that the oracle has priority in capturing by batching additional operations with price updates.
+On API3-curated markets, the entirety of this OEV belongs to API3 as protocol revenue.
 Other protocols, at best, capture only a fraction of the OEV generated on their markets.
 
-This allows Api3 to set lower curation fees to attract borrowers, which in turn decreases the cost of borrowing.
-While this means supply-side APY may be lower during calm markets, it makes Api3 markets more attractive to borrowers, driving higher utilization and a healthier lending ecosystem.
-The OEV captured during volatile periods more than compensates, providing Api3 with a sustainable revenue stream that is independent of the fee structure.
+This allows API3 to set lower curation fees to attract borrowers, which in turn decreases the cost of borrowing.
+While this means supply-side APY may be lower during calm markets, it makes API3 markets more attractive to borrowers, driving higher utilization and a healthier lending ecosystem.
+The OEV captured during volatile periods more than compensates, providing API3 with a sustainable revenue stream that is independent of the fee structure.
 
 ## Vaults
 
-Api3 operates multiple vaults across Ethereum mainnet, Base, and the Robinhood chain.
+API3 operates multiple vaults across Ethereum mainnet, Base, and the Robinhood chain.
 All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework](/curation/risk-management).
 
-| Vault                          | Network   | Asset | Strategy                           | Collateral                                   |
-| ------------------------------ | --------- | ----- | ---------------------------------- | -------------------------------------------- |
-| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral | wstETH, cbBTC, kBTC                          |
-| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          | MORPHO, EIGEN, ONDO, BAL, SYRUP, COMP, FLUID |
-| [Kabu](#kabu)                  | Base      | WETH  | Mid-cap governance tokens          | AERO, VVV, MORPHO, VIRTUAL                   |
-| [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  | dCOMP                                        |
-| [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      | PEPE, SPX6900, SHIB                          |
-| [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets      | CASHCAT                                      |
+| Vault                          | Network   | Asset | Strategy                           |
+| ------------------------------ | --------- | ----- | ---------------------------------- |
+| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral |
+| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          |
+| [Kabu](#kabu)                  | Base      | WETH  | Mid-cap governance tokens          |
+| [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  |
+| [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      |
+| [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets      |
 
 Each vault section below lists the markets it supplies, with the liquidation loan-to-value (LLTV) ratio and supply cap configured for each.
-An LLTV is fixed for the lifetime of a Morpho market, while [supply caps](/curation/risk-management#supply-caps) are reviewed and adjusted as conditions evolve — follow the vault links below for current values.
+An LLTV is fixed for the lifetime of a Morpho market, while [supply caps](/curation/risk-management#supply-caps) are reviewed and adjusted as conditions evolve - follow the vault links below for current values.
 
 ### Api3 Core
 
-Api3 Core is Api3's flagship conservative vault.
-It supplies USDC to lending markets backed by blue-chip collateral — Lido wrapped staked ETH (wstETH), and wrapped BTC issued by Coinbase (cbBTC) and Kraken (kBTC).
+Api3 Core is API3's flagship conservative vault.
+It supplies USDC to lending markets backed by blue-chip collateral - Lido wrapped staked ETH (wstETH), and wrapped BTC issued by Coinbase (cbBTC) and Kraken (kBTC).
 
 These are high-liquidity, battle-tested assets with deep on-chain liquidity and well-established oracle infrastructure.
 The vault targets stable, lower-risk yield from borrowing demand against these widely held collateral types.
@@ -101,7 +101,7 @@ Given the higher volatility and lower liquidity of these assets compared to blue
 
 ### Api3 dCOMP
 
-Api3 dCOMP is a vault built around a dedicated lending market collateralized by [dCOMP](https://github.com/api3dao/dcomp) — a lightweight, ownable wrapper for the COMP governance token configured with a specific delegate.
+Api3 dCOMP is a vault built around a dedicated lending market collateralized by [dCOMP](https://github.com/api3dao/dcomp) - a lightweight, ownable wrapper for the COMP governance token configured with a specific delegate.
 
 While preserving the inherent voting power of the underlying COMP, this wrapper allows the owner to reassign the delegated address. Users can wrap their COMP to receive dCOMP tokens, which can then be deposited as collateral. By wrapping COMP into dCOMP, users can effectively amplify the voting power of the designated delegate.
 
@@ -113,7 +113,7 @@ The Api3 dCOMP vault supplies the USDC borrow-side liquidity for this market, ma
 
 ### Purinta
 
-Purinta is a pair of meme token lending vaults curated by Api3: a USDC vault on Ethereum mainnet and a USDG vault on the Robinhood chain.
+Purinta is a pair of meme token lending vaults curated by API3: a USDC vault on Ethereum mainnet and a USDG vault on the Robinhood chain.
 Each supplies the borrow-side liquidity for a set of isolated meme token markets.
 
 Meme tokens are more volatile and higher-risk than blue-chip collateral, so a market is only listed when its token has enough on-chain liquidity to support healthy swaps and liquidations. Supply caps and LLTVs are configured conservatively to limit that exposure.
@@ -152,7 +152,7 @@ Because this market is a yield destination for unallocated liquidity, not part o
 
 ## Accessing the vaults
 
-Each of the vaults can be also accessed through the Morpho app, where Api3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
+Each of the vaults can be also accessed through the Morpho app, where API3 operates as a [verified curator.](https://forum.morpho.org/c/vaults/api3/57) Live figures - total deposits, APY, enabled markets, and current supply caps - are shown there.
 
 | Vault           | Network   | Address                                      | Link                                                                                                                   |
 | --------------- | --------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -165,7 +165,7 @@ Each of the vaults can be also accessed through the Morpho app, where Api3 opera
 
 ## Fees
 
-Each Api3 vault charges a single **5% performance fee** on the interest earned from borrowers (see [vault architecture](/curation/roles-and-operations#vault-architecture)).
+Each API3 vault charges a single **5% performance fee** on the interest earned from borrowers (see [vault architecture](/curation/roles-and-operations#vault-architecture)).
 There is no management fee on assets under management.
 
 | Fee type        | Amount |

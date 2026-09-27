@@ -8,22 +8,22 @@ outline: deep
 
 # Contract integration
 
-This page provides important information on how to integrate Api3 data feeds into a contract.
+This page provides important information on how to integrate API3 data feeds into a contract.
 Please read it in its entirety before attempting an integration.
 
 ::: info ⚠️ Warning
 
-Api3 does not authorize any members or affiliates to provide security advice.
+API3 does not authorize any members or affiliates to provide security advice.
 You are solely responsible for following the instructions on this page.
 
 :::
 
 ## Api3ReaderProxyV1
 
-Api3ReaderProxyV1 is a contract that is used to read a specific Api3 data feed.
+Api3ReaderProxyV1 is a contract that is used to read a specific API3 data feed.
 For example, to read ETH/USD on Ethereum, one can simply call the [`read()` function](https://etherscan.io/address/0x5b0cf2b36a65a6BB085D501B971e4c102B9Cd473#readProxyContract#F17) of a respective Api3ReaderProxyV1.
 
-You can use Api3 Market to see the Api3ReaderProxyV1 address you should use for a specific data feed, as described [here.](/dapps/integration/index.md#integration-information)
+You can use API3 Market to see the Api3ReaderProxyV1 address you should use for a specific data feed, as described [here.](/dapps/integration/index.md#integration-information)
 To summarize, you should use the Api3ReaderProxyV1 address that appears after selecting "Earn OEV Rewards" and entering the name of your dApp.
 
 ::: info ⚠️ Warning
@@ -34,7 +34,7 @@ To be eligible for OEV Rewards, you are required to use the Api3ReaderProxyV1 co
 
 ### Printing Api3ReaderProxyV1 addresses
 
-For your convenience, Api3 representatives may deploy OEV Rewards-enabled Api3ReaderProxyV1 contracts on your behalf and provide you with a list of commands that will print their addresses.
+For your convenience, API3 representatives may deploy OEV Rewards-enabled Api3ReaderProxyV1 contracts on your behalf and provide you with a list of commands that will print their addresses.
 By running these commands yourself, you can ensure that you are using the correct addresses.
 
 ::: info 💡 Tip
@@ -44,7 +44,7 @@ Since Api3ReaderProxyV1 is deployed deterministically, the lack of verification 
 
 :::
 
-These commands should be in the following format, where the dApp alias (assigned to you by Api3 during [registration](/dapps/oev-rewards/index.md#how-to-get-onboard)), chain ID, and dAPI names match your specific case:
+These commands should be in the following format, where the dApp alias (assigned to you by API3 during [registration](/dapps/oev-rewards/index.md#how-to-get-onboard)), chain ID, and dAPI names match your specific case:
 
 ```sh
 npx @api3/contracts@latest print-api3readerproxyv1-address \
@@ -60,11 +60,11 @@ dApp alias: lendle
 chain: Mantle
 dAPI name: ETH/USD
 • Please confirm that https://market.api3.org/mantle/eth-usd points to an active feed.
-• Your proxy address is https://mantlescan.xyz/address/0x776E79D916e49BBDb8FEe0F43fF148C2Ed3bE125
+• Your proxy is at https://mantlescan.xyz/address/0x776E79D916e49BBDb8FEe0F43fF148C2Ed3bE125
 Please confirm that there is a contract deployed at this address before using it.
 ```
 
-Note that if an Api3 representative has provided you with this command, you can expect the Market page to point to an active feed and the proxy to already be deployed.
+Note that if an API3 representative has provided you with this command, you can expect the Market page to point to an active feed and the proxy to already be deployed.
 Do not proceed with the integration until you confirm both conditions.
 
 ### Reading the data feed
@@ -96,7 +96,7 @@ It is good practice to validate against such conditions, as in `require(value > 
 
 :::
 
-All Api3 data feeds have 18 decimals.
+All API3 data feeds have 18 decimals.
 For example, if ETH/USD is `2918.5652133`, `value` will read `2918565213300000000000`.
 
 ::: info ⚠️ Warning
@@ -135,7 +135,7 @@ However, unless your contract design specifically relies on the data feed value 
 
 ::: info 💡 Tip
 
-Your auditors may not be familiar with best practices in the context of Api3 data feeds.
+Your auditors may not be familiar with best practices in the context of API3 data feeds.
 We recommend directing them to this page.
 
 :::
@@ -149,9 +149,9 @@ For example, you can combine an `ETH/USD` Api3ReaderProxyV1 contract and a `wstE
 
 Some dApps choose to mix oracle solutions, either by refusing service if they are not in consensus, or by using one primarily and deferring to another in case of inconsistency.
 
-In such setups, Api3 data feeds need to be treated differently due to OEV considerations.
+In such setups, API3 data feeds need to be treated differently due to OEV considerations.
 Specifically, the vast majority of OEV is extracted during times of volatility, and allowing other oracle solutions interfere during such times may result in the loss of a significant amount of OEV revenue, reducing your [OEV Rewards](/dapps/oev-rewards/).
-The golden standard is only using Api3 data feeds, and if you must use Api3 data feeds as your primary source with another solution as a fallback, you should tolerate as much inconsistency as possible.
+The golden standard is only using API3 data feeds, and if you must use API3 data feeds as your primary source with another solution as a fallback, you should tolerate as much inconsistency as possible.
 
 ::: info 💡 Tip
 
@@ -160,8 +160,8 @@ Based on our analysis, any less will hinder OEV extraction during times of high 
 
 :::
 
-Note that using Api3 data feeds for only some asset prices still counts as a mixed design.
-Consider a lending platform that uses the ETH/USD Api3 data feed and the USDT/USD data feed from another oracle solution.
+Note that using API3 data feeds for only some asset prices still counts as a mixed design.
+Consider a lending platform that uses the ETH/USD API3 data feed and the USDT/USD data feed from another oracle solution.
 A user takes out a USDT loan with ETH collateral, and the following price action renders the position liquidatable once the ETH/USD data feed is updated.
 However, a rogue USDT/USD update by the other oracle solution may expose the OEV opportunity to the public before it can be claimed for you.
 
