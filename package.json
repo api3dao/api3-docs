@@ -18,14 +18,14 @@
     "firebase:emulator": "pnpm docs:build && firebase emulators:start"
   },
   "devDependencies": {
-    "axios": "^1.19.0",
+    "axios": "^1.20.0",
     "colors": "^1.4.0",
     "file": "^0.2.2",
     "fs-extra": "^11.4.0",
     "husky": "^9.1.7",
     "medium-zoom": "^1.1.0",
     "oust": "^2.0.4",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.7",
     "vitepress": "1.6.4",
     "walk-sync": "^4.0.2"
   }
