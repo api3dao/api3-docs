@@ -21,7 +21,9 @@ Both `docs:dev` and `docs:build` first run [`scripts/generate-llms-files.js`](./
 - Write API3 in capitals. Lowercase `api3` is only for identifiers such as package names, paths and URLs, and for the logo wordmark. Contract names such as `Api3ReaderProxyV1` and deployed product names such as the `Api3 Core` vault keep their own spelling.
 - Use `dAPI` and `dApp` in prose, `dapi` and `dapp` in code identifiers.
 - Use hyphens rather than long dashes, and avoid semicolons in prose.
-- Keep pages high level and link to the authoritative source, such as a repository, a contract or API3 Market, instead of duplicating detail that goes stale.
+- Name the acting entity, such as API3 or the Market frontend, rather than writing "we".
+- Keep pages high level and link to the authoritative source, such as a repository, a contract or API3 Market, instead of duplicating detail that goes stale. Do not write facts that the next change turns false, such as exact counts of things that grow or lists that need an edit whenever an entry appears.
+- Verify numbers, addresses and quoted CLI output against their source before changing them, for example the `api3dao/contracts` repository, on-chain state or API3 Market.
 
 ## Checks
 
