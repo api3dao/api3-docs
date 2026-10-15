@@ -65,8 +65,8 @@ module.exports = {
     },
     externalLinkIcon: true,
     logo: {
-      light: '/img/Api3_Docs-Logo-Primary-Dark.svg',
-      dark: '/img/Api3_Docs-Logo-Primary-Light.svg',
+      light: '/img/API3_Docs-Logo-Primary-Dark.svg',
+      dark: '/img/API3_Docs-Logo-Primary-Light.svg',
     },
     siteTitle: false,
     socialLinks: [
