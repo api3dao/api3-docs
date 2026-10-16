@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/public/img/Api3_Docs-Logo-Primary-Light.svg">
-    <img alt="API3 documentation" src="docs/public/img/Api3_Docs-Logo-Primary-Dark.svg" width="360">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/public/img/API3_Docs-Logo-Primary-Light.svg">
+    <img alt="API3 documentation" src="docs/public/img/API3_Docs-Logo-Primary-Dark.svg" width="360">
   </picture>
 </p>
 
