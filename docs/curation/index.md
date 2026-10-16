@@ -46,14 +46,14 @@ The OEV captured during volatile periods more than compensates, providing API3 w
 API3 operates multiple vaults across Ethereum mainnet, Base, and the Robinhood chain.
 All vaults share the same [role structure](/curation/roles-and-operations) and [risk framework](/curation/risk-management).
 
-| Vault                          | Network   | Asset | Strategy                           |
-| ------------------------------ | --------- | ----- | ---------------------------------- |
-| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral |
-| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens          |
-| [Kabu](#kabu)                  | Base      | WETH  | Mid-cap governance tokens          |
-| [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market  |
-| [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets      |
-| [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets      |
+| Vault                          | Network   | Asset | Strategy                             |
+| ------------------------------ | --------- | ----- | ------------------------------------ |
+| [Api3&nbsp;Core](#api3-core)   | Ethereum  | USDC  | Conservative, blue-chip collateral   |
+| [Kabu](#kabu)                  | Ethereum  | USDC  | Mid-cap governance tokens            |
+| [Kabu](#kabu)                  | Base      | WETH  | Governance tokens and wrapped majors |
+| [Api3&nbsp;dCOMP](#api3-dcomp) | Ethereum  | USDC  | Dedicated dCOMP collateral market    |
+| [Purinta](#purinta)            | Ethereum  | USDC  | Meme token collateral markets        |
+| [Purinta](#purinta)            | Robinhood | USDG  | Meme token collateral markets        |
 
 Each vault section below lists the markets it supplies, with the liquidation loan-to-value (LLTV) ratio and supply cap configured for each.
 An LLTV is fixed for the lifetime of a Morpho market, while [supply caps](/curation/risk-management#supply-caps) are reviewed and adjusted as conditions evolve - follow the vault links below for current values.
@@ -74,8 +74,10 @@ The vault targets stable, lower-risk yield from borrowing demand against these w
 
 ### Kabu
 
-Kabu is a pair of vaults supplying lending markets backed by mid-cap governance and protocol tokens: a USDC vault on Ethereum mainnet and a WETH vault on Base.
-These markets serve borrowers who wish to access liquidity against their governance token holdings without selling.
+Kabu is a pair of vaults.
+The USDC vault on Ethereum mainnet supplies lending markets backed by mid-cap governance and protocol tokens.
+The WETH vault on Base supplies lending markets backed by governance tokens and by wrapped majors issued by Coinbase, such as cbXRP and cbHYPE.
+These markets serve borrowers who wish to access liquidity against their holdings without selling.
 Given the higher volatility and lower liquidity of these assets compared to blue-chip collateral, supply caps and risk parameters are set more conservatively on a per-market basis.
 
 **Ethereum (USDC)**
