@@ -1,0 +1,25 @@
+name: Check the DAO pages against the Snapshot space
+
+on:
+  pull_request:
+    paths:
+      - 'docs/dao/**'
+      - 'scripts/check-dao-space.js'
+      - '.github/workflows/dao-space.yml'
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '^24.18.0'
+
+      - name: Compare the pages with the space
+        run: node scripts/check-dao-space.js
