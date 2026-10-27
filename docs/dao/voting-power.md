@@ -73,7 +73,7 @@ Your wallet balance, deposits, unstaking amount and collateral still vote with y
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The dashboard dates from the legacy DAO, and [its documentation](https://old-docs.api3.org/dao-members/dashboard/voting.html) describes delegating in it.
+The dashboard dates from the legacy DAO, and [its documentation](https://dao-docs.api3.org/members/voting.html) describes delegating in it.
 
 ### Snapshot delegation
 

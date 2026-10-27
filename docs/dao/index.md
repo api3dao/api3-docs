@@ -8,7 +8,7 @@ outline: deep
 
 # DAO
 
-The API3 DAO governs through the Snapshot space [api3.eth](https://snapshot.box/#/s:api3.eth), where holders of the API3 token vote on proposals.
+The API3 DAO governs through the Snapshot space [api3.eth](https://snapshot.box/#/s:api3.eth), where holders of the [API3 token](/dao/api3-token) vote on proposals.
 Voting is off-chain: a vote is a signed message that Snapshot collects, and the voting power behind it is read from Ethereum mainnet at the block the proposal names.
 The API3 multisigs execute a proposal once it has passed and its result has been verified.
 
@@ -30,4 +30,4 @@ For quick reference, you can copy-paste [`llms-full.txt`](https://docs.api3.org/
 
 Governance used to run on Aragon contracts, with a staking pool and a dashboard for it.
 The pool is still in use: stake in it counts as voting power and pool delegations still apply to the stake, but staking is no longer needed to vote.
-The [legacy documentation](https://old-docs.api3.org/dao-members/) covers the pool, the dashboard and the contracts.
+The [legacy documentation](https://dao-docs.api3.org/) covers the pool, the dashboard and the contracts.

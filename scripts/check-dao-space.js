@@ -107,6 +107,19 @@ async function main() {
     }
   }
 
+  const tokenPage = fs.readFileSync(path.join(daoDir, 'api3-token.md'), 'utf-8');
+  const tokenAddress = sources.find((source) => source.name === 'erc20-balance-of')?.params?.address;
+  if (!tokenAddress) {
+    problems.push('The strategy has no erc20-balance-of source, the token page describes the token it reads');
+  } else if (!tokenPage.includes(tokenAddress)) {
+    problems.push(`api3-token.md does not name the token ${tokenAddress} the space reads`);
+  }
+  for (const hex of new Set(tokenPage.match(/0x[0-9a-fA-F]{40,}/g) ?? [])) {
+    if (!reads.has(hex)) {
+      problems.push(`api3-token.md lists ${hex}, which the space's strategies do not read`);
+    }
+  }
+
   if (space.validation.name !== 'basic') {
     problems.push(
       `The space validates proposals with ${space.validation.name}, the proposals page describes a basic threshold`

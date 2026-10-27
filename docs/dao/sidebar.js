@@ -4,6 +4,10 @@ module.exports = [
     link: '/dao/',
   },
   {
+    text: 'API3 token',
+    link: '/dao/api3-token',
+  },
+  {
     text: 'Voting power',
     link: '/dao/voting-power',
   },
