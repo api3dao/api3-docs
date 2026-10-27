@@ -19,4 +19,7 @@ hero:
     - theme: brand
       text: About curation
       link: /curation/
+    - theme: brand
+      text: About the DAO
+      link: /dao/
 ---
