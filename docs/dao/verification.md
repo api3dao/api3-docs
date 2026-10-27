@@ -8,9 +8,13 @@ outline: deep
 
 # Verification
 
-The API3 multisigs execute only a result they recomputed from the chain, never one read off a website.
-The [Snapshot voting verifier](https://github.com/api3dao/snapshot-voting-verifier) is the open source tool for that recomputation.
-Anyone can run it on any proposal of the space, and its README says how.
+The DAO relies on Snapshot to run its votes.
+The space settings, the strategies that compute voting power and the hub that collects and tallies the votes are Snapshot's, and the DAO trusts them to work as described.
+It verifies them all the same: before executing a proposal, the API3 multisigs recompute its result from the chain with the [Snapshot voting verifier](https://github.com/api3dao/snapshot-voting-verifier), never taking a result off a website.
+The tool is open source, anyone can run it on any proposal of the space, and its README says how.
+
+The DAO's rules also go further than Snapshot's settings can express, such as counting only the votes in favour toward the quorum and the window for the snapshot block.
+The verification enforces those too, so a proposal that Snapshot shows as passed can still fail a check and not be executed.
 
 ## What it establishes
 

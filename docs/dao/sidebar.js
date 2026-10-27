@@ -8,10 +8,6 @@ module.exports = [
     link: '/dao/voting-power',
   },
   {
-    text: 'Delegation',
-    link: '/dao/delegation',
-  },
-  {
     text: 'Voting',
     link: '/dao/voting',
   },

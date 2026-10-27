@@ -7,6 +7,7 @@ on:
       - 'scripts/check-dao-space.js'
       - '.github/workflows/dao-space.yml'
   schedule:
+    # Once a week, Monday 06:00 UTC
     - cron: '0 6 * * 1'
   workflow_dispatch:
 
