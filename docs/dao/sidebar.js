@@ -12,11 +12,7 @@ module.exports = [
     link: '/dao/voting',
   },
   {
-    text: 'Proposals',
-    link: '/dao/proposals',
-  },
-  {
-    text: 'Verification',
+    text: 'Independent verification',
     link: '/dao/verification',
   },
 ];

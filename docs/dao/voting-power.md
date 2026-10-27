@@ -8,8 +8,9 @@ outline: deep
 
 # Voting power
 
-One API3 is one vote, wherever it sits.
-Staking is not needed to vote, and voting has no minimum.
+Voting power is counted in API3: each API3 held in one of the places below is one vote.
+Staking is not needed to vote, and any amount votes.
+The 500,000 API3 threshold applies to posting a proposal, not to voting.
 Snapshot shows voting power under the symbol vpAPI3.
 
 ## What counts
@@ -25,19 +26,21 @@ At the block a proposal is measured at, your voting power is the sum of:
 
 Nothing else counts: API3 on an exchange, in a liquidity pool, lent out, bridged to another chain or held in any other contract.
 
-[Snapshot delegation](#snapshot-delegation) applies on top of this sum: a delegation moves all of it to the delegate.
+[Snapshot delegation](#snapshot-delegation) applies on top of this sum: a delegation gives all of it to the delegate.
 
 ## When it is measured
 
 Each proposal names a block, chosen by its author when posting.
 Voting power is read at that block and does not change for the rest of the vote.
 Tokens bought, staked, moved or delegated after that block count from the next proposal on.
-The block is at most 7,200 blocks, about a day, before the proposal was posted (see [Snapshot block](/dao/proposals#snapshot-block)).
+The block is at most 7,200 blocks, about a day, before the proposal was posted (see [Snapshot block](/dao/voting#snapshot-block)).
+
+The vote dialog of a proposal on snapshot.box shows your voting power at its block.
 
 ## How it is computed
 
 The space computes voting power with Snapshot's `with-delegation` strategy, which applies Snapshot delegation on top of five sources read on Ethereum mainnet.
-The strategy is set in the [space settings](https://snapshot.box/#/s:api3.eth/settings) on Snapshot, and the [verification](/dao/verification) recomputes it from the chain.
+The strategy is set in the [space settings](https://snapshot.box/#/s:api3.eth/settings) on Snapshot.
 
 | Source                    | Contract                                                | Read                                                                                                                                           |
 | ------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,7 +60,7 @@ There are two kinds, and they behave differently.
 |                                              | Pool delegation                                   | Snapshot delegation                                                            |
 | -------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
 | Made in                                      | The legacy DAO dashboard                          | The [Delegates](https://snapshot.box/#/s:api3.eth/delegates) page of the space |
-| What moves                                   | Your stake in the pool                            | Everything that counts for you, stake delegated to you in the pool included    |
+| What is delegated                            | Your stake in the pool                            | Everything that counts for you, stake delegated to you in the pool included    |
 | Follows a delegate who delegates on Snapshot | Yes                                               | No                                                                             |
 | Changing it                                  | A transaction, then a week before the next change | A transaction                                                                  |
 
@@ -70,11 +73,11 @@ Your wallet balance, deposits, unstaking amount and collateral still vote with y
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The dashboard dates from the legacy DAO (see [Before Snapshot](/dao/#before-snapshot)), and [its documentation](https://old-docs.api3.org/dao-members/dashboard/voting.html) describes delegating in it.
+The dashboard dates from the legacy DAO, and [its documentation](https://old-docs.api3.org/dao-members/dashboard/voting.html) describes delegating in it.
 
 ### Snapshot delegation
 
-Snapshot delegation moves everything you hold to your delegate, stake that others delegated to you in the pool included.
+Snapshot delegation gives your delegate everything that counts for you, stake that others delegated to you in the pool included.
 You then vote with zero.
 It is recorded in Snapshot's delegate registry on Ethereum mainnet, so setting, changing or clearing it is a transaction.
 
@@ -87,7 +90,7 @@ To delegate, open the [Delegates](https://snapshot.box/#/s:api3.eth/delegates) p
 
 - Snapshot delegation does not chain.
   If you delegate to someone who has delegated to a third person, your power stays with your delegate, who votes with it.
-  Only their own holdings move on.
+  Only their own holdings go on to the third person.
 - Pool delegation does pass through.
   If you delegated your stake in the pool to someone who delegates on Snapshot, your stake follows them to their delegate.
 - A pool delegation to someone who has since delegated inside the pool counts for nobody.
@@ -109,8 +112,3 @@ To delegate, open the [Delegates](https://snapshot.box/#/s:api3.eth/delegates) p
   Borrowing against it changes nothing.
 - An API3 multisig that pool delegations name votes with the stake delegated to it.
 - The API3 multisig that holds the DAO's own API3 has its voting power delegated to a dead address and does not vote.
-
-## Checking your voting power
-
-Open a proposal on [snapshot.box](https://snapshot.box/#/s:api3.eth): the vote dialog shows your voting power at the proposal's block.
-The [verification tool](/dao/verification) recomputes it from the chain for any address and block.

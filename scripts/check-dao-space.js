@@ -1,6 +1,6 @@
 // Checks the DAO pages against the live api3.eth space on the Snapshot hub.
 // The voting power page has to name every contract, method, field and market
-// the space's strategies read, and nothing else, and the proposals page has to
+// the space's strategies read, and nothing else, and the voting page has to
 // carry the threshold, voting type, delay, period and quorum the space is set to.
 const fs = require('fs');
 const path = require('path');
@@ -80,7 +80,7 @@ async function main() {
   const space = await fetchSpace();
   const problems = [];
   const votingPowerPage = fs.readFileSync(path.join(daoDir, 'voting-power.md'), 'utf-8');
-  const proposalsPage = fs.readFileSync(path.join(daoDir, 'proposals.md'), 'utf-8');
+  const votingPage = fs.readFileSync(path.join(daoDir, 'voting.md'), 'utf-8');
 
   if (space.network !== '1') {
     problems.push(`The space is on network ${space.network}, the pages say Ethereum mainnet`);
@@ -120,8 +120,8 @@ async function main() {
     Quorum: `${formatAmount(space.voting.quorum)} in favour`,
   };
   for (const [setting, value] of Object.entries(rows)) {
-    if (!hasRow(proposalsPage, setting, value)) {
-      problems.push(`proposals.md has no settings row "${setting}" with the value "${value}" the space is set to`);
+    if (!hasRow(votingPage, setting, value)) {
+      problems.push(`voting.md has no settings row "${setting}" with the value "${value}" the space is set to`);
     }
   }
 
