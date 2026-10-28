@@ -39,9 +39,10 @@ node ./libs/link-validator.js http://localhost:8082 ./docs/.vitepress/dist/
 
 Hosts that block automated requests are listed in [`libs/link-validator-ignore.json`](./libs/link-validator-ignore.json).
 
-The DAO pages repeat what the `api3.eth` space on Snapshot is set to: the contracts, methods and market its voting power strategy reads, and the proposal threshold, voting type, delay, period and quorum. [`scripts/check-dao-space.js`](./scripts/check-dao-space.js) reads the space from the Snapshot hub and fails when the pages differ from it. The [workflow](./.github/workflows/dao-space.yml) runs it on pull requests that touch `docs/dao` and once a week, so a settings change on Snapshot shows up as a failing run. Reproduce it locally with:
+The DAO pages describe the `api3.eth` space on Snapshot. [`scripts/fixtures/dao-space.json`](./scripts/fixtures/dao-space.json) records its documented configuration, including the complete voting power strategy parameters, privacy, eligibility and multisigs. [`scripts/check-dao-space.js`](./scripts/check-dao-space.js) compares the hub's settings with that configuration and checks the contracts, reads and settings named on the pages. Update the configuration and the pages together when an approved governance change takes effect, never just to make the check pass. The [workflow](./.github/workflows/dao-space.yml) tests the checker and runs the comparison on relevant pull requests and once a week. Reproduce it locally with:
 
 ```sh
+pnpm test
 node scripts/check-dao-space.js
 ```
 

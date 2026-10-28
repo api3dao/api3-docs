@@ -1,9 +1,10 @@
 // Checks the DAO pages against the live api3.eth space on the Snapshot hub.
-// The voting power page has to name every contract, method, field and market
-// the space's strategies read, and nothing else, and the voting page has to
-// carry the threshold, voting type, delay, period and quorum the space is set to.
+// Pin the complete strategy parameters and participation rules as well as
+// checking the contracts, reads and settings named on the pages.
 const fs = require('fs');
 const path = require('path');
+const { isDeepStrictEqual } = require('node:util');
+const documentedSpace = require('./fixtures/dao-space.json');
 
 const HUB = 'https://hub.snapshot.org/graphql';
 const SPACE = 'api3.eth';
@@ -12,9 +13,16 @@ const daoDir = path.join(__dirname, '..', 'docs', 'dao');
 const query = `{
   space(id: "${SPACE}") {
     network
+    symbol
     strategies { name network params }
-    voting { type delay period quorum }
+    voting { type delay period quorum hideAbstain privacy }
     validation { name params }
+    voteValidation { name params }
+    filters { onlyMembers }
+    admins
+    members
+    moderators
+    treasuries { name address network }
   }
 }`;
 
@@ -23,6 +31,7 @@ async function fetchSpace() {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ query }),
+    signal: AbortSignal.timeout(30000),
   });
   if (!response.ok) {
     throw new Error(`The hub returned ${response.status}`);
@@ -76,26 +85,37 @@ function hasRow(page, setting, value) {
   return row.test(page);
 }
 
-async function main() {
-  const space = await fetchSpace();
+function checkSpace(space, pages) {
   const problems = [];
-  const votingPowerPage = fs.readFileSync(path.join(daoDir, 'voting-power.md'), 'utf-8');
-  const votingPage = fs.readFileSync(path.join(daoDir, 'voting.md'), 'utf-8');
+  const { votingPowerPage, votingPage, tokenPage, overviewPage } = pages;
+
+  for (const [setting, expected] of Object.entries(documentedSpace)) {
+    if (!isDeepStrictEqual(space[setting], expected)) {
+      problems.push(`${setting} differs from the documented configuration in scripts/fixtures/dao-space.json`);
+    }
+  }
+
+  for (const { name, address } of documentedSpace.treasuries) {
+    if (!overviewPage.includes(`[${name}](https://etherscan.io/address/${address})`)) {
+      problems.push(`index.md does not link ${name} to its documented multisig ${address}`);
+    }
+  }
 
   if (space.network !== '1') {
     problems.push(`The space is on network ${space.network}, the pages say Ethereum mainnet`);
   }
-  if (space.strategies.length !== 1 || space.strategies[0].name !== 'with-delegation') {
+  const strategies = space.strategies ?? [];
+  if (strategies.length !== 1 || strategies[0].name !== 'with-delegation') {
     problems.push(
-      `The space runs ${space.strategies.map((strategy) => strategy.name).join(', ')}, the voting power page describes one with-delegation strategy`
+      `The space runs ${strategies.map((strategy) => strategy.name).join(', ')}, the voting power page describes one with-delegation strategy`
     );
   }
-  const sources = space.strategies[0]?.params?.strategies ?? [];
+  const sources = strategies[0]?.params?.strategies ?? [];
   if (sources.length !== 5) {
     problems.push(`The strategy reads ${sources.length} sources, the voting power page describes five`);
   }
 
-  const reads = collectReads(space.strategies);
+  const reads = collectReads(strategies);
   for (const read of reads) {
     if (!votingPowerPage.includes(read)) {
       problems.push(`voting-power.md does not mention ${read}, which the space's strategies read`);
@@ -107,7 +127,6 @@ async function main() {
     }
   }
 
-  const tokenPage = fs.readFileSync(path.join(daoDir, 'api3-token.md'), 'utf-8');
   const tokenAddress = sources.find((source) => source.name === 'erc20-balance-of')?.params?.address;
   if (!tokenAddress) {
     problems.push('The strategy has no erc20-balance-of source, the token page describes the token it reads');
@@ -120,23 +139,42 @@ async function main() {
     }
   }
 
-  if (space.validation.name !== 'basic') {
+  if (space.validation?.name !== 'basic') {
     problems.push(
-      `The space validates proposals with ${space.validation.name}, the proposals page describes a basic threshold`
+      `The space validates proposals with ${space.validation?.name}, the voting page describes a basic threshold`
     );
   }
+  const voting = space.voting ?? {};
   const rows = {
-    'Voting type': space.voting.type === 'basic' ? 'Basic' : String(space.voting.type),
-    'Proposal threshold': formatAmount(space.validation.params?.minScore),
-    'Voting delay': space.voting.delay ? formatDays(space.voting.delay) : 'None',
-    'Voting period': formatDays(space.voting.period),
-    Quorum: `${formatAmount(space.voting.quorum)} in favour`,
+    'Voting type': voting.type === 'basic' ? 'Basic' : String(voting.type),
+    'Proposal threshold': formatAmount(space.validation?.params?.minScore),
+    'Voting delay': voting.delay ? formatDays(voting.delay) : 'None',
+    'Voting period': formatDays(voting.period),
+    Quorum: `${formatAmount(voting.quorum)} in favour`,
+    Abstain: voting.hideAbstain === true ? 'Hidden' : 'Visible',
+    'Vote privacy': voting.privacy === '' ? 'Public' : String(voting.privacy),
+    'Who can vote':
+      space.voteValidation?.name === 'any' ? 'Any voting power holder' : String(space.voteValidation?.name),
+    'Posting access': space.filters?.onlyMembers === false ? 'Anyone meeting the threshold' : 'Members only',
   };
   for (const [setting, value] of Object.entries(rows)) {
     if (!hasRow(votingPage, setting, value)) {
       problems.push(`voting.md has no settings row "${setting}" with the value "${value}" the space is set to`);
     }
   }
+
+  return problems;
+}
+
+async function main() {
+  const space = await fetchSpace();
+  const readPage = (file) => fs.readFileSync(path.join(daoDir, file), 'utf-8');
+  const problems = checkSpace(space, {
+    votingPowerPage: readPage('voting-power.md'),
+    votingPage: readPage('voting.md'),
+    tokenPage: readPage('api3-token.md'),
+    overviewPage: readPage('index.md'),
+  });
 
   if (problems.length > 0) {
     console.error(`The DAO pages differ from the ${SPACE} space on the hub:`);
@@ -146,7 +184,11 @@ async function main() {
   console.log(`The DAO pages match the ${SPACE} space on the hub.`);
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+module.exports = { checkSpace };
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}
