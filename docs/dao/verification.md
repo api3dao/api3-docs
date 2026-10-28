@@ -27,7 +27,7 @@ Given a proposal, the tool reads every vote the Snapshot hub lists and establish
 - Every listed vote was signed by the voter it is listed under, names one of the proposal's choices and has a signed timestamp within the voting window.
 - Every listed voter's power matches the proposal's recorded strategies at the proposal's block, delegations included, recomputed from an Ethereum archive node and the delegate registry rather than from Snapshot's scoring service (see [Voting power](/dao/voting-power)).
 - The tally follows from those powers.
-- The proposal met the posting rules: the proposer's 500,000 API3 at the proposal's block, a snapshot block and a signed timestamp within their windows (see [Snapshot block](/dao/voting#snapshot-block)), and seven days of voting with no delay.
+- The proposal met the posting rules: the proposer's 500,000 API3 at the proposal's block, a snapshot block within its window (see [Snapshot block](/dao/voting#snapshot-block)), and seven days of voting with no delay.
 
 It then judges the result on what it recomputed: at least 10,000,000 API3 in favour and more votes for than against (see [Passing](/dao/voting#passing)).
 The run ends by saying whether the result is verified, and lists every problem it found.

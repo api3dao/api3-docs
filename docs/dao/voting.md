@@ -56,8 +56,8 @@ The author can delete their own proposal.
 ### Snapshot block
 
 The author picks the block when posting, and Snapshot only checks that the block exists.
-The DAO's rule is that the block is not later than the signed timestamp and at most 7,200 blocks, about a day, before the proposal was posted, and that the proposal reaches Snapshot within a day of its signed timestamp.
-A proposal outside these windows is not verified and is not executed.
+The DAO's rule is that the block is at most 7,200 blocks, about a day, before Snapshot received the proposal.
+A proposal outside this window is not verified and is not executed.
 
 Snapshot sets the proposal's creation time when its sequencer accepts it and moves a signed start time in the past forward, so voting always runs the full seven days from acceptance.
 The snapshot block is fixed when the proposal is prepared, so a Safe has to collect its confirmations and deliver the proposal while the block is still within the window.
