@@ -36,11 +36,11 @@ These pages explain how to participate under those rules.
 The space lists three multisigs as its treasuries.
 They hold the DAO's assets and execute what passes (see [Execution](/dao/voting#execution)).
 
-| Multisig                                                                            | Role                                                                                                          |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [Vault](https://etherscan.io/address/0x8e03609ed680B237C7b6f8020472CA0687308b24)    | Controls `api3.eth` and its Snapshot settings. Posts proposals and votes with the pool stake delegated to it. |
-| [Agent](https://etherscan.io/address/0xBBE0dE9757F93e3306aDBfeBE906AB285EDD13DA)    | Holds the DAO's assets other than API3. Its own voting power is delegated to a dead address.                  |
-| [Treasury](https://etherscan.io/address/0xb7fa2Cb302C5dC127e61F27b92beC411cbf0AE4A) | Holds the DAO's API3. Its voting power is delegated to a dead address, and it does not post proposals.        |
+| Multisig                                                                            | Role                                                                                                                                                     |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Vault](https://etherscan.io/address/0x8e03609ed680B237C7b6f8020472CA0687308b24)    | Holds the DAO's assets other than API3 and controls `api3.eth` and its Snapshot settings. Posts proposals and votes with the pool stake delegated to it. |
+| [Agent](https://etherscan.io/address/0xBBE0dE9757F93e3306aDBfeBE906AB285EDD13DA)    | Runs day-to-day operations and holds only what they need. Its own voting power is delegated to a dead address.                                           |
+| [Treasury](https://etherscan.io/address/0xb7fa2Cb302C5dC127e61F27b92beC411cbf0AE4A) | Holds the DAO's API3. Its voting power is delegated to a dead address, and it does not post proposals.                                                   |
 
 Changes to the Snapshot settings and other rules of governance follow the [rule-change execution period](/dao/voting#execution).
 
