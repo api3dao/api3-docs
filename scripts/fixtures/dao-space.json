@@ -264,7 +264,7 @@
   ],
   "voting": {
     "type": "basic",
-    "delay": 0,
+    "delay": null,
     "period": 604800,
     "quorum": 10000000,
     "hideAbstain": true,
