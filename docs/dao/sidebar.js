@@ -19,4 +19,8 @@ module.exports = [
     text: 'Independent verification',
     link: '/dao/verification',
   },
+  {
+    text: 'Snapshot assumptions',
+    link: '/dao/snapshot-assumptions',
+  },
 ];

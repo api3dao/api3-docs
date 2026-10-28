@@ -15,7 +15,7 @@ Snapshot shows voting power under the symbol vpAPI3.
 
 ## What counts
 
-At the block a proposal is measured at, your voting power is the sum of:
+At the block a proposal is measured at, your base voting power is the sum of:
 
 - API3 in your wallet.
 - API3 staked in the DAO pool, locked rewards included.
@@ -24,9 +24,14 @@ At the block a proposal is measured at, your voting power is the sum of:
 - API3 scheduled for unstaking, during the waiting period.
 - API3 posted as collateral in the Kabu API3/USDC market on Morpho.
 
-Nothing else counts: API3 on an exchange, in a liquidity pool, lent out, bridged to another chain or held in any other contract.
+API3 held for you by an exchange or custodian does not count as yours.
+Neither do liquidity pool tokens, lending receipts or tokens bridged to another chain.
+
+API3 held by other contracts counts for you only if the contract explicitly delegates its own API3 token balance to you on Snapshot.
+Owning a share of a contract does not give you voting power over its underlying assets.
 
 [Snapshot delegation](#snapshot-delegation) applies on top of this sum: a delegation gives all of it to the delegate.
+Power delegated to you on Snapshot is added separately and is not delegated onward.
 
 ## When it is measured
 
@@ -59,26 +64,36 @@ There are two kinds, and they behave differently.
 
 |                                              | Pool delegation                                   | Snapshot delegation                                                            |
 | -------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Made in                                      | The legacy DAO dashboard                          | The [Delegates](https://snapshot.box/#/s:api3.eth/delegates) page of the space |
-| What is delegated                            | Your stake in the pool                            | Everything that counts for you, stake delegated to you in the pool included    |
+| Made in                                      | The pool contract                                 | The [Delegates](https://snapshot.box/#/s:api3.eth/delegates) page of the space |
+| What is delegated                            | Your stake in the pool                            | Your base voting power, stake delegated to you in the pool included            |
 | Follows a delegate who delegates on Snapshot | Yes                                               | No                                                                             |
 | Changing it                                  | A transaction, then a week before the next change | A transaction                                                                  |
 
 ### Pool delegation
 
-Pool delegation is made in the legacy DAO dashboard and carries over for the stake only.
+Existing pool delegations carry over for the stake only.
 If you delegated your stake in the pool, it keeps voting with your delegate.
 Your wallet balance, deposits, unstaking amount and collateral still vote with you.
 
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The dashboard dates from the legacy DAO, and [its documentation](https://dao-docs.api3.org/members/voting.html) describes delegating in it.
+The legacy dashboard is retained for unstaking and withdrawing.
+To inspect or change a pool delegation, open the [pool contract on Etherscan](https://etherscan.io/address/0x6dd655f10d4b9E242aE186D9050B68F725c76d76#code):
+
+1. Under **Read Contract**, call `userDelegate` with your wallet address to see its current delegate.
+   The zero address means no pool delegation.
+2. Under **Write Contract**, connect that wallet and call `undelegateVotingPower` to clear the delegation, or `delegateVotingPower` with the new delegate's address to change it.
+   These are transactions and cost gas.
+
+The one-week cooldown applies to either change.
+The pool refuses a new delegate who is already delegating inside the pool.
 
 ### Snapshot delegation
 
-Snapshot delegation gives your delegate everything that counts for you, stake that others delegated to you in the pool included.
-You then vote with zero.
+Snapshot delegation gives your delegate your base voting power, stake that others delegated to you in the pool included.
+You can still vote with power delegated to you on Snapshot, because Snapshot delegation does not chain.
+If you have no incoming Snapshot delegations, your voting power is zero.
 It is recorded in Snapshot's delegate registry on Ethereum mainnet, so setting, changing or clearing it is a transaction.
 
 A delegation can be set under `api3.eth` or under all spaces.
@@ -96,19 +111,21 @@ To delegate, open the [Delegates](https://snapshot.box/#/s:api3.eth/delegates) p
 - A pool delegation to someone who has since delegated inside the pool counts for nobody.
   The pool gives a delegating user no voting power at all, received delegations included, and does not pass them on.
   Re-delegate or undelegate in the pool to fix it.
-- Voting yourself after delegating does nothing.
-  Your own power is zero while the delegation stands.
-  Clear it before the proposal's block to vote yourself.
+- Voting yourself after delegating does not take your base voting power back from your delegate.
+  You can still use any incoming Snapshot delegations.
+  To vote with your own holdings again, clear the applicable space and all-spaces delegations before the proposal's block.
 - Changing or clearing a delegation counts from the next proposal's block.
   A proposal already posted keeps the delegations as they were at its block.
-- To put everything with one delegate, delegate on Snapshot.
-  Pool delegation alone leaves the rest of your holdings with you.
+- To put your own holdings with one delegate, clear any outgoing pool delegation first, then delegate on Snapshot.
+  While a pool delegation stands, that stake follows the pool delegate's Snapshot delegation, not yours.
+  Incoming Snapshot delegations stay with you and cannot be passed on.
 
 ## Other cases
 
 - API3 held for you by an exchange or a custodian is in their wallet, not yours, and does not vote as yours.
-- A Safe or another contract wallet has voting power like any wallet and votes by signing through the Safe app (see [Voting](/dao/voting)).
+- A Safe can vote directly through the Safe app (see [Voting](/dao/voting)).
+  Other contract wallets need a compatible signing method or must explicitly delegate their own API3 balance.
 - Collateral on Morpho counts for the owner of the position, in the Kabu API3/USDC market only.
   Borrowing against it changes nothing.
-- An API3 multisig that pool delegations name votes with the stake delegated to it.
-- The API3 multisig that holds the DAO's own API3 has its voting power delegated to a dead address and does not vote.
+- The Vault votes with the pool stake delegated to it.
+  The Agent and Treasury delegate their own voting power to a dead address and do not vote (see [DAO multisigs](/dao/#dao-multisigs)).
