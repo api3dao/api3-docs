@@ -78,8 +78,8 @@ Your wallet balance, deposits, unstaking amount and collateral still vote with y
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The legacy dashboard is retained for unstaking and withdrawing.
-To inspect or change a pool delegation, open the [pool contract on Etherscan](https://etherscan.io/address/0x6dd655f10d4b9E242aE186D9050B68F725c76d76#code):
+The legacy dashboard is retained for unstaking and withdrawing, and [its documentation](https://dao-docs.api3.org/members/voting.html) describes how pool delegation worked there.
+To inspect or change a pool delegation now, open the [pool contract on Etherscan](https://etherscan.io/address/0x6dd655f10d4b9E242aE186D9050B68F725c76d76#code):
 
 1. Under **Read Contract**, call `userDelegate` with your wallet address to see its current delegate.
    The zero address means no pool delegation.
@@ -128,4 +128,4 @@ To delegate, open the [Delegates](https://snapshot.box/#/s:api3.eth/delegates) p
 - Collateral on Morpho counts for the owner of the position, in the Kabu API3/USDC market only.
   Borrowing against it changes nothing.
 - The Vault votes with the pool stake delegated to it.
-  The Agent and Treasury delegate their own voting power to a dead address and do not vote (see [DAO multisigs](/dao/#dao-multisigs)).
+  The Agent and Treasury delegate their own voting power to a dead address and do not vote (see [Treasuries](/dao/#treasuries)).

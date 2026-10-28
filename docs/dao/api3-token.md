@@ -24,7 +24,7 @@ Minting is restricted to addresses its owner marks as minters.
 The DAO pool minted the staking rewards of the legacy DAO.
 
 The migration to Snapshot closed the supply.
-The pool's minter status was revoked, a final mint to the DAO's treasury multisig brought the supply to 200,000,000 API3, and the contract's ownership was transferred to the dead address, so no address can mint and none can be made a minter.
+The pool's minter status was revoked, a final mint to the DAO's [Treasury multisig](/dao/#treasuries) brought the supply to 200,000,000 API3, and the contract's ownership was transferred to the dead address, so no address can mint and none can be made a minter.
 
 Any holder can burn their own API3 by opting in as a burner on the contract and calling `burn`.
 Nothing can mint it back, so the supply can only fall from here.

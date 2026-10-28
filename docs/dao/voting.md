@@ -49,18 +49,18 @@ Proposals are discussed on the [API3 Discord](https://discord.gg/api3dao).
 4. Publish by signing.
    Voting starts when the sequencer accepts the proposal.
 
-To post from a Safe, open snapshot.box in the Safe app, collect the required confirmations and deliver the signed proposal to Snapshot.
+To post from a Safe, open snapshot.box in the Safe app, collect the required confirmations within a day of the first signature and deliver the signed proposal to Snapshot.
 Check that the proposal appears in the space.
-The snapshot block is fixed when preparing the proposal, so collect the confirmations and submit it while that block is still within the [allowed window](#snapshot-block).
 The author can delete their own proposal.
 
 ### Snapshot block
 
 The author picks the block when posting, and Snapshot only checks that the block exists.
-The DAO's rule is that the block is not later than the proposal's creation and at most 7,200 blocks, about a day, before the proposal was posted.
-A proposal measured at a block outside this window is not verified and is not executed.
-Snapshot sets the creation time when the sequencer accepts the proposal.
-A signed start time in the past is moved forward so that voting still runs for the full seven days (see [Snapshot assumptions](/dao/snapshot-assumptions#proposal-timing)).
+The DAO's rule is that the block is not later than the signed timestamp and at most 7,200 blocks, about a day, before the proposal was posted, and that the proposal reaches Snapshot within a day of its signed timestamp.
+A proposal outside these windows is not verified and is not executed.
+
+Snapshot sets the proposal's creation time when its sequencer accepts it and moves a signed start time in the past forward, so voting always runs the full seven days from acceptance.
+The snapshot block is fixed when the proposal is prepared, so a Safe has to collect its confirmations and deliver the proposal while the block is still within the window.
 
 ## Passing
 
@@ -72,7 +72,7 @@ The [independent verification](/dao/verification) applies the rule.
 
 ## Execution
 
-Within seven days of passing, the API3 multisigs verify the result and execute the proposal.
+Within seven days of passing, the [API3 multisigs](/dao/#treasuries) verify the result and execute the proposal.
 
 A proposal that changes the rules of governance executes 30 days after passing, and a proposal that cancels such a change executes within seven days.
 The rules of governance are the voting rules, the DAO's [mandate and charter](/dao/#governing-proposal), the voting power strategy, the space settings, the verification tool, the `api3.eth` name and which multisig holds the treasury.
