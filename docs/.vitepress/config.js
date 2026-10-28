@@ -84,6 +84,7 @@ module.exports = {
       '/dapps/': require('../dapps/sidebar.js'),
       '/oev/': require('../oev/sidebar.js'),
       '/curation/': require('../curation/sidebar.js'),
+      '/dao/': require('../dao/sidebar.js'),
     },
     nav: nav(),
   },
@@ -106,6 +107,11 @@ function nav() {
       text: 'Curation',
       link: '/curation/',
       activeMatch: '/curation/.*',
+    },
+    {
+      text: 'DAO',
+      link: '/dao/',
+      activeMatch: '/dao/.*',
     },
   ];
 }

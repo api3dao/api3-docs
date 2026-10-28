@@ -13,6 +13,7 @@
     "format": "prettier --write --cache \"./**/*.{js,vue,md,json,yaml}\" --log-level silent",
     "format:check": "prettier --check --cache \"./**/*.{js,vue,md,json,yaml}\"",
     "lint": "pnpm format:check",
+    "test": "node --test scripts/*.test.js",
     "generate-llms-files": "node scripts/generate-llms-files.js",
     "prepare": "husky",
     "firebase:emulator": "pnpm docs:build && firebase emulators:start"
