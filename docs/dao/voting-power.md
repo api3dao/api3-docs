@@ -78,7 +78,7 @@ Your wallet balance, deposits, unstaking amount and collateral still vote with y
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The legacy dashboard stays online until the end of March 2028 for unstaking, withdrawing and undelegating, and its Undelegate button clears a pool delegation.
+The Undelegate button on the [legacy dashboard](/dao/#legacy-dao) clears a pool delegation.
 To inspect or change a pool delegation without the dashboard, follow [Using the pool on Etherscan](https://dao-docs.api3.org/members/etherscan.html#changing-a-pool-delegation) in the legacy documentation.
 The pool refuses a new delegate who is already delegating inside the pool.
 
