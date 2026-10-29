@@ -78,15 +78,8 @@ Your wallet balance, deposits, unstaking amount and collateral still vote with y
 The pool refuses a delegation change within a week of the last one.
 After delegating, you wait a week before you can undelegate or change the delegate, and after undelegating, a week before you can delegate again.
 
-The legacy dashboard is retained for unstaking and withdrawing, and [its documentation](https://dao-docs.api3.org/members/voting.html) describes how pool delegation worked there.
-To inspect or change a pool delegation now, open the [pool contract on Etherscan](https://etherscan.io/address/0x6dd655f10d4b9E242aE186D9050B68F725c76d76#code):
-
-1. Under **Read Contract**, call `userDelegate` with your wallet address to see its current delegate.
-   The zero address means no pool delegation.
-2. Under **Write Contract**, connect that wallet and call `undelegateVotingPower` to clear the delegation, or `delegateVotingPower` with the new delegate's address to change it.
-   These are transactions and cost gas.
-
-The one-week cooldown applies to either change.
+The Undelegate button on the [legacy dashboard](/dao/#legacy-dao) clears a pool delegation.
+To inspect or change a pool delegation without the dashboard, follow [Using the pool on Etherscan](https://dao-docs.api3.org/members/etherscan.html#changing-a-pool-delegation) in the legacy documentation.
 The pool refuses a new delegate who is already delegating inside the pool.
 
 ### Snapshot delegation

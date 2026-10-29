@@ -47,5 +47,6 @@ Changes to the Snapshot settings and other rules of governance follow the [rule-
 ## Legacy DAO
 
 Governance used to run on Aragon contracts, with a staking pool and a dashboard for it.
-The pool is still in use: stake in it counts as voting power and pool delegations still apply to the stake, but staking is no longer needed to vote.
-The [legacy documentation](https://dao-docs.api3.org/) covers the pool, the dashboard and the contracts.
+The pool is still in use: stake in it counts as voting power and pool delegations still apply to the stake, but staking is no longer needed to vote and the pool pays no rewards.
+The dashboard stays online until the end of March 2028 for unstaking, withdrawing and undelegating.
+The [legacy documentation](https://dao-docs.api3.org/) covers the pool, the dashboard and the contracts, and how to [use the pool on Etherscan](https://dao-docs.api3.org/members/etherscan.html) without the dashboard.
