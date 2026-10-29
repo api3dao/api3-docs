@@ -40,10 +40,15 @@ Votes are public while the proposal is open.
 Posting a proposal takes 500,000 API3 of voting power, held or delegated to you.
 Snapshot checks it at the latest block when it receives the proposal, and the [independent verification](/dao/verification) checks it again at the proposal's snapshot block.
 
-Proposals are discussed on the [API3 Discord](https://discord.gg/api3dao).
+A proposal says exactly what it asks for: the action, the amount, the recipient, the timing and what counts as done, as far as each applies.
+A rule change says which text or setting changes and to what.
+The API3 multisigs do not execute a proposal that leaves any of these open.
+Snapshot limits the length of a proposal, so the full text goes on IPFS and the Snapshot post carries a summary and the link.
+
+Proposals are discussed on the [API3 Discord](https://discord.gg/api3dao), before or during the vote, and discussion is optional.
 
 1. Open [New proposal](https://snapshot.box/#/s:api3.eth/create) in the space and connect the wallet that holds the voting power.
-2. Write the title and the body.
+2. Write the title, and a summary with the link to the full text as the body.
    The voting system is basic voting with the choices For and Against.
 3. Leave the snapshot block at its default, the latest block (see [Snapshot block](#snapshot-block)).
 4. Publish by signing.
@@ -73,9 +78,12 @@ The [independent verification](/dao/verification) applies the rule.
 ## Execution
 
 Within seven days of passing, the [API3 multisigs](/dao/#treasuries) verify the result and execute the proposal.
+They also check that the proposal is fully specified and that the [charter](/dao/#governing-proposal) does not rule it out.
+If they cannot execute in time, they say so publicly before the seven days are up, with the reason and a new date at most seven days later, once per proposal.
 
 A proposal that changes the rules of governance executes 30 days after passing, and a proposal that cancels such a change executes within seven days.
-The rules of governance are the voting rules, the DAO's [mandate and charter](/dao/#governing-proposal), the voting power strategy, the space settings, the verification tool, the `api3.eth` name and which multisig holds the treasury.
+The rules of governance are the voting rules, the DAO's [mandate and charter](/dao/#governing-proposal), the voting power strategy, the space settings, the verification tool, the ownership of `api3.eth` and which multisig holds the treasury or executes.
+An emergency move to a new Safe under the charter is confirmed by a proposal afterwards.
 Whether a proposal is a rule change follows from its content, not from anything the author declares.
 
 ## Space settings
