@@ -41,6 +41,7 @@ Posting a proposal takes 500,000 API3 of voting power (see [Posting a proposal](
 The DAO pool of the legacy DAO holds staked API3.
 Staking rewards ended with the migration and the pool mints nothing further.
 Rewards minted before it still unlock a year after each was minted.
+The last reward was minted on 29 October 2026 and unlocks on 28 October 2027, after which nothing is locked.
 Staking is no longer needed to vote, staked API3 keeps voting as described under [Voting power](/dao/voting-power#what-counts), and unstaking and withdrawing work as before.
 The [legacy documentation](https://dao-docs.api3.org/members/staking.html) describes the pool and how to [unstake and withdraw on Etherscan](https://dao-docs.api3.org/members/etherscan.html#unstaking-and-withdrawing).
 
