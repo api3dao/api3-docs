@@ -44,8 +44,10 @@ A proposal says exactly what it asks for: the action, the amount, the recipient,
 A rule change says which text or setting changes and to what.
 The API3 multisigs do not execute a proposal that leaves any of these open.
 Snapshot limits the length of a proposal, so the full text goes on IPFS and the Snapshot post carries a summary and the link.
+IPFS addresses content by its hash, so the link identifies the exact text that was voted on and any edit to the text produces a different link.
+Upload the final text to a pinning service such as Pinata and put the link it gives in the post.
 
-Proposals are discussed on the [API3 Discord](https://discord.gg/api3dao), before or during the vote, and discussion is optional.
+Proposals are discussed in the [governance channel](https://discord.com/channels/758003776174030948/1354430883226193932) of the API3 Discord, before or during the vote, and discussion is optional.
 
 1. Open [New proposal](https://snapshot.box/#/s:api3.eth/create) in the space and connect the wallet that holds the voting power.
 2. Write the title, and a summary with the link to the full text as the body.
