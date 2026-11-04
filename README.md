@@ -16,6 +16,7 @@ New to API3 data feeds? Start with the [Quickstart](https://docs.api3.org/dapps/
 - **[dApps](https://docs.api3.org/dapps/)**: activating a data feed on [API3 Market](https://market.api3.org), reading it from a contract through `Api3ReaderProxyV1`, integration and security considerations, and how OEV Rewards pay dApps for using the feeds.
 - **[OEV](https://docs.api3.org/oev/)**: what Oracle Extractable Value is, how API3 data feeds and OEV feeds work at the contract level, and how searchers use the public Signed APIs.
 - **[Curation](https://docs.api3.org/curation/)**: the Morpho vaults API3 curates, their roles and operations, risk management and disclosure.
+- **[DAO](https://docs.api3.org/dao/)**: governance on the `api3.eth` Snapshot space, what counts as voting power, delegation, voting, posting a proposal and how a result is verified before execution.
 
 ## AI assistants
 

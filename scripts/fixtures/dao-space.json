@@ -1,0 +1,306 @@
+{
+  "network": "1",
+  "symbol": "vpAPI3",
+  "strategies": [
+    {
+      "name": "with-delegation",
+      "network": "1",
+      "params": {
+        "symbol": "API3",
+        "strategies": [
+          {
+            "name": "erc20-balance-of",
+            "params": {
+              "symbol": "API3",
+              "address": "0x0b38210ea11411557c13457D4dA7dC6ea731B88a",
+              "decimals": 18
+            }
+          },
+          {
+            "name": "math",
+            "params": {
+              "symbol": "API3 (staked)",
+              "operation": "divide",
+              "operands": [
+                {
+                  "type": "strategy",
+                  "strategy": {
+                    "name": "math",
+                    "params": {
+                      "symbol": "API3 (staked, times total stake)",
+                      "operation": "multiply",
+                      "operands": [
+                        {
+                          "type": "strategy",
+                          "strategy": {
+                            "name": "contract-call",
+                            "params": {
+                              "symbol": "Pool shares (own plus delegated)",
+                              "address": "0x6dd655f10d4b9E242aE186D9050B68F725c76d76",
+                              "decimals": 18,
+                              "args": ["%{address}"],
+                              "methodABI": {
+                                "name": "userVotingPower",
+                                "type": "function",
+                                "stateMutability": "view",
+                                "inputs": [
+                                  {
+                                    "name": "userAddress",
+                                    "type": "address"
+                                  }
+                                ],
+                                "outputs": [
+                                  {
+                                    "name": "",
+                                    "type": "uint256"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "strategy",
+                          "strategy": {
+                            "name": "contract-call",
+                            "params": {
+                              "symbol": "Pool total stake",
+                              "address": "0x6dd655f10d4b9E242aE186D9050B68F725c76d76",
+                              "decimals": 18,
+                              "args": [],
+                              "methodABI": {
+                                "name": "totalStake",
+                                "type": "function",
+                                "stateMutability": "view",
+                                "inputs": [],
+                                "outputs": [
+                                  {
+                                    "name": "",
+                                    "type": "uint256"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "strategy",
+                  "strategy": {
+                    "name": "contract-call",
+                    "params": {
+                      "symbol": "Pool total shares",
+                      "address": "0x6dd655f10d4b9E242aE186D9050B68F725c76d76",
+                      "decimals": 18,
+                      "args": [],
+                      "methodABI": {
+                        "name": "totalShares",
+                        "type": "function",
+                        "stateMutability": "view",
+                        "inputs": [],
+                        "outputs": [
+                          {
+                            "name": "",
+                            "type": "uint256"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "contract-call",
+            "params": {
+              "symbol": "API3 (deposited)",
+              "address": "0x6dd655f10d4b9E242aE186D9050B68F725c76d76",
+              "decimals": 18,
+              "args": ["%{address}"],
+              "output": "unstaked",
+              "methodABI": {
+                "name": "users",
+                "type": "function",
+                "stateMutability": "view",
+                "inputs": [
+                  {
+                    "name": "userAddress",
+                    "type": "address"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "unstaked",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "vesting",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeAmount",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeShares",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeScheduledFor",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "lastDelegationUpdateTimestamp",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "lastProposalTimestamp",
+                    "type": "uint256"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "contract-call",
+            "params": {
+              "symbol": "API3 (unstaking)",
+              "address": "0x6dd655f10d4b9E242aE186D9050B68F725c76d76",
+              "decimals": 18,
+              "args": ["%{address}"],
+              "output": "unstakeAmount",
+              "methodABI": {
+                "name": "users",
+                "type": "function",
+                "stateMutability": "view",
+                "inputs": [
+                  {
+                    "name": "userAddress",
+                    "type": "address"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "unstaked",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "vesting",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeAmount",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeShares",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "unstakeScheduledFor",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "lastDelegationUpdateTimestamp",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "lastProposalTimestamp",
+                    "type": "uint256"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "contract-call",
+            "params": {
+              "symbol": "API3 (Morpho collateral)",
+              "address": "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb",
+              "decimals": 18,
+              "args": [
+                "0x70dfbd2705d10d5dfb4d89e07e2bb860b5a624ce2f97e209ab9f5308bf6c67a1",
+                "%{address}"
+              ],
+              "output": "collateral",
+              "methodABI": {
+                "name": "position",
+                "type": "function",
+                "stateMutability": "view",
+                "inputs": [
+                  {
+                    "name": "id",
+                    "type": "bytes32"
+                  },
+                  {
+                    "name": "user",
+                    "type": "address"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "supplyShares",
+                    "type": "uint256"
+                  },
+                  {
+                    "name": "borrowShares",
+                    "type": "uint128"
+                  },
+                  {
+                    "name": "collateral",
+                    "type": "uint128"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "voting": {
+    "type": "basic",
+    "delay": null,
+    "period": 604800,
+    "quorum": 10000000,
+    "hideAbstain": true,
+    "privacy": ""
+  },
+  "validation": {
+    "name": "basic",
+    "params": {
+      "minScore": 500000
+    }
+  },
+  "voteValidation": {
+    "name": "any",
+    "params": {}
+  },
+  "filters": {
+    "onlyMembers": false
+  },
+  "admins": [],
+  "members": [],
+  "moderators": [],
+  "treasuries": [
+    {
+      "name": "Vault",
+      "address": "0x8e03609ed680B237C7b6f8020472CA0687308b24",
+      "network": "1"
+    },
+    {
+      "name": "Agent",
+      "address": "0xBBE0dE9757F93e3306aDBfeBE906AB285EDD13DA",
+      "network": "1"
+    },
+    {
+      "name": "Treasury",
+      "address": "0xb7fa2Cb302C5dC127e61F27b92beC411cbf0AE4A",
+      "network": "1"
+    }
+  ]
+}
