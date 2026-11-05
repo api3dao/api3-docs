@@ -88,6 +88,8 @@ Given the higher volatility and lower liquidity of these assets compared to blue
 | [EIGEN / USDC](https://app.morpho.org/ethereum/market/0x6d1dae6238f6f296abb77d9e17a8429132458146bc89d1d2b20516b87a40dee7)  | `0x6d1dae62…dee7` | 62.5% | 1M USDC    |
 | [ONDO / USDC](https://app.morpho.org/ethereum/market/0x7dea3baf843210ce0a4a9e6374cea47dcd55384fb36d2d701e69b221867b39e5)   | `0x7dea3baf…39e5` | 62.5% | 1M USDC    |
 | [SYRUP / USDC](https://app.morpho.org/ethereum/market/0x38fa7d75c15a0f11cc46e2d1987a05c26a836d0da6b4430657ec5ece38a25a45)  | `0x38fa7d75…5a45` | 62.5% | 500k USDC  |
+| [ENA / USDC](https://app.morpho.org/ethereum/market/0xc0ed4e0113f9d0c72a0d6e8d43a1662b8f24c90ead3773bc4315ccc199b73018)    | `0xc0ed4e01…3018` | 62.5% | 500k USDC  |
+| [UNI / USDC](https://app.morpho.org/ethereum/market/0x3878c6695cb95356a248e0adbcdbc89880005ebba1e73a3c1ed85b406bba5eb8)    | `0x3878c669…5eb8` | 77%   | 500k USDC  |
 | [COMP / USDC](https://app.morpho.org/ethereum/market/0x9b966d26e14749cdf3be6fcf44ef404f1428b3c2f8c9e9a5172437e440597715)   | `0x9b966d26…7715` | 62.5% | 100k USDC  |
 | [FLUID / USDC](https://app.morpho.org/ethereum/market/0xaf53761f4931911877474ab8c7ff856987207ee7ec15e8513ff9cf86939229a0)  | `0xaf53761f…29a0` | 62.5% | 60k USDC   |
 | [API3 / USDC](https://app.morpho.org/ethereum/market/0x70dfbd2705d10d5dfb4d89e07e2bb860b5a624ce2f97e209ab9f5308bf6c67a1)   | `0x70dfbd27…67a1` | 62.5% | 50k USDC   |
@@ -96,7 +98,6 @@ Given the higher volatility and lower liquidity of these assets compared to blue
 
 | Market                                                                                                                  | Market ID         | LLTV  | Supply cap |
 | ----------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
-| [AERO / WETH](https://app.morpho.org/base/market/0x17cbb67e84acfbaf2a3b73f9fe697d9503a8fd2fce30f851429726fa04bc5afe)    | `0x17cbb67e…5afe` | 77%   | 350 WETH   |
 | [cbXRP / WETH](https://app.morpho.org/base/market/0x3b450af515095f290141e7eefd11a57e30d44609b6c4f4192a1187e2125367af)   | `0x3b450af5…67af` | 77%   | 160 WETH   |
 | [cbHYPE / WETH](https://app.morpho.org/base/market/0xcd609ceadf0cb94a5bef201a2bb4374b8a302e0bf66c3bf79d7999c656bebcaf)  | `0xcd609cea…bcaf` | 77%   | 120 WETH   |
 | [VVV / WETH](https://app.morpho.org/base/market/0xa84351c9d5be1d05f6b2d93df58ff8764ba54b70daa6c41529278ac4d1bc3c5b)     | `0xa84351c9…3c5b` | 62.5% | 110 WETH   |
