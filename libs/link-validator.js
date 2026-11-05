@@ -144,7 +144,7 @@ async function testLink(url, filePath, ignoreTimeout) {
   } catch (error) {
     // If a timeout try one more time
     if (!ignoreTimeout && error.code == 'ECONNABORTED' && error.toString().indexOf('Error: timeout') > -1) {
-      testLink(url, filePath, true);
+      return testLink(url, filePath, true);
     } else {
       process.stdout.write(colors.bold.red('X'));
       failuresArr.push({ file: filePath, url: url, error: error.toString() });
@@ -154,7 +154,7 @@ async function testLink(url, filePath, ignoreTimeout) {
 }
 
 async function run(task) {
-  (console.log('Checking (' + task + ')', Object.keys(linksObj).length), 'links.');
+  console.log('Checking (' + task + ')', Object.keys(linksObj).length, 'links.');
   for (var key in linksObj) {
     if (linksObj.hasOwnProperty(key)) {
       let fail = await testLink(key, linksObj[key], false);
