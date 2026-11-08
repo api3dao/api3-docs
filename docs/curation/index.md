@@ -132,11 +132,7 @@ Meme tokens are more volatile and higher-risk than blue-chip collateral, so a ma
 
 | Market                                                                                                                      | Market ID         | LLTV  | Supply cap |
 | --------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----- | ---------- |
-| [PEPE / USDC](https://app.morpho.org/ethereum/market/0xde2bb82278de27e7851625e2d7c25280adc6d499c000cc6904eb0ab29124a481)    | `0xde2bb822…a481` | 62.5% | 1M USDC    |
 | [SPX6900 / USDC](https://app.morpho.org/ethereum/market/0x31a277fde40c1bd37dd00cb2167fe1d5831b450efecc63323679228a101e9979) | `0x31a277fd…9979` | 62.5% | 500k USDC  |
-| [FLOKI / USDC](https://app.morpho.org/ethereum/market/0xc12d1dd6d5009d6fb98f2d558b90ce10039ab65a6f81bac18261b28d4859689c)   | `0xc12d1dd6…689c` | 62.5% | 300k USDC  |
-| [NPC / USDC](https://app.morpho.org/ethereum/market/0x8ab1b309944e0da2f85cec2aae47317c086dac72e6fd635b45c94d1294e3d674)     | `0x8ab1b309…d674` | 62.5% | 185k USDC  |
-| [SHIB / USDC](https://app.morpho.org/ethereum/market/0x87753839ac836a59dd13f66ea6ea5481ba2374ae76dfdfbe8c4861e835833646)    | `0x87753839…3646` | 62.5% | 80k USDC   |
 
 **Robinhood (USDG)**
 
